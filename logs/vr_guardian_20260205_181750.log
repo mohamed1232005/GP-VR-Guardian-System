@@ -1,0 +1,28 @@
+18:17:50 [INFO] ======================================================================
+18:17:50 [INFO] VR GUARDIAN SERVER v4.2 - COMPLETE SYSTEM
+18:17:50 [INFO] ======================================================================
+18:17:50 [INFO] [DEPTH] Loading MiDaS model...
+18:17:53 [INFO] [DEPTH] Device: cuda
+18:17:54 [INFO] [DEPTH] ✓ MiDaS ready!
+18:17:54 [INFO] [FLOOR] ✓ Floor detector ready!
+18:17:54 [INFO] [HANDS] Loading MediaPipe...
+18:17:55 [INFO] [HANDS] ✓ MediaPipe version: 0.10.14
+18:17:55 [INFO] [HANDS] ✓ Hand tracking ready!
+18:17:55 [INFO] [HANDS] ✓ Pointing gesture detection enabled
+18:17:55 [INFO] [POSE] Loading MediaPipe...
+18:17:55 [INFO] [POSE] ✓ MediaPipe version: 0.10.14
+18:17:55 [INFO] [POSE] ✓ Pose tracking ready!
+18:17:55 [INFO] 
+[FEATURES] Active:
+18:17:55 [INFO]   [OK] Depth Estimation (MiDaS)
+18:17:55 [INFO]   [OK] Floor Detection (RANSAC)
+18:17:55 [INFO]   [OK] Hand Tracking (MediaPipe)
+18:17:55 [INFO]   [OK] Pose Estimation (MediaPipe)
+18:17:55 [INFO] 
+18:17:55 [INFO] [NETWORK] Starting server...
+18:17:55 [INFO] [NETWORK] ✓ Listening on 0.0.0.0:9999
+18:17:55 [INFO] 
+======================================================================
+18:17:55 [INFO] READY! Waiting for mobile connection...
+18:17:55 [INFO] ======================================================================
+

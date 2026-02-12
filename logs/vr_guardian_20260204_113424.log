@@ -1,0 +1,32 @@
+11:34:24 [INFO] ======================================================================
+11:34:24 [INFO] VR GUARDIAN SERVER v4.1 - WINDOWS COMPATIBLE
+11:34:24 [INFO] ======================================================================
+11:34:24 [INFO] [DEPTH] Loading MiDaS model...
+11:34:27 [INFO] [DEPTH] Device: cuda
+11:34:28 [INFO] [DEPTH] ✓ MiDaS ready!
+11:34:28 [INFO] [FLOOR] ✓ Floor detector ready!
+11:34:28 [INFO] [HANDS] Checking MediaPipe...
+11:34:29 [WARNING] [HANDS] MediaPipe not available: Could not import hands: No module named 'mediapipe.python'
+11:34:29 [WARNING] [HANDS] Hand tracking will be DISABLED
+11:34:29 [WARNING] [FIX] Install latest: pip install mediapipe --upgrade
+11:34:29 [INFO] [POSE] Checking MediaPipe...
+11:34:29 [WARNING] [POSE] MediaPipe not available: Could not import MediaPipe pose
+11:34:29 [WARNING] [POSE] Pose tracking will be DISABLED
+11:34:29 [INFO] 
+[FEATURES] Active:
+11:34:29 [INFO]   [OK] Depth Estimation (MiDaS)
+11:34:29 [INFO]   [OK] Floor Detection (RANSAC)
+11:34:29 [INFO]   [NO] Hand Tracking (MediaPipe)
+11:34:29 [INFO]   [NO] Pose Estimation (MediaPipe)
+11:34:29 [WARNING] 
+[INFO] MediaPipe hand tracking not available
+11:34:29 [WARNING] [FIX] Try: pip install mediapipe --upgrade
+11:34:29 [WARNING] [INFO] MediaPipe pose tracking not available
+11:34:29 [INFO] 
+11:34:29 [INFO] [NETWORK] Starting server...
+11:34:29 [INFO] [NETWORK] ✓ Listening on 0.0.0.0:9999
+11:34:29 [INFO] 
+======================================================================
+11:34:29 [INFO] READY! Waiting for mobile connection...
+11:34:29 [INFO] ======================================================================
+

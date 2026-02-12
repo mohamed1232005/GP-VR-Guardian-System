@@ -1,0 +1,40 @@
+16:00:02 [INFO] 
+[INIT] Loading AI modules...
+16:00:02 [INFO] [DEPTH] Loading MiDaS model...
+16:00:06 [INFO] [DEPTH] Device: cuda
+16:00:07 [INFO] [DEPTH] ✓ MiDaS ready!
+16:00:07 [INFO] [FLOOR] ✓ Floor detector ready!
+16:00:07 [INFO] [HANDS] Loading MediaPipe Hands...
+16:00:07 [INFO] [HANDS] ✓ Hand tracker ready!
+16:00:07 [INFO] [INIT] ✓ All modules loaded!
+16:00:07 [INFO] [GPU] Using: CUDA
+16:00:07 [INFO] [NETWORK] ✓ Listening on 0.0.0.0:9999
+16:00:07 [INFO] 
+======================================================================
+16:00:07 [INFO] READY! Waiting for mobile connection...
+16:00:07 [INFO] ======================================================================
+
+16:03:22 [INFO] [NETWORK] ✓✓✓ Connected: ('192.168.100.13', 60604)
+16:03:22 [INFO] 
+[SYSTEM] All systems GO!
+16:03:22 [INFO] [SYSTEM] Press Ctrl+C to stop
+
+16:03:22 [ERROR] 
+[ERROR] 'detected'
+16:03:22 [INFO] 
+[CLEANUP] Shutting down...
+16:03:22 [INFO] 
+[FINAL STATS]
+16:03:22 [INFO]   Total frames: 1
+16:03:22 [INFO]   Final FPS: 0.0
+16:03:22 [INFO]   Avg process time: 34.7ms
+16:03:22 [INFO]   Play area points: 0
+16:03:22 [INFO] 
+[WARNING] Low FPS - check:
+16:03:22 [INFO]   - Is GPU being used?
+16:03:22 [INFO]   - Is WiFi connection stable?
+16:03:22 [INFO]   - Try reducing camera resolution in Unity
+16:03:22 [INFO] 
+================================================================================
+16:03:22 [INFO] Server shutdown complete
+16:03:22 [INFO] ================================================================================

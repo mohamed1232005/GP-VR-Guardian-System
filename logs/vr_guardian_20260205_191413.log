@@ -1,0 +1,57 @@
+19:14:13 [INFO] ======================================================================
+19:14:13 [INFO] VR GUARDIAN SERVER v4.2 - COMPLETE SYSTEM
+19:14:13 [INFO] ======================================================================
+19:14:13 [INFO] [DEPTH] Loading MiDaS model...
+19:14:15 [INFO] [DEPTH] Device: cuda
+19:14:16 [INFO] [DEPTH] ✓ MiDaS ready!
+19:14:16 [INFO] [FLOOR] ✓ Floor detector ready!
+19:14:16 [INFO] [HANDS] Loading MediaPipe...
+19:14:17 [INFO] [HANDS] ✓ MediaPipe version: 0.10.14
+19:14:17 [INFO] [HANDS] ✓ Hand tracking ready!
+19:14:17 [INFO] [HANDS] ✓ Pointing gesture detection enabled
+19:14:17 [INFO] [POSE] Loading MediaPipe...
+19:14:17 [INFO] [POSE] ✓ MediaPipe version: 0.10.14
+19:14:17 [INFO] [POSE] ✓ Pose tracking ready!
+19:14:17 [INFO] 
+[FEATURES] Active:
+19:14:17 [INFO]   [OK] Depth Estimation (MiDaS)
+19:14:17 [INFO]   [OK] Floor Detection (RANSAC)
+19:14:17 [INFO]   [OK] Hand Tracking (MediaPipe)
+19:14:17 [INFO]   [OK] Pose Estimation (MediaPipe)
+19:14:17 [INFO] 
+19:14:17 [INFO] [NETWORK] Starting server...
+19:14:17 [INFO] [NETWORK] ✓ Listening on 0.0.0.0:9999
+19:14:17 [INFO] 
+======================================================================
+19:14:17 [INFO] READY! Waiting for mobile connection...
+19:14:17 [INFO] ======================================================================
+
+19:14:21 [INFO] [NETWORK] ✓✓✓ Connected: ('192.168.100.14', 58964)
+19:14:23 [INFO] [DISPLAY] ✓ Windows created
+19:14:24 [INFO] [STATS] Frame   12 | FPS:  1.1 | Process: 471.9ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:28 [INFO] [STATS] Frame   48 | FPS: 13.3 | Process: 413.6ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:31 [INFO] [STATS] Frame  100 | FPS: 18.7 | Process: 303.2ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:34 [INFO] [STATS] Frame  153 | FPS: 17.9 | Process: 207.6ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:37 [INFO] [STATS] Frame  204 | FPS: 18.4 | Process: 202.6ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:40 [INFO] [STATS] Frame  264 | FPS: 20.9 | Process: 176.3ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:44 [INFO] [STATS] Frame  312 | FPS: 18.5 | Process: 202.2ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:47 [INFO] [STATS] Frame  360 | FPS: 12.8 | Process: 207.4ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:50 [INFO] [STATS] Frame  416 | FPS: 19.9 | Process: 187.5ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:53 [INFO] [STATS] Frame  495 | FPS: 26.3 | Process: 134.1ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:56 [INFO] [STATS] Frame  572 | FPS: 27.5 | Process: 100.8ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+19:14:59 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+19:14:59 [WARNING] [NETWORK] Connection lost
+19:14:59 [INFO] 
+[CLEANUP] Shutting down...
+19:14:59 [INFO] [HANDS] Cleaned up
+19:14:59 [INFO] [POSE] Cleaned up
+19:14:59 [INFO] [STATS] Total frames: 623
+19:14:59 [INFO] [STATS] Average FPS: 20.0
+19:14:59 [INFO] [STATS] Average process: 118.5ms
+19:14:59 [INFO] [STATS] Play area points: 0
+19:14:59 [INFO] 
+[SUCCESS] ✓ System performed well!
+19:14:59 [INFO] 
+======================================================================
+19:14:59 [INFO] Server shutdown complete
+19:14:59 [INFO] ======================================================================

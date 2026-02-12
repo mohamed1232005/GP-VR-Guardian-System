@@ -1,0 +1,47 @@
+00:11:18 [INFO] ======================================================================
+00:11:18 [INFO] VR GUARDIAN SERVER v4.1 - WINDOWS COMPATIBLE
+00:11:18 [INFO] ======================================================================
+00:11:18 [INFO] [DEPTH] Loading MiDaS model...
+00:11:21 [INFO] [DEPTH] Device: cuda
+00:11:22 [INFO] [DEPTH] ✓ MiDaS ready!
+00:11:22 [INFO] [FLOOR] ✓ Floor detector ready!
+00:11:22 [INFO] [HANDS] Loading MediaPipe...
+00:11:23 [INFO] [HANDS] ✓ MediaPipe version: 0.10.14
+00:11:23 [INFO] [HANDS] ✓ Hand tracking ready!
+00:11:23 [INFO] [HANDS] ✓ Pointing gesture detection enabled
+00:11:23 [INFO] [POSE] Loading MediaPipe...
+00:11:23 [INFO] [POSE] ✓ MediaPipe version: 0.10.14
+00:11:23 [INFO] [POSE] ✓ Pose tracking ready!
+00:11:23 [INFO] 
+[FEATURES] Active:
+00:11:23 [INFO]   [OK] Depth Estimation (MiDaS)
+00:11:23 [INFO]   [OK] Floor Detection (RANSAC)
+00:11:23 [INFO]   [OK] Hand Tracking (MediaPipe)
+00:11:23 [INFO]   [OK] Pose Estimation (MediaPipe)
+00:11:23 [INFO] 
+00:11:23 [INFO] [NETWORK] Starting server...
+00:11:23 [INFO] [NETWORK] ✓ Listening on 0.0.0.0:9999
+00:11:23 [INFO] 
+======================================================================
+00:11:23 [INFO] READY! Waiting for mobile connection...
+00:11:23 [INFO] ======================================================================
+
+00:11:23 [INFO] [NETWORK] ✓✓✓ Connected: ('192.168.100.13', 39544)
+00:11:23 [INFO] [NETWORK] [CONNECTED!]
+00:11:24 [INFO] 
+[CLEANUP] Shutting down...
+00:11:24 [INFO] [HANDS] Cleaned up
+00:11:24 [INFO] [POSE] Cleaned up
+00:11:24 [INFO] [STATS] Total frames: 0
+00:11:24 [INFO] [STATS] Average FPS: 0.2
+00:11:24 [INFO] [STATS] Average process: 0.0ms
+00:11:24 [WARNING] 
+[PERFORMANCE] FPS was very low!
+00:11:24 [WARNING] Try:
+00:11:24 [WARNING]   1. Enable GPU (nvidia-smi)
+00:11:24 [WARNING]   2. Reduce processing (edit process_every in server.py)
+00:11:24 [WARNING]   3. Close other apps
+00:11:24 [INFO] 
+======================================================================
+00:11:24 [INFO] Server shutdown complete
+00:11:24 [INFO] ======================================================================

@@ -1,0 +1,59 @@
+17:55:01 [INFO] ======================================================================
+17:55:01 [INFO] VR GUARDIAN SERVER v4.2 - COMPLETE SYSTEM
+17:55:01 [INFO] ======================================================================
+17:55:01 [INFO] [DEPTH] Loading MiDaS model...
+17:55:05 [INFO] [DEPTH] Device: cuda
+17:55:06 [INFO] [DEPTH] ✓ MiDaS ready!
+17:55:06 [INFO] [FLOOR] ✓ Floor detector ready!
+17:55:06 [INFO] [HANDS] Loading MediaPipe...
+17:55:07 [INFO] [HANDS] ✓ MediaPipe version: 0.10.14
+17:55:07 [INFO] [HANDS] ✓ Hand tracking ready!
+17:55:07 [INFO] [HANDS] ✓ Pointing gesture detection enabled
+17:55:07 [INFO] [POSE] Loading MediaPipe...
+17:55:07 [INFO] [POSE] ✓ MediaPipe version: 0.10.14
+17:55:07 [INFO] [POSE] ✓ Pose tracking ready!
+17:55:07 [INFO] 
+[FEATURES] Active:
+17:55:07 [INFO]   [OK] Depth Estimation (MiDaS)
+17:55:07 [INFO]   [OK] Floor Detection (RANSAC)
+17:55:07 [INFO]   [OK] Hand Tracking (MediaPipe)
+17:55:07 [INFO]   [OK] Pose Estimation (MediaPipe)
+17:55:07 [INFO] 
+17:55:07 [INFO] [NETWORK] Starting server...
+17:55:07 [INFO] [NETWORK] ✓ Listening on 0.0.0.0:9999
+17:55:07 [INFO] 
+======================================================================
+17:55:07 [INFO] READY! Waiting for mobile connection...
+17:55:07 [INFO] ======================================================================
+
+17:55:16 [INFO] [NETWORK] ✓✓✓ Connected: ('192.168.100.13', 37200)
+17:55:16 [INFO] [DISPLAY] ✓ Windows created
+17:55:26 [INFO] [STATS] Frame   13 | FPS:  0.7 | Process: 146.1ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+17:55:30 [INFO] [STATS] Frame   16 | FPS:  0.6 | Process: 153.8ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+17:55:33 [INFO] [STATS] Frame   28 | FPS:  0.9 | Process: 152.8ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+17:55:37 [INFO] [STATS] Frame   60 | FPS: 10.2 | Process: 152.2ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+17:55:40 [INFO] [STATS] Frame   92 | FPS: 10.2 | Process: 151.8ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+17:55:43 [INFO] [STATS] Frame  123 | FPS: 10.1 | Process: 151.9ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+17:55:46 [INFO] [STATS] Frame  150 | FPS:  8.9 | Process: 148.7ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+17:55:50 [INFO] [STATS] Frame  167 | FPS:  7.6 | Process: 150.0ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+17:55:58 [INFO] [STATS] Frame  168 | FPS:  5.0 | Process: 147.9ms | Floor: ✓ | Hands: ✗ | Area: 0 pts
+17:55:59 [INFO] 
+[SERVER] Stopped by user
+17:55:59 [INFO] 
+[CLEANUP] Shutting down...
+17:55:59 [INFO] [HANDS] Cleaned up
+17:55:59 [INFO] [POSE] Cleaned up
+17:55:59 [INFO] [STATS] Total frames: 168
+17:55:59 [INFO] [STATS] Average FPS: 2.2
+17:55:59 [INFO] [STATS] Average process: 147.9ms
+17:55:59 [INFO] [STATS] Play area points: 0
+17:55:59 [WARNING] 
+[PERFORMANCE] Low FPS detected!
+17:55:59 [WARNING] [TIP] Try:
+17:55:59 [WARNING]   1. nvidia-smi (check GPU)
+17:55:59 [WARNING]   2. Reduce 'process_every' variable
+17:55:59 [WARNING]   3. Close other applications
+17:55:59 [INFO] 
+======================================================================
+17:55:59 [INFO] Server shutdown complete
+17:55:59 [INFO] ======================================================================

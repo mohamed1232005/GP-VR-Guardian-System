@@ -1,0 +1,26 @@
+11:26:08 [INFO] ======================================================================
+11:26:08 [INFO] VR GUARDIAN SERVER v4.0 - CLEAN ARCHITECTURE
+11:26:08 [INFO] ======================================================================
+11:26:08 [INFO] [DEPTH] Loading MiDaS model...
+11:26:12 [INFO] [DEPTH] Device: cuda
+11:26:13 [INFO] [HANDS] Checking MediaPipe...
+11:26:14 [WARNING] [HANDS] MediaPipe not available: Could not import MediaPipe hands
+11:26:14 [WARNING] [HANDS] Hand tracking will be DISABLED
+11:26:14 [WARNING] [FIX] Install: pip uninstall mediapipe && pip install mediapipe==0.10.9
+11:26:14 [INFO] [POSE] Checking MediaPipe...
+11:26:14 [WARNING] [POSE] MediaPipe not available: Could not import MediaPipe pose
+11:26:14 [WARNING] [POSE] Pose tracking will be DISABLED
+11:26:14 [INFO] 
+[FEATURES] Active:
+11:26:14 [WARNING] 
+[INFO] MediaPipe hand tracking not available
+11:26:14 [WARNING] [FIX] Try: pip uninstall mediapipe && pip install mediapipe==0.10.9
+11:26:14 [WARNING] 
+[INFO] MediaPipe pose tracking not available
+11:26:14 [INFO] 
+11:26:14 [INFO] [NETWORK] Starting server...
+11:26:14 [INFO] 
+======================================================================
+11:26:14 [INFO] READY! Waiting for mobile connection...
+11:26:14 [INFO] ======================================================================
+
