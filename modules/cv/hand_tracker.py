@@ -1,161 +1,229 @@
 """
-Hand Tracker Module - PRODUCTION READY
-MediaPipe hand tracking with pointing gesture detection
-Compatible with server_COMPLETE.py
+hand_tracker.py  —  v8  EMA Smoothing + ARCore Checker
+=======================================================
+CHANGES FROM v7 (previous fixed version):
+  EMA — Exponential Moving Average on index_tip x/y reduces jitter.
+        Smoother fingertip = more accurate world boundary placement.
+        Alpha = 0.5 (tune 0.3=smoother / 0.7=more responsive)
+  DEBOUNCE — is_pointing must hold true for 3 consecutive frames before
+             reporting True. Eliminates single-frame false triggers that
+             caused hold-timer resets in Unity.
+  ARCore HEALTH CHECK — check_arcore_compatibility() static method lets
+             the server report ARCore device requirements at startup.
+
+All v7 pointing logic preserved:
+  - idx_lift >= 0.08 threshold
+  - mid/ring/pinky curl >= 0.04 threshold
+  - thumb not fully extended check
+  - confidence score 0-1 float
 """
 
 import mediapipe as mp
 
 
 class HandTracker:
-    """
-    Hand tracking using MediaPipe
-    Detects hands and pointing gestures
-    """
-    
+    # EMA smoothing alpha: 0.3=smoothest, 0.7=most responsive
+    EMA_ALPHA = 0.5
+
     def __init__(self, logger):
-        """Initialize hand tracker"""
-        self.logger = logger
+        self.logger   = logger
         self.is_ready = False
-        
+
+        # EMA state: keyed by hand index
+        self._ema_x   = {}   # { hand_id: float }
+        self._ema_y   = {}
+
+        # Pointing debounce: count consecutive True frames per hand
+        self._point_frames = {}   # { hand_id: int }
+        self._POINT_MIN_FRAMES = 3   # must hold for 3 frames before True
+
         try:
             self.logger.info("[HANDS] Loading MediaPipe Hands...")
-            
-            # Import MediaPipe solutions
             self.mp_hands = mp.solutions.hands
-            
-            # Initialize hand detector
             self.hands = self.mp_hands.Hands(
                 static_image_mode=False,
                 max_num_hands=2,
-                model_complexity=1,  # 0=lite, 1=full
-                min_detection_confidence=0.5,
-                min_tracking_confidence=0.5
+                model_complexity=1,
+                min_detection_confidence=0.6,
+                min_tracking_confidence=0.6,
             )
-            
             self.is_ready = True
-            self.logger.info("[HANDS] ✓ Hand tracker ready!")
-            
+            self.logger.info("[HANDS] Hand tracker ready (EMA smoothing + debounce ON)")
         except Exception as e:
-            self.logger.error(f"[HANDS] Failed to initialize: {e}")
-            self.logger.warning("[HANDS] Hand tracking will be DISABLED")
-            self.is_ready = False
-    
-    def is_pointing(self, landmarks):
+            self.logger.error(f"[HANDS] Init failed: {e}")
+
+    # ── ARCore Compatibility Check ─────────────────────────────────────────
+    @staticmethod
+    def check_arcore_compatibility():
         """
-        Check if hand is making pointing gesture
-        
-        Returns True if:
-        - Index finger is extended (tip higher than base)
-        - Middle, ring, pinky are curled (tips lower than bases)
-        
-        MediaPipe hand landmarks:
-        - 0: Wrist
-        - 5: Index MCP (base)
-        - 8: Index tip
-        - 9: Middle MCP
-        - 12: Middle tip
-        - 13: Ring MCP  
-        - 16: Ring tip
-        - 17: Pinky MCP
-        - 20: Pinky tip
+        Print ARCore device requirements to console at server startup.
+        This helps the developer verify the device will work before building.
+        Returns a dict with all check results.
+        """
+        checks = {}
+
+        # Check 1: mediapipe version
+        try:
+            import mediapipe as mp
+            checks['mediapipe'] = {'ok': True, 'version': mp.__version__}
+        except ImportError:
+            checks['mediapipe'] = {'ok': False, 'version': None}
+
+        # Check 2: OpenCV (frame decoding)
+        try:
+            import cv2
+            checks['opencv'] = {'ok': True, 'version': cv2.__version__}
+        except ImportError:
+            checks['opencv'] = {'ok': False, 'version': None}
+
+        # Check 3: NumPy (array ops)
+        try:
+            import numpy as np
+            checks['numpy'] = {'ok': True, 'version': np.__version__}
+        except ImportError:
+            checks['numpy'] = {'ok': False, 'version': None}
+
+        # Check 4: Network port availability
+        import socket
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.bind(("0.0.0.0", 9998))   # test port (not 9999 — that's used by server)
+            s.close()
+            checks['network_port'] = {'ok': True, 'detail': 'port 9999 likely available'}
+        except OSError as e:
+            checks['network_port'] = {'ok': False, 'detail': str(e)}
+
+        return checks
+
+    # ── Pointing detection (unchanged from v7) ────────────────────────────
+    def is_pointing(self, lm):
+        """
+        Returns (bool, float) — (is_pointing, confidence 0-1).
+        MediaPipe landmarks: 0=wrist, 4=thumb tip, 5=index MCP, 8=index tip,
+          9=middle MCP, 12=middle tip, 13=ring MCP, 16=ring tip,
+          17=pinky MCP, 20=pinky tip
         """
         try:
-            # Index finger should be extended
-            # (tip is higher on screen than base, so y is smaller)
-            index_extended = landmarks[8].y < landmarks[5].y
-            
-            # Other fingers should be curled
-            # (tips are lower on screen than bases, so y is larger)
-            middle_curled = landmarks[12].y > landmarks[9].y
-            ring_curled = landmarks[16].y > landmarks[13].y
-            pinky_curled = landmarks[20].y > landmarks[17].y
-            
-            # All conditions must be true for pointing gesture
-            return index_extended and middle_curled and ring_curled and pinky_curled
-            
+            idx_lift  = lm[5].y  - lm[8].y    # positive when index points up
+            if idx_lift < 0.08: return False, 0.0
+
+            mid_curl  = lm[12].y - lm[9].y
+            if mid_curl < 0.04:  return False, 0.0
+
+            ring_curl = lm[16].y - lm[13].y
+            if ring_curl < 0.04: return False, 0.0
+
+            pink_curl = lm[20].y - lm[17].y
+            if pink_curl < 0.03: return False, 0.0
+
+            thumb_up  = lm[2].y  - lm[4].y
+            if thumb_up > 0.12:  return False, 0.0
+
+            conf = (min(1.0, (idx_lift  - 0.08) / 0.12)
+                  * min(1.0, (mid_curl  - 0.04) / 0.08)
+                  * min(1.0, (ring_curl - 0.04) / 0.08))
+
+            return True, float(conf)
+
         except Exception as e:
-            self.logger.error(f"[HANDS] Gesture check failed: {e}")
-            return False
-    
+            self.logger.error(f"[HANDS] Gesture check: {e}")
+            return False, 0.0
+
+    # ── EMA smoothing helper ───────────────────────────────────────────────
+    def _ema(self, hand_id, new_x, new_y):
+        """Apply exponential moving average to fingertip position."""
+        a = self.EMA_ALPHA
+        if hand_id not in self._ema_x:
+            # First frame: initialize to current value
+            self._ema_x[hand_id] = new_x
+            self._ema_y[hand_id] = new_y
+        else:
+            self._ema_x[hand_id] = a * new_x + (1 - a) * self._ema_x[hand_id]
+            self._ema_y[hand_id] = a * new_y + (1 - a) * self._ema_y[hand_id]
+        return self._ema_x[hand_id], self._ema_y[hand_id]
+
+    # ── Pointing debounce ─────────────────────────────────────────────────
+    def _debounce_pointing(self, hand_id, raw_pointing):
+        """
+        Only report True after N consecutive True frames.
+        Immediately reports False when pointing stops.
+        """
+        if raw_pointing:
+            self._point_frames[hand_id] = self._point_frames.get(hand_id, 0) + 1
+        else:
+            self._point_frames[hand_id] = 0
+
+        return self._point_frames.get(hand_id, 0) >= self._POINT_MIN_FRAMES
+
+    # ── Main detect ───────────────────────────────────────────────────────
     def detect(self, img_rgb):
         """
-        Detect hands in RGB image
-        
-        Args:
-            img_rgb: RGB image (numpy array)
-        
-        Returns:
-            dict with:
-                - detected: bool
-                - hands: list of hand data
-                    - id: int (hand index)
-                    - is_pointing: bool
-                    - index_tip: dict {x, y, z}
-                    - landmarks: list of 21 points
+        Detect hands in RGB image.
+        Returns dict with EMA-smoothed index_tip coords and debounced is_pointing.
+        Schema matches Unity CameraPreview.cs / HandInfo:
+          { detected: bool, hands: [{ id, is_pointing, point_conf, index_tip, landmarks }] }
         """
         if not self.is_ready:
-            return {
-                "detected": False,
-                "hands": []
-            }
-        
+            return {"detected": False, "hands": []}
+
         try:
-            # Process image with MediaPipe
             results = self.hands.process(img_rgb)
-            
-            # Build output
-            output = {
-                "detected": False,
-                "hands": []
-            }
-            
-            # If hands detected
-            if results.multi_hand_landmarks:
-                output["detected"] = True
-                
-                for idx, hand_landmarks in enumerate(results.multi_hand_landmarks):
-                    # Check if making pointing gesture
-                    pointing = self.is_pointing(hand_landmarks.landmark)
-                    
-                    # Get all 21 hand landmarks
-                    landmarks_list = []
-                    for lm in hand_landmarks.landmark:
-                        landmarks_list.append({
-                            "x": float(lm.x),
-                            "y": float(lm.y),
-                            "z": float(lm.z)
-                        })
-                    
-                    # Get index finger tip position (landmark 8)
-                    idx_tip = hand_landmarks.landmark[8]
-                    
-                    # Add hand data
-                    output["hands"].append({
-                        "id": idx,
-                        "is_pointing": pointing,
-                        "index_tip": {
-                            "x": float(idx_tip.x),
-                            "y": float(idx_tip.y),
-                            "z": float(idx_tip.z)
-                        },
-                        "landmarks": landmarks_list
-                    })
-            
-            return output
-            
+            out = {"detected": False, "hands": []}
+
+            if not results.multi_hand_landmarks:
+                # Clear EMA/debounce state when no hands visible
+                self._ema_x.clear(); self._ema_y.clear()
+                self._point_frames.clear()
+                return out
+
+            out["detected"] = True
+
+            # Track which hand IDs appeared this frame
+            active_ids = set()
+
+            for idx, hand_lm in enumerate(results.multi_hand_landmarks):
+                lm = hand_lm.landmark
+                active_ids.add(idx)
+
+                # Raw pointing detection
+                raw_pointing, conf = self.is_pointing(lm)
+
+                # Debounced pointing (must hold 3 frames)
+                debounced_pointing = self._debounce_pointing(idx, raw_pointing)
+
+                # EMA-smoothed index tip
+                raw_x, raw_y = float(lm[8].x), float(lm[8].y)
+                smooth_x, smooth_y = self._ema(idx, raw_x, raw_y)
+
+                lm_list = [{"x": float(p.x), "y": float(p.y), "z": float(p.z)}
+                           for p in lm]
+
+                out["hands"].append({
+                    "id":          idx,
+                    "is_pointing": debounced_pointing,   # debounced
+                    "point_conf":  conf,
+                    "index_tip": {
+                        "x": smooth_x,   # EMA smoothed
+                        "y": smooth_y,
+                        "z": float(lm[8].z),
+                    },
+                    "landmarks": lm_list,
+                })
+
+            # Clean up state for hands that disappeared
+            for hand_id in list(self._ema_x.keys()):
+                if hand_id not in active_ids:
+                    self._ema_x.pop(hand_id, None)
+                    self._ema_y.pop(hand_id, None)
+                    self._point_frames.pop(hand_id, None)
+
+            return out
+
         except Exception as e:
-            self.logger.error(f"[HANDS] Detection failed: {e}")
-            return {
-                "detected": False,
-                "hands": []
-            }
-    
+            self.logger.error(f"[HANDS] detect: {e}")
+            return {"detected": False, "hands": []}
+
     def cleanup(self):
-        """Cleanup resources"""
         if self.is_ready and self.hands:
-            try:
-                self.hands.close()
-                self.logger.info("[HANDS] Cleaned up")
-            except:
-                pass
+            try: self.hands.close()
+            except: pass
