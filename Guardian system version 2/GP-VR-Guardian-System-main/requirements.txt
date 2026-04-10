@@ -1,0 +1,95 @@
+# VR Guardian System v4.0 - Python Dependencies
+# Windows Compatible - Fixed MediaPipe versions
+
+# =================================================================
+# CORE DEPENDENCIES (REQUIRED)
+# =================================================================
+
+# Deep Learning & AI
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Computer Vision
+opencv-python>=4.8.0
+
+# 3D Processing
+open3d>=0.17.0
+
+# Data Processing
+numpy>=1.24.0,<2.0.0
+
+# =================================================================
+# MEDIAPIPE - Use Latest Available Version
+# =================================================================
+
+# Install latest MediaPipe (will auto-select compatible version)
+mediapipe>=0.10.0
+
+# Note: Available versions for your Python:
+# 0.10.13, 0.10.14, 0.10.18, 0.10.20, 0.10.21, 0.10.30, 0.10.31, 0.10.32
+#
+# Install specific version if needed:
+# pip install mediapipe==0.10.32  (latest)
+# pip install mediapipe==0.10.14  (older but stable)
+
+# =================================================================
+# INSTALLATION
+# =================================================================
+
+# # Standard installation:
+# pip install -r requirements.txt
+
+# # If fails, try:
+# pip install -r requirements.txt --upgrade
+
+# # Or install manually:
+# pip install torch torchvision opencv-python open3d numpy mediapipe
+
+# =================================================================
+# MEDIAPIPE TROUBLESHOOTING
+# =================================================================
+
+# If MediaPipe import fails after installation:
+#
+# 1. Check what's installed:
+#    pip show mediapipe
+#
+# 2. Check if it imports:
+#    python -c "import mediapipe; print(mediapipe.__version__)"
+#
+# 3. Try different version:
+#    pip uninstall mediapipe
+#    pip install mediapipe==0.10.14
+#
+# 4. If still fails, check Python version:
+#    python --version
+#    (MediaPipe works best with Python 3.8-3.11)
+#
+# 5. As last resort, use without MediaPipe:
+#    System will work with floor detection only
+
+# =================================================================
+# WINDOWS-SPECIFIC NOTES
+# =================================================================
+
+# Unicode console errors fixed in logger.py
+# System will work even if MediaPipe fails
+# Logs saved to logs/ folder with full unicode support
+
+# =================================================================
+# GPU ACCELERATION (OPTIONAL)
+# =================================================================
+
+# For NVIDIA GPU (much faster):
+#
+# Check CUDA version:
+# nvidia-smi
+#
+# For CUDA 11.8:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+#
+# For CUDA 12.1:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+# Verify GPU:
+# python -c "import torch; print('CUDA:', torch.cuda.is_available())"
