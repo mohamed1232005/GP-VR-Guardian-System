@@ -1,0 +1,56 @@
+14:11:54 [INFO] ============================================================
+14:11:54 [INFO]   ARCore Server Compatibility Check
+14:11:54 [INFO] ============================================================
+14:11:54 [INFO]   ✓  mediapipe              0.10.32
+14:11:54 [INFO]   ✓  opencv                 4.11.0
+14:11:54 [INFO]   ✓  numpy                  1.26.4
+14:11:54 [INFO]   ✓  network_port           port 9999 likely available
+14:11:54 [INFO] ------------------------------------------------------------
+14:11:54 [INFO]   Unity ARCore requirements (verify in Editor):
+14:11:54 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+14:11:54 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+14:11:54 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+14:11:54 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+14:11:54 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+14:11:54 [INFO]     AR Camera tag: MainCamera
+14:11:54 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+14:11:54 [INFO] ------------------------------------------------------------
+14:11:54 [INFO]   All Python checks PASSED ✓
+14:11:54 [INFO] ============================================================
+14:11:54 [INFO] [INIT] Loading AI modules...
+14:11:54 [INFO] [HANDS] Loading MediaPipe Hands...
+14:11:54 [ERROR] [HANDS] Init failed: module 'mediapipe' has no attribute 'solutions'
+14:11:54 [INFO] [POSE] Loading MediaPipe...
+14:11:54 [ERROR] [POSE] MediaPipe import failed: MediaPipe pose module not found
+14:11:54 [WARNING] [POSE] ✗ Pose tracking DISABLED
+14:11:54 [INFO] [DEPTH] Loading MiDaS model...
+14:11:55 [ERROR] [DEPTH] Failed to initialize: No module named 'timm'
+14:11:55 [INFO] [FLOOR] ✓ Floor detector ready!
+14:11:55 [INFO] [INIT] Depth + Floor loaded OK
+14:11:55 [WARNING] [DEPTH] DepthEstimator missing device → disabling depth
+14:11:55 [INFO] [INIT] All modules ready.
+14:11:55 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+14:11:55 [INFO] ============================================================
+14:11:55 [INFO] READY - waiting for mobile connection...
+14:11:55 [INFO] ============================================================
+14:13:25 [INFO] [NETWORK] Connected: ('192.168.1.4', 55340)
+14:13:25 [INFO] [SYSTEM] Connected — running
+14:13:25 [INFO] [STATS] #   2 | FPS:  0.0 |   6.5ms | Hands:0  | Pose:N | Area:0pt
+14:13:28 [INFO] [STATS] #  32 | FPS:  9.9 |   0.4ms | Hands:0  | Pose:N | Area:0pt
+14:13:31 [INFO] [STATS] #  62 | FPS:  9.9 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:13:34 [INFO] [STATS] #  92 | FPS: 10.0 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:13:38 [INFO] [STATS] # 124 | FPS: 10.0 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:13:41 [INFO] [STATS] # 156 | FPS: 10.1 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:13:44 [INFO] [STATS] # 188 | FPS: 10.1 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:13:47 [INFO] [STATS] # 218 | FPS:  9.9 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:13:50 [INFO] [STATS] # 248 | FPS:  9.7 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:13:53 [INFO] [STATS] # 278 | FPS: 10.2 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:13:56 [INFO] [STATS] # 310 | FPS: 10.0 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:14:00 [INFO] [STATS] # 342 | FPS: 10.0 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:14:08 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+14:14:08 [WARNING] [NET] Connection lost.
+14:14:08 [INFO] [SERVER] Reconnecting in 1s...
+14:14:09 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+14:14:09 [INFO] ============================================================
+14:14:09 [INFO] READY - waiting for mobile connection...
+14:14:09 [INFO] ============================================================

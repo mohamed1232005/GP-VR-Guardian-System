@@ -1,0 +1,98 @@
+15:25:49 [INFO] ============================================================
+15:25:49 [INFO]   ARCore Server Compatibility Check
+15:25:49 [INFO] ============================================================
+15:25:49 [INFO]   ✓  mediapipe              0.10.32
+15:25:49 [INFO]   ✓  opencv                 4.11.0
+15:25:49 [INFO]   ✓  numpy                  2.4.2
+15:25:49 [INFO]   ✓  network_port           port 9999 available
+15:25:49 [INFO] ------------------------------------------------------------
+15:25:49 [INFO]   Unity ARCore requirements (verify in Editor):
+15:25:49 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+15:25:49 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+15:25:49 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+15:25:49 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+15:25:49 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+15:25:49 [INFO]     AR Camera tag: MainCamera
+15:25:49 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+15:25:49 [INFO] ------------------------------------------------------------
+15:25:49 [INFO]   All Python checks PASSED ✓
+15:25:49 [INFO] ============================================================
+15:25:49 [INFO] [INIT] Loading hand tracker...
+15:25:49 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+15:25:49 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+15:25:49 [INFO] [INIT] ✓ Hand tracker ready
+15:25:49 [INFO] [INIT] Loading pose tracker...
+15:25:49 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+15:25:49 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+15:25:49 [INFO] [INIT] ✓ Pose tracker ready
+15:25:49 [INFO] [INIT] All modules ready.
+15:25:49 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+15:25:49 [INFO] ============================================================
+15:25:49 [INFO] READY - waiting for mobile connection...
+15:25:49 [INFO] ============================================================
+15:27:20 [INFO] [NETWORK] Connected: ('192.168.1.6', 52902)
+15:27:20 [INFO] [SYSTEM] Connected — running
+15:27:20 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+15:27:23 [INFO] [STATS] #  27 | FPS:  0.3 |  53.8ms | Hands:0  | Pose:-- FloorHint:--
+15:27:26 [INFO] [STATS] #  58 | FPS: 10.0 |  39.9ms | Hands:0  | Pose:-- FloorHint:--
+15:27:29 [INFO] [STATS] #  87 | FPS: 10.0 |  39.2ms | Hands:0  | Pose:-- FloorHint:--
+15:27:32 [INFO] [STATS] # 119 | FPS: 10.2 |  39.2ms | Hands:0  | Pose:-- FloorHint:--
+15:27:35 [INFO] [STATS] # 149 | FPS: 10.0 |  48.2ms | Hands:0  | Pose:-- FloorHint:--
+15:27:38 [INFO] [STATS] # 180 | FPS: 10.1 |  56.3ms | Hands:0  | Pose:-- FloorHint:--
+15:27:42 [INFO] [STATS] # 210 | FPS:  9.7 |  53.8ms | Hands:0  | Pose:-- FloorHint:--
+15:27:45 [INFO] [STATS] # 240 | FPS:  9.6 |  54.6ms | Hands:0  | Pose:-- FloorHint:--
+15:27:48 [INFO] [STATS] # 271 | FPS: 10.0 |  56.5ms | Hands:0  | Pose:-- FloorHint:--
+15:27:51 [INFO] [STATS] # 302 | FPS: 10.0 |  54.4ms | Hands:0  | Pose:-- FloorHint:--
+15:27:54 [INFO] [STATS] # 333 | FPS: 10.1 |  56.3ms | Hands:0  | Pose:-- FloorHint:--
+15:27:57 [INFO] [STATS] # 362 | FPS:  9.4 |  54.8ms | Hands:0  | Pose:-- FloorHint:--
+15:28:00 [INFO] [STATS] # 390 | FPS:  9.1 |  52.2ms | Hands:0  | Pose:-- FloorHint:--
+15:28:03 [INFO] [STATS] # 415 | FPS:  8.5 |  51.3ms | Hands:0  | Pose:-- FloorHint:--
+15:28:06 [INFO] [STATS] # 444 | FPS:  9.2 |  48.7ms | Hands:0  | Pose:-- FloorHint:--
+15:28:09 [INFO] [STATS] # 474 | FPS:  9.9 |  48.7ms | Hands:0  | Pose:-- FloorHint:--
+15:28:12 [INFO] [STATS] # 505 | FPS: 10.2 |  49.3ms | Hands:0  | Pose:-- FloorHint:--
+15:28:15 [INFO] [STATS] # 536 | FPS: 10.1 |  43.4ms | Hands:0  | Pose:-- FloorHint:--
+15:28:18 [INFO] [STATS] # 566 | FPS: 10.0 |  44.9ms | Hands:0  | Pose:-- FloorHint:--
+15:28:21 [INFO] [STATS] # 595 | FPS:  9.6 |  51.1ms | Hands:0  | Pose:-- FloorHint:--
+15:28:24 [INFO] [STATS] # 624 | FPS:  9.7 |  48.3ms | Hands:0  | Pose:-- FloorHint:--
+15:28:27 [INFO] [STATS] # 655 | FPS: 10.0 |  45.1ms | Hands:0  | Pose:-- FloorHint:--
+15:28:31 [INFO] [STATS] # 684 | FPS:  9.5 |  47.8ms | Hands:0  | Pose:-- FloorHint:--
+15:28:34 [INFO] [STATS] # 716 | FPS: 10.5 |  43.0ms | Hands:0  | Pose:-- FloorHint:--
+15:28:37 [INFO] [STATS] # 746 | FPS: 10.1 |  48.7ms | Hands:0  | Pose:-- FloorHint:--
+15:28:40 [INFO] [STATS] # 772 | FPS:  8.9 |  66.0ms | Hands:1 POINTING | Pose:OK FloorHint:--
+15:28:41 [INFO] [DEBUG] Saved frame: frame_00780.jpg tip=(0.403,0.476,0.0215) floor_hint=None
+15:28:41 [INFO] [GESTURE] idx_ext=True(2.18) mid_curl=True(1.10) ring_curl=True(1.20) pink_curl=True(1.11)
+15:28:43 [INFO] [STATS] # 801 | FPS:  9.5 |  68.1ms | Hands:0  | Pose:OK FloorHint:--
+15:28:46 [INFO] [STATS] # 829 | FPS:  9.1 |  63.7ms | Hands:0  | Pose:OK FloorHint:--
+15:28:49 [INFO] [STATS] # 858 | FPS:  9.9 |  71.9ms | Hands:1 POINTING | Pose:OK FloorHint:--
+15:28:50 [INFO] [DEBUG] Saved frame: frame_00870.jpg tip=(0.395,0.403,-0.0485) floor_hint=None
+15:28:50 [INFO] [GESTURE] idx_ext=True(2.20) mid_curl=True(0.43) ring_curl=True(0.47) pink_curl=True(0.54)
+15:28:52 [INFO] [STATS] # 887 | FPS:  9.4 |  83.8ms | Hands:1 POINTING | Pose:OK FloorHint:--
+15:28:55 [INFO] [STATS] # 917 | FPS: 10.0 |  50.3ms | Hands:0  | Pose:-- FloorHint:--
+15:28:58 [INFO] [STATS] # 947 | FPS:  9.9 |  45.4ms | Hands:0  | Pose:-- FloorHint:--
+15:29:01 [INFO] [STATS] # 978 | FPS: 10.3 |  43.3ms | Hands:0  | Pose:-- FloorHint:--
+15:29:04 [INFO] [STATS] #1008 | FPS: 10.0 |  43.4ms | Hands:0  | Pose:-- FloorHint:--
+15:29:07 [INFO] [STATS] #1039 | FPS: 10.1 |  42.9ms | Hands:0  | Pose:-- FloorHint:--
+15:29:10 [INFO] [STATS] #1068 | FPS:  9.7 |  46.6ms | Hands:0  | Pose:-- FloorHint:--
+15:29:13 [INFO] [STATS] #1098 | FPS: 10.1 |  47.0ms | Hands:0  | Pose:-- FloorHint:--
+15:29:16 [INFO] [STATS] #1127 | FPS:  9.4 |  54.6ms | Hands:0  | Pose:-- FloorHint:--
+15:29:19 [INFO] [STATS] #1153 | FPS:  8.4 |  56.7ms | Hands:0  | Pose:-- FloorHint:--
+15:29:27 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+15:29:27 [WARNING] [NET] Connection lost.
+15:29:27 [INFO] [SERVER] Reconnecting in 1s...
+15:29:28 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+15:29:28 [INFO] ============================================================
+15:29:28 [INFO] READY - waiting for mobile connection...
+15:29:28 [INFO] ============================================================
+15:38:01 [INFO] [NETWORK] Connected: ('192.168.1.6', 41764)
+15:38:01 [INFO] [SYSTEM] Connected — running
+15:38:01 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+15:38:04 [INFO] [STATS] #  25 | FPS:  0.1 |  69.2ms | Hands:0  | Pose:-- FloorHint:--
+15:38:07 [INFO] [STATS] #  54 | FPS:  9.3 |  53.5ms | Hands:0  | Pose:-- FloorHint:--
+15:38:10 [INFO] [STATS] #  83 | FPS:  9.4 |  52.4ms | Hands:0  | Pose:-- FloorHint:--
+15:38:16 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+15:38:16 [WARNING] [NET] Connection lost.
+15:38:16 [INFO] [SERVER] Reconnecting in 1s...
+15:38:17 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+15:38:17 [INFO] ============================================================
+15:38:17 [INFO] READY - waiting for mobile connection...
+15:38:17 [INFO] ============================================================

@@ -1,0 +1,38 @@
+22:38:19 [INFO] ============================================================
+22:38:19 [INFO]   ARCore Server Compatibility Check
+22:38:19 [INFO] ============================================================
+22:38:19 [INFO]   ✓  mediapipe              0.10.32
+22:38:19 [INFO]   ✓  opencv                 4.11.0
+22:38:19 [INFO]   ✓  numpy                  2.4.2
+22:38:19 [INFO]   ✓  network_port           port 9999 available
+22:38:19 [INFO] ------------------------------------------------------------
+22:38:19 [INFO]   Unity ARCore requirements (verify in Editor):
+22:38:19 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+22:38:19 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+22:38:19 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+22:38:19 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+22:38:19 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+22:38:19 [INFO]     AR Camera tag: MainCamera
+22:38:19 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+22:38:19 [INFO] ------------------------------------------------------------
+22:38:19 [INFO]   All Python checks PASSED ✓
+22:38:19 [INFO] ============================================================
+22:38:19 [INFO] [INIT] Loading hand tracker...
+22:38:19 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+22:38:19 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+22:38:19 [INFO] [INIT] ✓ Hand tracker ready
+22:38:19 [INFO] [INIT] All modules ready.
+22:38:19 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+22:38:19 [INFO] ============================================================
+22:38:19 [INFO] READY - waiting for mobile connection...
+22:38:19 [INFO] ============================================================
+22:40:12 [INFO] [NETWORK] Connected: ('192.168.1.6', 39710)
+22:40:12 [INFO] [SYSTEM] Connected — running
+22:40:13 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+22:41:40 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+22:41:40 [WARNING] [NET] Connection lost.
+22:41:40 [INFO] [SERVER] Reconnecting in 1s...
+22:41:41 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+22:41:41 [INFO] ============================================================
+22:41:41 [INFO] READY - waiting for mobile connection...
+22:41:41 [INFO] ============================================================

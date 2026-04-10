@@ -1,0 +1,37 @@
+03:56:56 [INFO] ============================================================
+03:56:56 [INFO]   ARCore Server Compatibility Check
+03:56:56 [INFO] ============================================================
+03:56:56 [INFO]   ✓  mediapipe              0.10.32
+03:56:56 [INFO]   ✓  opencv                 4.11.0
+03:56:56 [INFO]   ✓  numpy                  2.4.2
+03:56:56 [INFO]   ✓  network_port           port 9999 available
+03:56:56 [INFO] ------------------------------------------------------------
+03:56:56 [INFO]   Unity ARCore requirements (verify in Editor):
+03:56:56 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+03:56:56 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+03:56:56 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+03:56:56 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+03:56:56 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+03:56:56 [INFO]     AR Camera tag: MainCamera
+03:56:56 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+03:56:56 [INFO] ------------------------------------------------------------
+03:56:56 [INFO]   All Python checks PASSED ✓
+03:56:56 [INFO] ============================================================
+03:56:56 [INFO] [INIT] Loading hand tracker...
+03:56:56 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+03:56:56 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+03:56:56 [INFO] [INIT] ✓ Hand tracker ready
+03:56:56 [INFO] [INIT] All modules ready.
+03:56:56 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+03:56:56 [INFO] ============================================================
+03:56:56 [INFO] READY - waiting for mobile connection...
+03:56:56 [INFO] ============================================================
+03:59:33 [INFO] [NETWORK] Connected: ('192.168.1.6', 51034)
+03:59:33 [INFO] [SYSTEM] Connected — running
+04:01:55 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+04:01:55 [WARNING] [NET] Connection lost.
+04:01:55 [INFO] [SERVER] Reconnecting in 1s...
+04:01:56 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+04:01:56 [INFO] ============================================================
+04:01:56 [INFO] READY - waiting for mobile connection...
+04:01:56 [INFO] ============================================================

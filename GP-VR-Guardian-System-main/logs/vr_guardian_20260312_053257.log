@@ -1,0 +1,21 @@
+05:33:00 [INFO] ============================================================
+05:33:00 [INFO]   ARCore Server Compatibility Check
+05:33:00 [INFO] ============================================================
+05:33:00 [INFO]   ✓  mediapipe              0.10.32
+05:33:00 [INFO]   ✓  opencv                 4.11.0
+05:33:00 [INFO]   ✓  numpy                  2.4.2
+05:33:00 [INFO]   ✓  network_port           port 9999 likely available
+05:33:00 [INFO] ------------------------------------------------------------
+05:33:00 [INFO]   Unity ARCore requirements (verify in Editor):
+05:33:00 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+05:33:00 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+05:33:00 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+05:33:00 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+05:33:00 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+05:33:00 [INFO]     AR Camera tag: MainCamera
+05:33:00 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+05:33:00 [INFO] ------------------------------------------------------------
+05:33:00 [INFO]   All Python checks PASSED ✓
+05:33:00 [INFO] ============================================================
+05:33:00 [INFO] [INIT] Loading hand tracker...
+05:33:00 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...

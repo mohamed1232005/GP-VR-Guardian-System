@@ -1,0 +1,74 @@
+15:39:16 [INFO] ============================================================
+15:39:16 [INFO]   ARCore Server Compatibility Check
+15:39:16 [INFO] ============================================================
+15:39:16 [INFO]   ✓  mediapipe              0.10.32
+15:39:16 [INFO]   ✓  opencv                 4.11.0
+15:39:16 [INFO]   ✓  numpy                  2.4.2
+15:39:16 [INFO]   ✓  network_port           port 9999 available
+15:39:16 [INFO] ------------------------------------------------------------
+15:39:16 [INFO]   Unity ARCore requirements (verify in Editor):
+15:39:16 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+15:39:16 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+15:39:16 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+15:39:16 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+15:39:16 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+15:39:16 [INFO]     AR Camera tag: MainCamera
+15:39:16 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+15:39:16 [INFO] ------------------------------------------------------------
+15:39:16 [INFO]   All Python checks PASSED ✓
+15:39:16 [INFO] ============================================================
+15:39:16 [INFO] [INIT] Loading hand tracker...
+15:39:16 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+15:39:17 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+15:39:17 [INFO] [INIT] ✓ Hand tracker ready
+15:39:17 [INFO] [INIT] Loading pose tracker...
+15:39:17 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+15:39:17 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+15:39:17 [INFO] [INIT] ✓ Pose tracker ready
+15:39:17 [INFO] [INIT] All modules ready.
+15:39:17 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+15:39:17 [INFO] ============================================================
+15:39:17 [INFO] READY - waiting for mobile connection...
+15:39:17 [INFO] ============================================================
+15:39:35 [INFO] [NETWORK] Connected: ('10.20.230.48', 34398)
+15:39:35 [INFO] [SYSTEM] Connected — running
+15:39:35 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+15:39:38 [INFO] [STATS] #  31 | FPS: 10.2 |  21.6ms | Hands:0  | Pose:-- FloorHint:--
+15:39:41 [INFO] [STATS] #  62 | FPS: 10.1 |  20.5ms | Hands:0  | Pose:-- FloorHint:--
+15:39:44 [INFO] [STATS] #  91 | FPS:  9.5 |  18.0ms | Hands:0  | Pose:-- FloorHint:--
+15:39:47 [INFO] [STATS] # 113 | FPS:  8.0 |  18.7ms | Hands:0  | Pose:-- FloorHint:--
+15:39:50 [INFO] [STATS] # 139 | FPS:  8.0 |  18.0ms | Hands:0  | Pose:OK FloorHint:--
+15:39:53 [INFO] [STATS] # 166 | FPS:  8.8 |  18.6ms | Hands:0  | Pose:OK FloorHint:--
+15:39:56 [INFO] [STATS] # 195 | FPS:  9.3 |  20.5ms | Hands:0  | Pose:OK FloorHint:0.963
+15:39:59 [INFO] [STATS] # 221 | FPS:  8.3 |  20.2ms | Hands:0  | Pose:OK FloorHint:0.880
+15:40:02 [INFO] [STATS] # 242 | FPS:  6.9 |  20.1ms | Hands:0  | Pose:OK FloorHint:--
+15:40:05 [INFO] [STATS] # 270 | FPS:  8.6 |  24.7ms | Hands:0  | Pose:OK FloorHint:0.941
+15:40:08 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+15:40:08 [WARNING] [NET] Connection lost.
+15:40:08 [INFO] [SERVER] Reconnecting in 1s...
+15:40:09 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+15:40:09 [INFO] ============================================================
+15:40:09 [INFO] READY - waiting for mobile connection...
+15:40:09 [INFO] ============================================================
+15:40:17 [INFO] [NETWORK] Connected: ('10.20.230.48', 40364)
+15:40:17 [INFO] [SYSTEM] Connected — running
+15:40:17 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+15:40:20 [INFO] [STATS] #  29 | FPS:  2.5 |  16.9ms | Hands:0  | Pose:-- FloorHint:--
+15:40:23 [INFO] [STATS] #  59 | FPS:  9.6 |  19.0ms | Hands:0  | Pose:-- FloorHint:--
+15:40:26 [INFO] [STATS] #  90 | FPS: 10.3 |  17.5ms | Hands:0  | Pose:-- FloorHint:--
+15:40:29 [INFO] [STATS] # 120 | FPS: 10.0 |  18.8ms | Hands:0  | Pose:-- FloorHint:--
+15:40:32 [INFO] [STATS] # 151 | FPS: 10.2 |  17.9ms | Hands:0  | Pose:-- FloorHint:--
+15:40:35 [INFO] [STATS] # 182 | FPS: 10.1 |  17.5ms | Hands:0  | Pose:-- FloorHint:--
+15:40:38 [INFO] [STATS] # 213 | FPS: 10.1 |  18.1ms | Hands:0  | Pose:-- FloorHint:--
+15:40:42 [INFO] [STATS] # 244 | FPS: 10.0 |  18.6ms | Hands:0  | Pose:-- FloorHint:--
+15:40:45 [INFO] [STATS] # 274 | FPS: 10.0 |  17.6ms | Hands:0  | Pose:-- FloorHint:--
+15:40:48 [INFO] [STATS] # 305 | FPS: 10.2 |  25.6ms | Hands:1 POINTING | Pose:OK FloorHint:--
+15:40:51 [INFO] [STATS] # 336 | FPS: 10.1 |  19.3ms | Hands:0  | Pose:OK FloorHint:--
+15:40:54 [INFO] [STATS] # 366 | FPS: 10.1 |  19.1ms | Hands:0  | Pose:-- FloorHint:--
+15:40:59 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+15:40:59 [WARNING] [NET] Connection lost.
+15:40:59 [INFO] [SERVER] Reconnecting in 1s...
+15:41:00 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+15:41:00 [INFO] ============================================================
+15:41:00 [INFO] READY - waiting for mobile connection...
+15:41:00 [INFO] ============================================================

@@ -1,0 +1,53 @@
+14:53:22 [INFO] ============================================================
+14:53:22 [INFO]   ARCore Server Compatibility Check
+14:53:22 [INFO] ============================================================
+14:53:22 [INFO]   ✓  mediapipe              0.10.32
+14:53:22 [INFO]   ✓  opencv                 4.11.0
+14:53:22 [INFO]   ✓  numpy                  1.26.4
+14:53:22 [INFO]   ✓  network_port           port 9999 likely available
+14:53:22 [INFO] ------------------------------------------------------------
+14:53:22 [INFO]   Unity ARCore requirements (verify in Editor):
+14:53:22 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+14:53:22 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+14:53:22 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+14:53:22 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+14:53:22 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+14:53:22 [INFO]     AR Camera tag: MainCamera
+14:53:22 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+14:53:22 [INFO] ------------------------------------------------------------
+14:53:22 [INFO]   All Python checks PASSED ✓
+14:53:22 [INFO] ============================================================
+14:53:22 [INFO] [INIT] Loading AI modules...
+14:53:22 [INFO] [HANDS] Loading MediaPipe Hands...
+14:53:22 [ERROR] [HANDS] Init failed: module 'mediapipe' has no attribute 'solutions'
+14:53:22 [INFO] [POSE] Loading MediaPipe...
+14:53:22 [ERROR] [POSE] MediaPipe import failed: MediaPipe pose module not found
+14:53:22 [WARNING] [POSE] ✗ Pose tracking DISABLED
+14:53:22 [INFO] [DEPTH] Loading MiDaS model...
+14:53:23 [ERROR] [DEPTH] Failed to initialize: No module named 'timm'
+14:53:23 [INFO] [FLOOR] ✓ Floor detector ready!
+14:53:23 [INFO] [INIT] Depth + Floor loaded OK
+14:53:23 [WARNING] [DEPTH] DepthEstimator missing device → disabling depth
+14:53:23 [INFO] [INIT] All modules ready.
+14:53:23 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+14:53:23 [INFO] ============================================================
+14:53:23 [INFO] READY - waiting for mobile connection...
+14:53:23 [INFO] ============================================================
+14:56:05 [INFO] [NETWORK] Connected: ('192.168.1.4', 37140)
+14:56:05 [INFO] [SYSTEM] Connected — running
+14:56:06 [INFO] [STATS] #   1 | FPS:  0.0 |   9.0ms | Hands:0  | Pose:N | Area:0pt
+14:56:09 [INFO] [STATS] #  31 | FPS:  8.1 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:56:12 [INFO] [STATS] #  62 | FPS: 10.2 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:56:15 [INFO] [STATS] #  95 | FPS: 10.4 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:56:18 [INFO] [STATS] # 125 | FPS:  9.3 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:56:21 [INFO] [STATS] # 153 | FPS:  9.2 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:56:24 [INFO] [STATS] # 187 | FPS: 11.5 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:56:27 [INFO] [STATS] # 214 | FPS:  9.1 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:56:31 [INFO] [STATS] # 241 | FPS:  9.4 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:56:34 [INFO] [STATS] # 272 | FPS: 10.0 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:56:37 [INFO] [STATS] # 303 | FPS: 10.2 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:56:40 [INFO] [STATS] # 334 | FPS: 10.2 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:56:43 [INFO] [STATS] # 364 | FPS:  9.9 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:56:46 [INFO] [STATS] # 395 | FPS: 10.0 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:56:49 [INFO] [STATS] # 425 | FPS:  9.9 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:56:50 [INFO] [SERVER] Stopped.

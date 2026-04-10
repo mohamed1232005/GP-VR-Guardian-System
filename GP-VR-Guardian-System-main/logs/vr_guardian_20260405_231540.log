@@ -1,0 +1,60 @@
+23:15:41 [INFO] ============================================================
+23:15:41 [INFO]   ARCore Server Compatibility Check
+23:15:41 [INFO] ============================================================
+23:15:41 [INFO]   ✓  mediapipe              0.10.32
+23:15:41 [INFO]   ✓  opencv                 4.11.0
+23:15:41 [INFO]   ✓  numpy                  2.4.2
+23:15:41 [INFO]   ✓  network_port           port 9999 available
+23:15:41 [INFO] ------------------------------------------------------------
+23:15:41 [INFO]   Unity ARCore requirements (verify in Editor):
+23:15:41 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+23:15:41 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+23:15:41 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+23:15:41 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+23:15:41 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+23:15:41 [INFO]     AR Camera tag: MainCamera
+23:15:41 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+23:15:41 [INFO] ------------------------------------------------------------
+23:15:41 [INFO]   All Python checks PASSED ✓
+23:15:41 [INFO] ============================================================
+23:15:41 [INFO] [INIT] Loading hand tracker...
+23:15:41 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+23:15:41 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+23:15:41 [INFO] [INIT] ✓ Hand tracker ready
+23:15:41 [INFO] [INIT] Loading pose tracker...
+23:15:41 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+23:15:41 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+23:15:41 [INFO] [INIT] ✓ Pose tracker ready
+23:15:41 [INFO] [INIT] All modules ready.
+23:15:41 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+23:15:41 [INFO] ============================================================
+23:15:41 [INFO] READY - waiting for mobile connection...
+23:15:41 [INFO] ============================================================
+23:17:34 [INFO] [NETWORK] Connected: ('192.168.1.6', 39470)
+23:17:34 [INFO] [SYSTEM] Connected — running
+23:17:35 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+23:17:38 [INFO] [STATS] #  27 | FPS:  0.2 |  53.2ms | Hands:0  | Pose:-- FloorHint:--
+23:17:41 [INFO] [STATS] #  57 | FPS: 10.0 |  43.6ms | Hands:0  | Pose:-- FloorHint:--
+23:17:44 [INFO] [STATS] #  88 | FPS: 10.0 |  40.5ms | Hands:0  | Pose:-- FloorHint:--
+23:17:47 [INFO] [STATS] # 118 | FPS: 10.0 |  35.8ms | Hands:0  | Pose:-- FloorHint:--
+23:17:50 [INFO] [STATS] # 147 | FPS:  9.6 |  47.2ms | Hands:1  | Pose:-- FloorHint:--
+23:17:53 [INFO] [STATS] # 176 | FPS:  9.2 |  54.7ms | Hands:0  | Pose:-- FloorHint:--
+23:17:55 [INFO] [GESTURE] idx_ext=True(1.79) mid_curl=True(1.09) ring_curl=True(1.21) pink_curl=True(1.34)
+23:17:56 [INFO] [STATS] # 202 | FPS:  8.8 |  74.8ms | Hands:1 POINTING | Pose:OK FloorHint:--
+23:17:57 [INFO] [DEBUG] Saved frame: frame_00210.jpg tip=(0.445,0.465,-0.0045) floor_hint=None
+23:17:59 [INFO] [STATS] # 228 | FPS:  8.7 |  76.5ms | Hands:1 POINTING | Pose:-- FloorHint:--
+23:17:59 [INFO] [GESTURE] idx_ext=True(2.01) mid_curl=True(1.19) ring_curl=True(1.25) pink_curl=True(1.36)
+23:18:00 [INFO] [DEBUG] Saved frame: frame_00240.jpg tip=(0.510,0.450,-0.0127) floor_hint=None
+23:18:02 [INFO] [STATS] # 257 | FPS:  9.1 |  77.2ms | Hands:1 POINTING | Pose:-- FloorHint:--
+23:18:02 [INFO] [GESTURE] idx_ext=True(1.95) mid_curl=True(0.97) ring_curl=True(1.03) pink_curl=True(1.13)
+23:18:04 [INFO] [DEBUG] Saved frame: frame_00270.jpg tip=(0.433,0.492,0.0128) floor_hint=None
+23:18:05 [INFO] [STATS] # 278 | FPS:  7.7 |  72.4ms | Hands:0  | Pose:-- FloorHint:--
+23:18:08 [INFO] [STATS] # 302 | FPS:  7.6 |  46.0ms | Hands:0  | Pose:-- FloorHint:--
+23:18:11 [INFO] [STATS] # 331 | FPS:  9.3 |  41.2ms | Hands:0  | Pose:-- FloorHint:--
+23:18:17 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+23:18:17 [WARNING] [NET] Connection lost.
+23:18:17 [INFO] [SERVER] Reconnecting in 1s...
+23:18:18 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+23:18:18 [INFO] ============================================================
+23:18:18 [INFO] READY - waiting for mobile connection...
+23:18:18 [INFO] ============================================================

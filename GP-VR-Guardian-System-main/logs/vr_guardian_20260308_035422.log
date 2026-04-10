@@ -1,0 +1,35 @@
+03:54:22 [INFO] ============================================================
+03:54:22 [INFO]   ARCore Server Compatibility Check
+03:54:22 [INFO] ============================================================
+03:54:22 [INFO]   ✓  mediapipe              0.10.32
+03:54:22 [INFO]   ✓  opencv                 4.11.0
+03:54:22 [INFO]   ✓  numpy                  1.26.4
+03:54:22 [INFO]   ✓  network_port           port 9999 likely available
+03:54:22 [INFO] ------------------------------------------------------------
+03:54:22 [INFO]   Unity ARCore requirements (verify in Editor):
+03:54:22 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+03:54:22 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+03:54:22 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+03:54:22 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+03:54:22 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+03:54:22 [INFO]     AR Camera tag: MainCamera
+03:54:22 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+03:54:22 [INFO] ------------------------------------------------------------
+03:54:22 [INFO]   All Python checks PASSED ✓
+03:54:22 [INFO] ============================================================
+03:54:22 [INFO] [INIT] Loading AI modules...
+03:54:22 [INFO] [HANDS] Loading MediaPipe Hands...
+03:54:22 [ERROR] [HANDS] Init failed: module 'mediapipe' has no attribute 'solutions'
+03:54:22 [INFO] [POSE] Loading MediaPipe...
+03:54:22 [ERROR] [POSE] MediaPipe import failed: MediaPipe pose module not found
+03:54:22 [WARNING] [POSE] ✗ Pose tracking DISABLED
+03:54:22 [INFO] [DEPTH] Loading MiDaS model...
+03:54:23 [ERROR] [DEPTH] Failed to initialize: No module named 'timm'
+03:54:23 [INFO] [FLOOR] ✓ Floor detector ready!
+03:54:23 [INFO] [INIT] Depth + Floor loaded OK
+03:54:23 [WARNING] [DEPTH] DepthEstimator missing device → disabling depth
+03:54:23 [INFO] [INIT] All modules ready.
+03:54:23 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+03:54:23 [INFO] ============================================================
+03:54:23 [INFO] READY - waiting for mobile connection...
+03:54:23 [INFO] ============================================================

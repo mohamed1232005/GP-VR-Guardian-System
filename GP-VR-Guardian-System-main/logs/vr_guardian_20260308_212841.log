@@ -1,0 +1,36 @@
+21:28:42 [INFO] ============================================================
+21:28:42 [INFO]   ARCore Server Compatibility Check
+21:28:42 [INFO] ============================================================
+21:28:42 [INFO]   ✓  mediapipe              0.10.32
+21:28:42 [INFO]   ✓  opencv                 4.11.0
+21:28:42 [INFO]   ✓  numpy                  2.4.2
+21:28:42 [INFO]   ✓  network_port           port 9999 likely available
+21:28:42 [INFO] ------------------------------------------------------------
+21:28:42 [INFO]   Unity ARCore requirements (verify in Editor):
+21:28:42 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+21:28:42 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+21:28:42 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+21:28:42 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+21:28:42 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+21:28:42 [INFO]     AR Camera tag: MainCamera
+21:28:42 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+21:28:42 [INFO] ------------------------------------------------------------
+21:28:42 [INFO]   All Python checks PASSED ✓
+21:28:42 [INFO] ============================================================
+21:28:42 [INFO] [INIT] Loading AI modules...
+21:28:42 [INFO] [HANDS] Loading MediaPipe Hands...
+21:28:42 [ERROR] [HANDS] Init failed: MediaPipe 0.10.32 — no hands module found via any import path
+21:28:42 [INFO] [POSE] Loading MediaPipe...
+21:28:42 [ERROR] [POSE] MediaPipe import failed: MediaPipe 0.10.32 — no pose module found via any import path
+21:28:42 [WARNING] [POSE] ✗ Pose tracking DISABLED
+21:28:42 [INFO] [DEPTH] Loading MiDaS model...
+21:28:46 [INFO] [DEPTH] Device: cpu
+21:28:47 [INFO] [DEPTH] ✓ MiDaS ready!
+21:28:47 [INFO] [FLOOR] ✓ Floor detector ready!
+21:28:47 [INFO] [INIT] Depth + Floor loaded OK
+21:28:47 [INFO] [GPU] CPU
+21:28:47 [INFO] [INIT] All modules ready.
+21:28:47 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+21:28:47 [INFO] ============================================================
+21:28:47 [INFO] READY - waiting for mobile connection...
+21:28:47 [INFO] ============================================================

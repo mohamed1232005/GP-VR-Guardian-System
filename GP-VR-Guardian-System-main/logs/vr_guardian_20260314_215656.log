@@ -1,0 +1,64 @@
+21:56:57 [INFO] ============================================================
+21:56:57 [INFO]   ARCore Server Compatibility Check
+21:56:57 [INFO] ============================================================
+21:56:57 [INFO]   ✓  mediapipe              0.10.32
+21:56:57 [INFO]   ✓  opencv                 4.11.0
+21:56:57 [INFO]   ✓  numpy                  2.4.2
+21:56:57 [INFO]   ✓  network_port           port 9999 likely available
+21:56:57 [INFO] ------------------------------------------------------------
+21:56:57 [INFO]   Unity ARCore requirements (verify in Editor):
+21:56:57 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+21:56:57 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+21:56:57 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+21:56:57 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+21:56:57 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+21:56:57 [INFO]     AR Camera tag: MainCamera
+21:56:57 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+21:56:57 [INFO] ------------------------------------------------------------
+21:56:57 [INFO]   All Python checks PASSED ✓
+21:56:57 [INFO] ============================================================
+21:56:57 [INFO] [INIT] Loading hand tracker...
+21:56:57 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+21:56:57 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+21:56:57 [INFO] [INIT] ✓ Hand tracker ready
+21:56:57 [INFO] [INIT] All modules ready.
+21:56:57 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+21:56:57 [INFO] ============================================================
+21:56:57 [INFO] READY - waiting for mobile connection...
+21:56:57 [INFO] ============================================================
+21:56:58 [INFO] [NETWORK] Connected: ('192.168.1.4', 37602)
+21:56:58 [INFO] [SYSTEM] Connected — running
+21:56:58 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+21:57:01 [INFO] [STATS] #  32 | FPS: 10.5 |   9.8ms | Hands:0 
+21:57:04 [INFO] [STATS] #  63 | FPS: 10.0 |   9.8ms | Hands:0 
+21:57:07 [INFO] [STATS] #  94 | FPS: 10.1 |  10.0ms | Hands:0 
+21:57:10 [INFO] [STATS] # 125 | FPS: 10.2 |  10.1ms | Hands:0 
+21:57:13 [INFO] [STATS] # 156 | FPS: 10.0 |  10.6ms | Hands:0 
+21:57:16 [INFO] [STATS] # 186 | FPS: 10.0 |   9.7ms | Hands:0 
+21:57:19 [INFO] [STATS] # 216 | FPS: 10.0 |  10.9ms | Hands:0 
+21:57:22 [INFO] [STATS] # 247 | FPS: 10.0 |  10.1ms | Hands:0 
+21:57:25 [INFO] [STATS] # 278 | FPS: 10.1 |  10.4ms | Hands:0 
+21:57:28 [INFO] [STATS] # 308 | FPS:  9.8 |  10.3ms | Hands:0 
+21:57:32 [INFO] [STATS] # 339 | FPS: 10.1 |   9.7ms | Hands:0 
+21:57:35 [INFO] [STATS] # 370 | FPS: 10.1 |  11.3ms | Hands:0 
+21:57:38 [INFO] [STATS] # 400 | FPS: 10.0 |  10.8ms | Hands:0 
+21:57:41 [INFO] [STATS] # 430 | FPS: 10.0 |  12.3ms | Hands:0 
+21:57:44 [INFO] [STATS] # 461 | FPS: 10.0 |  10.5ms | Hands:0 
+21:57:47 [INFO] [STATS] # 491 | FPS: 10.0 |   9.9ms | Hands:0 
+21:57:50 [INFO] [STATS] # 521 | FPS: 10.0 |   9.9ms | Hands:0 
+21:57:53 [INFO] [STATS] # 551 | FPS: 10.0 |  11.1ms | Hands:1 
+21:57:56 [INFO] [STATS] # 582 | FPS: 10.0 |  11.3ms | Hands:0 
+21:57:59 [INFO] [STATS] # 613 | FPS: 10.0 |  11.4ms | Hands:0 
+21:58:02 [INFO] [STATS] # 643 | FPS: 10.0 |  13.0ms | Hands:0 
+21:58:05 [INFO] [STATS] # 673 | FPS:  9.7 |  33.3ms | Hands:0 
+21:58:08 [INFO] [STATS] # 703 | FPS: 10.1 |  51.6ms | Hands:0 
+21:58:11 [INFO] [STATS] # 734 | FPS: 10.2 |  48.2ms | Hands:0 
+21:58:14 [INFO] [STATS] # 764 | FPS:  9.8 |  51.5ms | Hands:0 
+21:58:17 [INFO] [STATS] # 794 | FPS: 10.0 |  58.7ms | Hands:0 
+21:58:20 [INFO] [STATS] # 825 | FPS: 10.1 |  22.7ms | Hands:0 
+21:58:23 [INFO] [STATS] # 855 | FPS:  9.9 |  15.3ms | Hands:0 
+21:58:26 [INFO] [STATS] # 885 | FPS: 10.0 |  11.9ms | Hands:0 
+21:58:29 [INFO] [STATS] # 915 | FPS: 10.0 |  14.0ms | Hands:0 
+21:58:32 [INFO] [STATS] # 945 | FPS: 10.0 |  11.2ms | Hands:0 
+21:58:35 [INFO] [STATS] # 975 | FPS: 10.0 |   9.9ms | Hands:0 
+21:58:36 [INFO] [SERVER] Stopped.

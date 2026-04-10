@@ -1,0 +1,267 @@
+05:33:36 [INFO] ============================================================
+05:33:36 [INFO]   ARCore Server Compatibility Check
+05:33:36 [INFO] ============================================================
+05:33:36 [INFO]   ✓  mediapipe              0.10.32
+05:33:36 [INFO]   ✓  opencv                 4.11.0
+05:33:36 [INFO]   ✓  numpy                  2.4.2
+05:33:36 [INFO]   ✓  network_port           port 9999 likely available
+05:33:36 [INFO] ------------------------------------------------------------
+05:33:36 [INFO]   Unity ARCore requirements (verify in Editor):
+05:33:36 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+05:33:36 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+05:33:36 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+05:33:36 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+05:33:36 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+05:33:36 [INFO]     AR Camera tag: MainCamera
+05:33:36 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+05:33:36 [INFO] ------------------------------------------------------------
+05:33:36 [INFO]   All Python checks PASSED ✓
+05:33:36 [INFO] ============================================================
+05:33:36 [INFO] [INIT] Loading hand tracker...
+05:33:36 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+05:33:36 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+05:33:36 [INFO] [INIT] ✓ Hand tracker ready
+05:33:36 [INFO] [INIT] All modules ready.
+05:33:36 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+05:33:36 [INFO] ============================================================
+05:33:36 [INFO] READY - waiting for mobile connection...
+05:33:36 [INFO] ============================================================
+05:35:28 [INFO] [NETWORK] Connected: ('192.168.1.4', 34208)
+05:35:28 [INFO] [SYSTEM] Connected — running
+05:35:29 [INFO] [STATS] #   1 | FPS:  0.0 |  40.9ms | Hands:0 
+05:35:32 [INFO] [STATS] #  32 | FPS: 10.2 |  13.6ms | Hands:0 
+05:35:35 [INFO] [STATS] #  63 | FPS: 10.2 |  13.5ms | Hands:0 
+05:35:38 [INFO] [STATS] #  90 | FPS:  8.9 |  19.4ms | Hands:0 
+05:35:41 [INFO] [STATS] # 121 | FPS: 10.1 |  15.6ms | Hands:1 
+05:35:42 [INFO] [GESTURE] idx_ext=True(2.12) mid_curl=True(1.00) ring_curl=True(0.51) pink_curl=True(0.26)
+05:35:45 [INFO] [STATS] # 152 | FPS: 10.0 |  17.1ms | Hands:0 
+05:35:47 [INFO] [DEBUG] Saved proof frame: frame_00180.jpg tip=(0.353,0.598)
+05:35:48 [INFO] [STATS] # 183 | FPS: 10.0 |  24.1ms | Hands:1 POINTING
+05:35:48 [INFO] [GESTURE] idx_ext=True(2.02) mid_curl=True(0.65) ring_curl=True(1.11) pink_curl=True(1.47)
+05:35:51 [INFO] [STATS] # 214 | FPS: 10.1 |  31.0ms | Hands:0 
+05:35:54 [INFO] [STATS] # 245 | FPS: 10.2 |  15.8ms | Hands:0 
+05:35:57 [INFO] [STATS] # 275 | FPS: 10.0 |  15.6ms | Hands:0 
+05:36:00 [INFO] [STATS] # 306 | FPS: 10.3 |  13.3ms | Hands:0 
+05:36:04 [INFO] [STATS] # 333 | FPS:  9.0 |  12.4ms | Hands:0 
+05:36:07 [INFO] [STATS] # 361 | FPS:  6.9 |  13.2ms | Hands:0 
+05:36:10 [INFO] [GESTURE] idx_ext=True(2.13) mid_curl=True(0.49) ring_curl=True(0.42) pink_curl=True(0.66)
+05:36:10 [INFO] [DEBUG] Saved proof frame: frame_00390.jpg tip=(0.226,0.474)
+05:36:10 [INFO] [STATS] # 391 | FPS: 10.0 |  14.1ms | Hands:1 POINTING
+05:36:13 [INFO] [GESTURE] idx_ext=True(2.06) mid_curl=True(0.61) ring_curl=True(0.56) pink_curl=True(0.77)
+05:36:13 [INFO] [DEBUG] Saved proof frame: frame_00420.jpg tip=(0.277,0.423)
+05:36:13 [INFO] [STATS] # 421 | FPS: 10.0 |  21.5ms | Hands:1 POINTING
+05:36:16 [INFO] [STATS] # 452 | FPS: 10.1 |  18.2ms | Hands:0 
+05:36:19 [INFO] [STATS] # 479 | FPS: 10.1 |  17.0ms | Hands:1 POINTING
+05:36:19 [INFO] [GESTURE] idx_ext=True(2.21) mid_curl=True(0.68) ring_curl=True(0.63) pink_curl=True(0.66)
+05:36:19 [INFO] [DEBUG] Saved proof frame: frame_00480.jpg tip=(0.274,0.734)
+05:36:22 [INFO] [GESTURE] idx_ext=True(2.13) mid_curl=True(0.67) ring_curl=True(0.73) pink_curl=True(0.78)
+05:36:22 [INFO] [DEBUG] Saved proof frame: frame_00510.jpg tip=(0.303,0.654)
+05:36:22 [INFO] [STATS] # 517 | FPS: 11.0 |  22.0ms | Hands:1 POINTING
+05:36:25 [INFO] [GESTURE] idx_ext=True(2.02) mid_curl=True(1.36) ring_curl=True(1.44) pink_curl=True(1.59)
+05:36:25 [INFO] [DEBUG] Saved proof frame: frame_00540.jpg tip=(0.628,0.590)
+05:36:26 [INFO] [STATS] # 548 | FPS: 10.0 |  21.1ms | Hands:1 
+05:36:28 [INFO] [GESTURE] idx_ext=True(2.06) mid_curl=True(1.11) ring_curl=True(1.19) pink_curl=True(1.29)
+05:36:28 [INFO] [DEBUG] Saved proof frame: frame_00570.jpg tip=(0.630,0.563)
+05:36:29 [INFO] [STATS] # 578 | FPS: 10.0 |  21.2ms | Hands:1 POINTING
+05:36:31 [INFO] [GESTURE] idx_ext=True(2.10) mid_curl=True(0.84) ring_curl=True(0.85) pink_curl=True(0.98)
+05:36:31 [INFO] [DEBUG] Saved proof frame: frame_00600.jpg tip=(0.631,0.565)
+05:36:32 [INFO] [STATS] # 609 | FPS: 10.1 |  21.2ms | Hands:1 POINTING
+05:36:34 [INFO] [GESTURE] idx_ext=True(2.05) mid_curl=True(1.18) ring_curl=True(1.34) pink_curl=True(1.52)
+05:36:34 [INFO] [DEBUG] Saved proof frame: frame_00630.jpg tip=(0.630,0.568)
+05:36:35 [INFO] [STATS] # 639 | FPS: 10.1 |  21.6ms | Hands:1 POINTING
+05:36:37 [INFO] [GESTURE] idx_ext=True(2.00) mid_curl=True(0.99) ring_curl=True(1.07) pink_curl=True(1.12)
+05:36:37 [INFO] [DEBUG] Saved proof frame: frame_00660.jpg tip=(0.636,0.562)
+05:36:38 [INFO] [STATS] # 669 | FPS: 10.0 |  22.2ms | Hands:1 POINTING
+05:36:40 [INFO] [GESTURE] idx_ext=True(2.05) mid_curl=True(0.91) ring_curl=True(0.98) pink_curl=True(0.94)
+05:36:40 [INFO] [DEBUG] Saved proof frame: frame_00690.jpg tip=(0.638,0.568)
+05:36:41 [INFO] [STATS] # 700 | FPS: 10.0 |  21.5ms | Hands:1 POINTING
+05:36:43 [INFO] [GESTURE] idx_ext=True(2.07) mid_curl=True(0.63) ring_curl=True(0.71) pink_curl=True(0.97)
+05:36:43 [INFO] [DEBUG] Saved proof frame: frame_00720.jpg tip=(0.607,0.366)
+05:36:44 [INFO] [STATS] # 730 | FPS: 10.0 |  21.4ms | Hands:1 POINTING
+05:36:47 [INFO] [GESTURE] idx_ext=True(2.06) mid_curl=True(0.69) ring_curl=True(0.64) pink_curl=True(0.66)
+05:36:47 [INFO] [STATS] # 760 | FPS: 10.0 |  19.0ms | Hands:1 POINTING
+05:36:49 [INFO] [DEBUG] Saved proof frame: frame_00780.jpg tip=(0.561,0.380)
+05:36:50 [INFO] [GESTURE] idx_ext=True(2.02) mid_curl=True(0.59) ring_curl=True(0.67) pink_curl=True(0.71)
+05:36:50 [INFO] [STATS] # 790 | FPS: 10.0 |  22.0ms | Hands:1 POINTING
+05:36:53 [INFO] [STATS] # 820 | FPS: 10.0 |  16.7ms | Hands:1 POINTING
+05:36:54 [INFO] [GESTURE] idx_ext=True(2.13) mid_curl=True(0.45) ring_curl=True(0.37) pink_curl=True(0.39)
+05:36:55 [INFO] [DEBUG] Saved proof frame: frame_00840.jpg tip=(0.571,0.378)
+05:36:56 [INFO] [STATS] # 851 | FPS: 10.0 |  20.4ms | Hands:0 
+05:36:58 [INFO] [GESTURE] idx_ext=True(2.35) mid_curl=False(2.36) ring_curl=False(2.26) pink_curl=False(2.15)
+05:36:59 [INFO] [STATS] # 881 | FPS:  9.9 |  20.2ms | Hands:0 
+05:37:01 [INFO] [DEBUG] Saved proof frame: frame_00900.jpg tip=(0.527,0.422)
+05:37:02 [INFO] [STATS] # 911 | FPS: 10.0 |  19.1ms | Hands:0 
+05:37:02 [INFO] [GESTURE] idx_ext=True(2.19) mid_curl=True(0.23) ring_curl=True(0.35) pink_curl=True(0.54)
+05:37:05 [INFO] [STATS] # 942 | FPS: 10.1 |  14.4ms | Hands:0 
+05:37:08 [INFO] [STATS] # 972 | FPS: 10.0 |  12.8ms | Hands:1 
+05:37:10 [INFO] [DEBUG] Saved proof frame: frame_00990.jpg tip=(0.227,0.543)
+05:37:11 [INFO] [GESTURE] idx_ext=True(2.16) mid_curl=True(0.41) ring_curl=True(0.44) pink_curl=True(0.85)
+05:37:11 [INFO] [STATS] #1002 | FPS: 10.0 |  21.5ms | Hands:1 POINTING
+05:37:13 [INFO] [DEBUG] Saved proof frame: frame_01020.jpg tip=(0.316,0.520)
+05:37:14 [INFO] [GESTURE] idx_ext=True(2.15) mid_curl=True(0.62) ring_curl=True(0.42) pink_curl=True(0.52)
+05:37:14 [INFO] [STATS] #1033 | FPS: 10.3 |  20.7ms | Hands:1 POINTING
+05:37:16 [INFO] [DEBUG] Saved proof frame: frame_01050.jpg tip=(0.333,0.566)
+05:37:17 [INFO] [STATS] #1064 | FPS: 10.1 |  21.3ms | Hands:1 POINTING
+05:37:17 [INFO] [GESTURE] idx_ext=True(1.98) mid_curl=True(0.59) ring_curl=True(1.01) pink_curl=False(1.75)
+05:37:20 [INFO] [STATS] #1094 | FPS: 10.0 |  22.6ms | Hands:1 POINTING
+05:37:22 [INFO] [GESTURE] idx_ext=True(2.11) mid_curl=True(0.61) ring_curl=True(0.50) pink_curl=True(1.03)
+05:37:23 [INFO] [STATS] #1125 | FPS: 10.0 |  21.3ms | Hands:1 
+05:37:25 [INFO] [DEBUG] Saved proof frame: frame_01140.jpg tip=(0.364,0.489)
+05:37:25 [INFO] [GESTURE] idx_ext=True(1.99) mid_curl=True(0.31) ring_curl=True(0.60) pink_curl=True(1.21)
+05:37:26 [INFO] [STATS] #1155 | FPS: 10.0 |  23.5ms | Hands:1 
+05:37:29 [INFO] [STATS] #1185 | FPS: 10.0 |  20.8ms | Hands:1 
+05:37:31 [INFO] [GESTURE] idx_ext=True(2.12) mid_curl=True(0.50) ring_curl=True(0.32) pink_curl=True(0.69)
+05:37:32 [INFO] [STATS] #1216 | FPS: 10.0 |  16.5ms | Hands:0 
+05:37:34 [INFO] [DEBUG] Saved proof frame: frame_01230.jpg tip=(0.399,0.482)
+05:37:35 [INFO] [STATS] #1246 | FPS: 10.0 |  20.4ms | Hands:0 
+05:37:37 [INFO] [GESTURE] idx_ext=True(2.24) mid_curl=True(0.63) ring_curl=True(0.61) pink_curl=True(1.02)
+05:37:38 [INFO] [STATS] #1277 | FPS: 10.0 |  20.5ms | Hands:1 POINTING
+05:37:41 [INFO] [GESTURE] idx_ext=True(2.18) mid_curl=True(0.57) ring_curl=True(0.44) pink_curl=True(0.50)
+05:37:41 [INFO] [STATS] #1307 | FPS: 10.0 |  21.1ms | Hands:1 POINTING
+05:37:45 [INFO] [STATS] #1338 | FPS: 10.0 |  19.8ms | Hands:1 POINTING
+05:37:46 [INFO] [GESTURE] idx_ext=True(2.17) mid_curl=True(0.28) ring_curl=True(0.37) pink_curl=True(1.07)
+05:37:48 [INFO] [STATS] #1368 | FPS: 10.0 |  22.7ms | Hands:0 
+05:37:49 [INFO] [DEBUG] Saved proof frame: frame_01380.jpg tip=(0.367,0.463)
+05:37:50 [INFO] [GESTURE] idx_ext=True(2.20) mid_curl=True(0.24) ring_curl=True(0.20) pink_curl=True(0.40)
+05:37:51 [INFO] [STATS] #1398 | FPS:  9.9 |  22.3ms | Hands:1 POINTING
+05:37:52 [INFO] [DEBUG] Saved proof frame: frame_01410.jpg tip=(0.422,0.456)
+05:37:53 [INFO] [GESTURE] idx_ext=True(2.24) mid_curl=True(0.82) ring_curl=True(0.62) pink_curl=True(0.66)
+05:37:54 [INFO] [STATS] #1428 | FPS: 10.1 |  23.3ms | Hands:1 POINTING
+05:37:55 [INFO] [DEBUG] Saved proof frame: frame_01440.jpg tip=(0.461,0.465)
+05:37:56 [INFO] [GESTURE] idx_ext=True(2.27) mid_curl=True(0.49) ring_curl=True(0.25) pink_curl=True(0.45)
+05:37:57 [INFO] [STATS] #1458 | FPS: 10.0 |  23.7ms | Hands:1 POINTING
+05:37:58 [INFO] [DEBUG] Saved proof frame: frame_01470.jpg tip=(0.474,0.464)
+05:37:59 [INFO] [GESTURE] idx_ext=True(2.21) mid_curl=True(0.47) ring_curl=True(0.28) pink_curl=True(0.33)
+05:38:00 [INFO] [STATS] #1488 | FPS:  9.9 |  25.9ms | Hands:1 POINTING
+05:38:01 [INFO] [DEBUG] Saved proof frame: frame_01500.jpg tip=(0.538,0.503)
+05:38:02 [INFO] [GESTURE] idx_ext=True(2.04) mid_curl=True(0.42) ring_curl=True(0.54) pink_curl=True(0.84)
+05:38:03 [INFO] [STATS] #1519 | FPS: 10.2 |  24.3ms | Hands:1 POINTING
+05:38:04 [INFO] [DEBUG] Saved proof frame: frame_01530.jpg tip=(0.515,0.511)
+05:38:05 [INFO] [GESTURE] idx_ext=True(2.07) mid_curl=True(0.78) ring_curl=True(0.49) pink_curl=True(0.78)
+05:38:06 [INFO] [STATS] #1550 | FPS: 10.0 |  23.8ms | Hands:1 POINTING
+05:38:07 [INFO] [DEBUG] Saved proof frame: frame_01560.jpg tip=(0.522,0.521)
+05:38:08 [INFO] [GESTURE] idx_ext=True(2.00) mid_curl=True(0.52) ring_curl=True(0.65) pink_curl=True(1.11)
+05:38:09 [INFO] [STATS] #1580 | FPS: 10.0 |  23.9ms | Hands:1 POINTING
+05:38:10 [INFO] [DEBUG] Saved proof frame: frame_01590.jpg tip=(0.501,0.595)
+05:38:12 [INFO] [STATS] #1611 | FPS: 10.1 |  21.0ms | Hands:0 
+05:38:15 [INFO] [STATS] #1641 | FPS:  9.9 |  16.8ms | Hands:0 
+05:38:18 [INFO] [STATS] #1671 | FPS: 10.0 |  15.1ms | Hands:0 
+05:38:21 [INFO] [STATS] #1701 | FPS: 10.0 |  14.2ms | Hands:0 
+05:38:24 [INFO] [STATS] #1731 | FPS: 10.0 |  15.5ms | Hands:0 
+05:38:27 [INFO] [STATS] #1762 | FPS: 10.0 |  14.0ms | Hands:0 
+05:38:30 [INFO] [STATS] #1792 | FPS: 10.0 |  14.1ms | Hands:0 
+05:38:33 [INFO] [STATS] #1822 | FPS: 10.0 |  15.5ms | Hands:0 
+05:38:36 [INFO] [STATS] #1853 | FPS: 10.1 |  14.8ms | Hands:0 
+05:38:39 [INFO] [STATS] #1883 | FPS: 10.0 |  16.6ms | Hands:0 
+05:38:42 [INFO] [STATS] #1914 | FPS: 10.0 |  14.9ms | Hands:0 
+05:38:44 [INFO] [GESTURE] idx_ext=True(2.17) mid_curl=True(0.51) ring_curl=True(0.52) pink_curl=True(0.51)
+05:38:45 [INFO] [STATS] #1944 | FPS:  9.9 |  20.7ms | Hands:1 POINTING
+05:38:46 [INFO] [DEBUG] Saved proof frame: frame_01950.jpg tip=(0.442,0.503)
+05:38:48 [INFO] [GESTURE] idx_ext=True(2.08) mid_curl=False(2.09) ring_curl=True(1.34) pink_curl=True(1.45)
+05:38:48 [INFO] [STATS] #1975 | FPS: 10.0 |  23.0ms | Hands:0 
+05:38:51 [INFO] [STATS] #2005 | FPS: 10.0 |  16.6ms | Hands:0 
+05:38:54 [INFO] [GESTURE] idx_ext=True(2.19) mid_curl=True(0.45) ring_curl=True(0.91) pink_curl=True(1.17)
+05:38:54 [INFO] [STATS] #2035 | FPS: 10.0 |  24.0ms | Hands:1 POINTING
+05:38:57 [INFO] [STATS] #2065 | FPS: 10.0 |  24.2ms | Hands:1 POINTING
+05:38:58 [INFO] [GESTURE] idx_ext=True(2.23) mid_curl=True(0.72) ring_curl=True(0.58) pink_curl=True(1.26)
+05:39:00 [INFO] [STATS] #2096 | FPS: 10.0 |  23.2ms | Hands:0 
+05:39:02 [INFO] [GESTURE] idx_ext=True(2.10) mid_curl=True(0.82) ring_curl=True(0.84) pink_curl=True(0.92)
+05:39:03 [INFO] [STATS] #2126 | FPS: 10.0 |  23.6ms | Hands:1 POINTING
+05:39:04 [INFO] [DEBUG] Saved proof frame: frame_02130.jpg tip=(0.455,0.521)
+05:39:05 [INFO] [GESTURE] idx_ext=True(2.07) mid_curl=True(1.15) ring_curl=True(1.16) pink_curl=True(1.04)
+05:39:06 [INFO] [STATS] #2156 | FPS: 10.0 |  23.9ms | Hands:1 POINTING
+05:39:07 [INFO] [DEBUG] Saved proof frame: frame_02160.jpg tip=(0.393,0.497)
+05:39:10 [INFO] [STATS] #2186 | FPS:  9.9 |  20.3ms | Hands:0 
+05:39:13 [INFO] [STATS] #2217 | FPS: 10.4 |  14.8ms | Hands:0 
+05:39:16 [INFO] [STATS] #2248 | FPS: 10.2 |  15.8ms | Hands:0 
+05:39:16 [INFO] [GESTURE] idx_ext=True(2.11) mid_curl=True(1.26) ring_curl=True(1.24) pink_curl=True(1.22)
+05:39:19 [INFO] [STATS] #2278 | FPS:  9.9 |  21.2ms | Hands:1 POINTING
+05:39:22 [INFO] [STATS] #2301 | FPS:  8.4 |  18.3ms | Hands:1 POINTING
+05:39:23 [INFO] [DEBUG] Saved proof frame: frame_02310.jpg tip=(0.469,0.499)
+05:39:23 [INFO] [GESTURE] idx_ext=True(2.25) mid_curl=True(0.50) ring_curl=True(0.50) pink_curl=True(0.63)
+05:39:25 [INFO] [STATS] #2333 | FPS: 10.5 |  23.4ms | Hands:1 POINTING
+05:39:26 [INFO] [DEBUG] Saved proof frame: frame_02340.jpg tip=(0.345,0.533)
+05:39:26 [INFO] [GESTURE] idx_ext=True(2.17) mid_curl=True(0.93) ring_curl=True(0.91) pink_curl=True(0.85)
+05:39:28 [INFO] [STATS] #2363 | FPS:  9.6 |  19.6ms | Hands:0 
+05:39:31 [INFO] [STATS] #2394 | FPS: 10.2 |  20.1ms | Hands:1 
+05:39:32 [INFO] [DEBUG] Saved proof frame: frame_02400.jpg tip=(0.390,0.584)
+05:39:32 [INFO] [GESTURE] idx_ext=True(2.28) mid_curl=True(0.76) ring_curl=True(0.72) pink_curl=True(0.66)
+05:39:34 [INFO] [STATS] #2424 | FPS:  9.9 |  22.4ms | Hands:0 
+05:39:35 [INFO] [DEBUG] Saved proof frame: frame_02430.jpg tip=(0.442,0.585)
+05:39:35 [INFO] [GESTURE] idx_ext=True(2.16) mid_curl=True(0.88) ring_curl=True(0.87) pink_curl=True(0.81)
+05:39:37 [INFO] [STATS] #2455 | FPS: 10.2 |  23.6ms | Hands:1 POINTING
+05:39:38 [INFO] [DEBUG] Saved proof frame: frame_02460.jpg tip=(0.411,0.579)
+05:39:38 [INFO] [GESTURE] idx_ext=True(2.13) mid_curl=True(0.81) ring_curl=True(0.77) pink_curl=True(0.72)
+05:39:40 [INFO] [STATS] #2485 | FPS:  9.4 |  22.0ms | Hands:1 POINTING
+05:39:41 [INFO] [DEBUG] Saved proof frame: frame_02490.jpg tip=(0.348,0.514)
+05:39:43 [INFO] [STATS] #2515 | FPS: 10.0 |  19.8ms | Hands:1 POINTING
+05:39:45 [INFO] [GESTURE] idx_ext=True(2.25) mid_curl=True(0.72) ring_curl=True(0.33) pink_curl=True(0.23)
+05:39:46 [INFO] [STATS] #2546 | FPS: 10.1 |  17.2ms | Hands:0 
+05:39:49 [INFO] [STATS] #2576 | FPS:  9.9 |  20.3ms | Hands:1 POINTING
+05:39:52 [INFO] [GESTURE] idx_ext=True(2.14) mid_curl=True(0.89) ring_curl=True(0.92) pink_curl=True(0.97)
+05:39:52 [INFO] [STATS] #2607 | FPS: 10.2 |  24.6ms | Hands:1 
+05:39:53 [INFO] [DEBUG] Saved proof frame: frame_02610.jpg tip=(0.441,0.514)
+05:39:55 [INFO] [STATS] #2637 | FPS: 10.0 |  23.2ms | Hands:0 
+05:39:57 [INFO] [GESTURE] idx_ext=True(2.23) mid_curl=True(0.66) ring_curl=True(0.59) pink_curl=True(0.61)
+05:39:59 [INFO] [STATS] #2667 | FPS: 10.0 |  22.7ms | Hands:1 POINTING
+05:39:59 [INFO] [DEBUG] Saved proof frame: frame_02670.jpg tip=(0.425,0.516)
+05:40:00 [INFO] [GESTURE] idx_ext=True(2.15) mid_curl=True(0.83) ring_curl=True(0.90) pink_curl=True(0.80)
+05:40:02 [INFO] [STATS] #2698 | FPS: 10.4 |  23.6ms | Hands:1 POINTING
+05:40:02 [INFO] [DEBUG] Saved proof frame: frame_02700.jpg tip=(0.366,0.571)
+05:40:03 [INFO] [GESTURE] idx_ext=True(2.15) mid_curl=True(0.80) ring_curl=True(0.81) pink_curl=True(0.76)
+05:40:05 [INFO] [STATS] #2728 | FPS: 10.0 |  23.2ms | Hands:1 POINTING
+05:40:05 [INFO] [DEBUG] Saved proof frame: frame_02730.jpg tip=(0.370,0.538)
+05:40:06 [INFO] [GESTURE] idx_ext=True(2.13) mid_curl=True(0.67) ring_curl=True(0.73) pink_curl=True(0.73)
+05:40:08 [INFO] [DEBUG] Saved proof frame: frame_02760.jpg tip=(0.413,0.554)
+05:40:08 [INFO] [STATS] #2760 | FPS: 10.4 |  24.7ms | Hands:1 POINTING
+05:40:10 [INFO] [GESTURE] idx_ext=True(2.17) mid_curl=True(0.82) ring_curl=True(0.76) pink_curl=True(0.84)
+05:40:11 [INFO] [DEBUG] Saved proof frame: frame_02790.jpg tip=(0.465,0.525)
+05:40:11 [INFO] [STATS] #2790 | FPS:  9.8 |  24.7ms | Hands:1 POINTING
+05:40:13 [INFO] [GESTURE] idx_ext=True(2.19) mid_curl=True(1.09) ring_curl=True(0.91) pink_curl=True(0.79)
+05:40:14 [INFO] [DEBUG] Saved proof frame: frame_02820.jpg tip=(0.379,0.657)
+05:40:14 [INFO] [STATS] #2821 | FPS: 10.2 |  24.2ms | Hands:1 POINTING
+05:40:17 [INFO] [STATS] #2851 | FPS: 10.0 |  18.1ms | Hands:0 
+05:40:20 [INFO] [STATS] #2882 | FPS: 10.0 |  17.4ms | Hands:1 
+05:40:23 [INFO] [STATS] #2913 | FPS: 10.1 |  17.1ms | Hands:0 
+05:40:24 [INFO] [GESTURE] idx_ext=True(2.25) mid_curl=True(0.99) ring_curl=True(0.54) pink_curl=True(0.32)
+05:40:26 [INFO] [STATS] #2943 | FPS:  9.9 |  19.9ms | Hands:1 POINTING
+05:40:27 [INFO] [GESTURE] idx_ext=True(2.11) mid_curl=True(0.62) ring_curl=True(0.63) pink_curl=True(0.60)
+05:40:29 [INFO] [STATS] #2973 | FPS: 10.3 |  24.6ms | Hands:1 
+05:40:32 [INFO] [DEBUG] Saved proof frame: frame_03000.jpg tip=(0.402,0.492)
+05:40:32 [INFO] [GESTURE] idx_ext=True(2.09) mid_curl=True(0.76) ring_curl=True(0.63) pink_curl=True(0.66)
+05:40:32 [INFO] [STATS] #3005 | FPS: 10.3 |  23.8ms | Hands:1 POINTING
+05:40:35 [INFO] [DEBUG] Saved proof frame: frame_03030.jpg tip=(0.427,0.482)
+05:40:35 [INFO] [GESTURE] idx_ext=True(2.18) mid_curl=True(0.67) ring_curl=True(0.72) pink_curl=True(0.82)
+05:40:35 [INFO] [STATS] #3035 | FPS:  9.8 |  24.5ms | Hands:1 POINTING
+05:40:37 [INFO] [DEBUG] Saved proof frame: frame_03060.jpg tip=(0.406,0.494)
+05:40:38 [INFO] [GESTURE] idx_ext=True(2.19) mid_curl=True(0.66) ring_curl=True(0.72) pink_curl=True(0.67)
+05:40:38 [INFO] [STATS] #3066 | FPS: 10.3 |  27.4ms | Hands:1 POINTING
+05:40:40 [INFO] [DEBUG] Saved proof frame: frame_03090.jpg tip=(0.380,0.490)
+05:40:41 [INFO] [STATS] #3096 | FPS: 10.1 |  25.6ms | Hands:0 
+05:40:44 [INFO] [STATS] #3127 | FPS: 10.2 |  16.9ms | Hands:0 
+05:40:45 [INFO] [GESTURE] idx_ext=True(2.09) mid_curl=True(0.75) ring_curl=True(0.80) pink_curl=True(0.88)
+05:40:47 [INFO] [STATS] #3158 | FPS: 10.2 |  19.7ms | Hands:0 
+05:40:49 [INFO] [DEBUG] Saved proof frame: frame_03180.jpg tip=(0.474,0.526)
+05:40:50 [INFO] [STATS] #3190 | FPS: 10.5 |  21.0ms | Hands:0 
+05:40:52 [INFO] [GESTURE] idx_ext=True(2.18) mid_curl=True(1.02) ring_curl=True(0.92) pink_curl=True(0.81)
+05:40:52 [INFO] [DEBUG] Saved proof frame: frame_03210.jpg tip=(0.392,0.522)
+05:40:53 [INFO] [STATS] #3218 | FPS:  9.2 |  22.6ms | Hands:1 POINTING
+05:40:55 [INFO] [GESTURE] idx_ext=True(2.16) mid_curl=True(1.07) ring_curl=True(1.14) pink_curl=True(1.17)
+05:40:55 [INFO] [DEBUG] Saved proof frame: frame_03240.jpg tip=(0.408,0.495)
+05:40:56 [INFO] [STATS] #3252 | FPS: 10.3 |  26.4ms | Hands:1 POINTING
+05:41:00 [INFO] [STATS] #3282 | FPS:  9.8 |  20.3ms | Hands:1 POINTING
+05:41:00 [INFO] [GESTURE] idx_ext=True(2.08) mid_curl=True(0.72) ring_curl=True(0.76) pink_curl=True(0.77)
+05:41:01 [INFO] [DEBUG] Saved proof frame: frame_03300.jpg tip=(0.425,0.489)
+05:41:03 [INFO] [STATS] #3313 | FPS: 10.1 |  23.7ms | Hands:1 POINTING
+05:41:05 [INFO] [GESTURE] idx_ext=True(2.04) mid_curl=True(0.79) ring_curl=True(0.89) pink_curl=True(0.99)
+05:41:06 [INFO] [STATS] #3344 | FPS: 10.2 |  19.2ms | Hands:0 
+05:41:09 [INFO] [STATS] #3374 | FPS: 10.0 |  22.9ms | Hands:1 POINTING
+05:41:10 [INFO] [DEBUG] Saved proof frame: frame_03390.jpg tip=(0.431,0.448)
+05:41:10 [INFO] [GESTURE] idx_ext=True(1.98) mid_curl=True(0.77) ring_curl=True(0.79) pink_curl=True(0.90)
+05:41:12 [INFO] [STATS] #3405 | FPS: 10.0 |  23.9ms | Hands:1 POINTING
+05:41:15 [INFO] [STATS] #3435 | FPS:  9.7 |  17.2ms | Hands:0 
+05:41:18 [INFO] [STATS] #3463 | FPS:  9.5 |  15.8ms | Hands:0 
+05:41:21 [INFO] [STATS] #3493 | FPS:  9.7 |  16.5ms | Hands:0 
+05:41:24 [INFO] [STATS] #3524 | FPS: 10.3 |  13.9ms | Hands:0 
+05:41:27 [INFO] [STATS] #3555 | FPS: 10.2 |  14.9ms | Hands:0 
+05:41:30 [INFO] [SERVER] Stopped.

@@ -1,0 +1,43 @@
+14:50:30 [INFO] ============================================================
+14:50:30 [INFO]   ARCore Server Compatibility Check
+14:50:30 [INFO] ============================================================
+14:50:30 [INFO]   ✓  mediapipe              0.10.32
+14:50:30 [INFO]   ✓  opencv                 4.11.0
+14:50:30 [INFO]   ✓  numpy                  2.4.2
+14:50:30 [INFO]   ✓  network_port           port 9999 available
+14:50:30 [INFO] ------------------------------------------------------------
+14:50:30 [INFO]   Unity ARCore requirements (verify in Editor):
+14:50:30 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+14:50:30 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+14:50:30 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+14:50:30 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+14:50:30 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+14:50:30 [INFO]     AR Camera tag: MainCamera
+14:50:30 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+14:50:30 [INFO] ------------------------------------------------------------
+14:50:30 [INFO]   All Python checks PASSED ✓
+14:50:30 [INFO] ============================================================
+14:50:30 [INFO] [INIT] Loading hand tracker...
+14:50:30 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+14:50:30 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+14:50:30 [INFO] [INIT] ✓ Hand tracker ready
+14:50:30 [INFO] [INIT] Loading pose tracker...
+14:50:30 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+14:50:31 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+14:50:31 [INFO] [INIT] ✓ Pose tracker ready
+14:50:31 [INFO] [INIT] All modules ready.
+14:50:31 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+14:50:31 [INFO] ============================================================
+14:50:31 [INFO] READY - waiting for mobile connection...
+14:50:31 [INFO] ============================================================
+14:52:26 [INFO] [NETWORK] Connected: ('192.168.1.6', 52778)
+14:52:26 [INFO] [SYSTEM] Connected — running
+14:52:26 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+14:52:29 [INFO] [STATS] #  27 | FPS:  0.2 |  27.2ms | Hands:0  | Pose:-- FloorHint:--
+14:52:32 [INFO] [STATS] #  50 | FPS:  8.2 |  20.2ms | Hands:0  | Pose:-- FloorHint:--
+14:52:35 [INFO] [STATS] #  78 | FPS:  7.5 |  17.3ms | Hands:0  | Pose:-- FloorHint:--
+14:52:38 [INFO] [STATS] # 103 | FPS:  8.5 |  18.0ms | Hands:0  | Pose:OK FloorHint:--
+14:52:41 [INFO] [STATS] # 130 | FPS:  9.3 |  20.0ms | Hands:0  | Pose:-- FloorHint:--
+14:52:44 [INFO] [STATS] # 148 | FPS:  6.7 |  20.9ms | Hands:0  | Pose:-- FloorHint:--
+14:52:47 [INFO] [STATS] # 174 | FPS:  8.5 |  26.3ms | Hands:0  | Pose:-- FloorHint:--
+14:52:50 [INFO] [SERVER] Stopped.

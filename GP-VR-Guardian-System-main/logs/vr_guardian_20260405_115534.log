@@ -1,0 +1,50 @@
+11:55:35 [INFO] ============================================================
+11:55:35 [INFO]   ARCore Server Compatibility Check
+11:55:35 [INFO] ============================================================
+11:55:35 [INFO]   ✓  mediapipe              0.10.32
+11:55:35 [INFO]   ✓  opencv                 4.11.0
+11:55:35 [INFO]   ✓  numpy                  2.4.2
+11:55:35 [INFO]   ✓  network_port           port 9999 available
+11:55:35 [INFO] ------------------------------------------------------------
+11:55:35 [INFO]   Unity ARCore requirements (verify in Editor):
+11:55:35 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+11:55:35 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+11:55:35 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+11:55:35 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+11:55:35 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+11:55:35 [INFO]     AR Camera tag: MainCamera
+11:55:35 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+11:55:35 [INFO] ------------------------------------------------------------
+11:55:35 [INFO]   All Python checks PASSED ✓
+11:55:35 [INFO] ============================================================
+11:55:35 [INFO] [INIT] Loading hand tracker...
+11:55:35 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+11:55:35 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+11:55:35 [INFO] [INIT] ✓ Hand tracker ready
+11:55:35 [INFO] [INIT] Loading pose tracker...
+11:55:35 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+11:55:35 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+11:55:35 [INFO] [INIT] ✓ Pose tracker ready
+11:55:35 [INFO] [INIT] All modules ready.
+11:55:35 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+11:55:35 [INFO] ============================================================
+11:55:35 [INFO] READY - waiting for mobile connection...
+11:55:35 [INFO] ============================================================
+11:55:36 [INFO] [NETWORK] Connected: ('192.168.1.6', 47620)
+11:55:36 [INFO] [SYSTEM] Connected — running
+11:55:36 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+11:55:39 [ERROR] [SERVER] Error: unsupported format string passed to NoneType.__format__
+11:55:39 [INFO] [SERVER] Reconnecting in 1s...
+11:55:40 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+11:55:40 [INFO] ============================================================
+11:55:40 [INFO] READY - waiting for mobile connection...
+11:55:40 [INFO] ============================================================
+11:56:41 [INFO] [NETWORK] Connected: ('192.168.1.6', 56702)
+11:56:41 [INFO] [SYSTEM] Connected — running
+11:56:41 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+11:56:44 [ERROR] [SERVER] Error: unsupported format string passed to NoneType.__format__
+11:56:44 [INFO] [SERVER] Reconnecting in 1s...
+11:56:45 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+11:56:45 [INFO] ============================================================
+11:56:45 [INFO] READY - waiting for mobile connection...
+11:56:45 [INFO] ============================================================

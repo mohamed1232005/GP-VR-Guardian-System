@@ -1,0 +1,42 @@
+23:30:24 [INFO] ============================================================
+23:30:24 [INFO]   ARCore Server Compatibility Check
+23:30:24 [INFO] ============================================================
+23:30:24 [INFO]   ✓  mediapipe              0.10.32
+23:30:24 [INFO]   ✓  opencv                 4.11.0
+23:30:24 [INFO]   ✓  numpy                  2.4.2
+23:30:24 [INFO]   ✓  network_port           port 9999 available
+23:30:24 [INFO] ------------------------------------------------------------
+23:30:24 [INFO]   Unity ARCore requirements (verify in Editor):
+23:30:24 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+23:30:24 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+23:30:24 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+23:30:24 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+23:30:24 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+23:30:24 [INFO]     AR Camera tag: MainCamera
+23:30:24 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+23:30:24 [INFO] ------------------------------------------------------------
+23:30:24 [INFO]   All Python checks PASSED ✓
+23:30:24 [INFO] ============================================================
+23:30:24 [INFO] [INIT] Loading hand tracker...
+23:30:24 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+23:30:25 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+23:30:25 [INFO] [INIT] ✓ Hand tracker ready
+23:30:25 [INFO] [INIT] Loading pose tracker...
+23:30:25 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+23:30:25 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+23:30:25 [INFO] [INIT] ✓ Pose tracker ready
+23:30:25 [INFO] [INIT] All modules ready.
+23:30:25 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+23:30:25 [INFO] ============================================================
+23:30:25 [INFO] READY - waiting for mobile connection...
+23:30:25 [INFO] ============================================================
+23:31:53 [INFO] [NETWORK] Connected: ('192.168.1.6', 34596)
+23:31:53 [INFO] [SYSTEM] Connected — running
+23:31:53 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+23:32:44 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+23:32:44 [WARNING] [NET] Connection lost.
+23:32:44 [INFO] [SERVER] Reconnecting in 1s...
+23:32:45 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+23:32:45 [INFO] ============================================================
+23:32:45 [INFO] READY - waiting for mobile connection...
+23:32:45 [INFO] ============================================================

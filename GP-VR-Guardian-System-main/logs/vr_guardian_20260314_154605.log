@@ -1,0 +1,66 @@
+15:46:06 [INFO] ============================================================
+15:46:06 [INFO]   ARCore Server Compatibility Check
+15:46:06 [INFO] ============================================================
+15:46:06 [INFO]   ✓  mediapipe              0.10.32
+15:46:06 [INFO]   ✓  opencv                 4.11.0
+15:46:06 [INFO]   ✓  numpy                  2.4.2
+15:46:06 [INFO]   ✓  network_port           port 9999 likely available
+15:46:06 [INFO] ------------------------------------------------------------
+15:46:06 [INFO]   Unity ARCore requirements (verify in Editor):
+15:46:06 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+15:46:06 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+15:46:06 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+15:46:06 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+15:46:06 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+15:46:06 [INFO]     AR Camera tag: MainCamera
+15:46:06 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+15:46:06 [INFO] ------------------------------------------------------------
+15:46:06 [INFO]   All Python checks PASSED ✓
+15:46:06 [INFO] ============================================================
+15:46:06 [INFO] [INIT] Loading hand tracker...
+15:46:06 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+15:46:06 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+15:46:06 [INFO] [INIT] ✓ Hand tracker ready
+15:46:06 [INFO] [INIT] All modules ready.
+15:46:06 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+15:46:06 [INFO] ============================================================
+15:46:06 [INFO] READY - waiting for mobile connection...
+15:46:06 [INFO] ============================================================
+15:46:06 [INFO] [NETWORK] Connected: ('192.168.1.4', 45644)
+15:46:06 [INFO] [SYSTEM] Connected — running
+15:46:07 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+15:46:10 [INFO] [STATS] #  32 | FPS: 10.5 |  10.0ms | Hands:0 
+15:46:13 [INFO] [STATS] #  62 | FPS:  9.9 |  12.3ms | Hands:0 
+15:46:16 [INFO] [STATS] #  92 | FPS:  9.9 |   9.9ms | Hands:0 
+15:46:19 [INFO] [STATS] # 122 | FPS: 10.0 |  10.3ms | Hands:0 
+15:46:22 [INFO] [STATS] # 153 | FPS: 10.0 |  10.7ms | Hands:0 
+15:46:25 [INFO] [STATS] # 182 | FPS:  9.4 |  14.3ms | Hands:0 
+15:46:28 [INFO] [DEBUG] Saved proof frame: frame_00210.jpg tip=(0.420,0.461,0.0012)
+15:46:28 [INFO] [STATS] # 210 | FPS:  9.2 |  15.8ms | Hands:1 POINTING
+15:46:29 [INFO] [GESTURE] idx_ext=True(2.08) mid_curl=True(1.18) ring_curl=True(1.05) pink_curl=True(1.20)
+15:46:31 [INFO] [DEBUG] Saved proof frame: frame_00240.jpg tip=(0.382,0.523,0.0137)
+15:46:31 [INFO] [STATS] # 240 | FPS:  9.9 |  19.1ms | Hands:1 POINTING
+15:46:33 [INFO] [GESTURE] idx_ext=True(1.96) mid_curl=True(1.21) ring_curl=True(1.17) pink_curl=True(1.52)
+15:46:34 [INFO] [DEBUG] Saved proof frame: frame_00270.jpg tip=(0.331,0.698,0.0522)
+15:46:34 [INFO] [STATS] # 272 | FPS: 10.6 |  20.2ms | Hands:1 POINTING
+15:46:37 [INFO] [STATS] # 303 | FPS: 10.0 |  12.8ms | Hands:0 
+15:46:40 [INFO] [DEBUG] Saved proof frame: frame_00330.jpg tip=(0.356,0.541,-0.0717)
+15:46:40 [INFO] [STATS] # 334 | FPS: 10.4 |  13.6ms | Hands:1 POINTING
+15:46:41 [INFO] [GESTURE] idx_ext=True(2.22) mid_curl=True(1.68) ring_curl=True(1.94) pink_curl=True(1.84)
+15:46:43 [INFO] [STATS] # 366 | FPS: 10.4 |  16.3ms | Hands:1 POINTING
+15:46:46 [INFO] [STATS] # 395 | FPS:  9.5 |  13.7ms | Hands:0 
+15:46:49 [INFO] [GESTURE] idx_ext=True(2.12) mid_curl=False(2.25) ring_curl=False(2.08) pink_curl=True(1.97)
+15:46:49 [INFO] [DEBUG] Saved proof frame: frame_00420.jpg tip=(0.324,0.495,-0.0069)
+15:46:49 [INFO] [STATS] # 425 | FPS:  9.5 |  17.8ms | Hands:1 
+15:46:52 [INFO] [DEBUG] Saved proof frame: frame_00450.jpg tip=(0.498,0.671,0.0416)
+15:46:52 [INFO] [GESTURE] idx_ext=True(1.96) mid_curl=True(1.23) ring_curl=True(1.29) pink_curl=True(1.53)
+15:46:52 [INFO] [STATS] # 452 | FPS:  9.2 |  19.0ms | Hands:1 POINTING
+15:46:55 [INFO] [STATS] # 477 | FPS:  8.3 |  15.2ms | Hands:0 
+15:46:59 [INFO] [STATS] # 500 | FPS:  7.8 |  10.9ms | Hands:0 
+15:47:07 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+15:47:07 [WARNING] [NET] Connection lost.
+15:47:07 [INFO] [SERVER] Reconnecting in 1s...
+15:47:08 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+15:47:08 [INFO] ============================================================
+15:47:08 [INFO] READY - waiting for mobile connection...
+15:47:08 [INFO] ============================================================

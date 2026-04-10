@@ -1,0 +1,43 @@
+14:57:10 [INFO] ============================================================
+14:57:10 [INFO]   ARCore Server Compatibility Check
+14:57:10 [INFO] ============================================================
+14:57:10 [INFO]   ✓  mediapipe              0.10.32
+14:57:10 [INFO]   ✓  opencv                 4.11.0
+14:57:10 [INFO]   ✓  numpy                  1.26.4
+14:57:10 [INFO]   ✓  network_port           port 9999 likely available
+14:57:10 [INFO] ------------------------------------------------------------
+14:57:10 [INFO]   Unity ARCore requirements (verify in Editor):
+14:57:10 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+14:57:10 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+14:57:10 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+14:57:10 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+14:57:10 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+14:57:10 [INFO]     AR Camera tag: MainCamera
+14:57:10 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+14:57:10 [INFO] ------------------------------------------------------------
+14:57:10 [INFO]   All Python checks PASSED ✓
+14:57:10 [INFO] ============================================================
+14:57:10 [INFO] [INIT] Loading AI modules...
+14:57:10 [INFO] [HANDS] Loading MediaPipe Hands...
+14:57:10 [ERROR] [HANDS] Init failed: module 'mediapipe' has no attribute 'solutions'
+14:57:10 [INFO] [POSE] Loading MediaPipe...
+14:57:10 [ERROR] [POSE] MediaPipe import failed: MediaPipe pose module not found
+14:57:10 [WARNING] [POSE] ✗ Pose tracking DISABLED
+14:57:10 [INFO] [DEPTH] Loading MiDaS model...
+14:57:11 [ERROR] [DEPTH] Failed to initialize: No module named 'timm'
+14:57:11 [INFO] [FLOOR] ✓ Floor detector ready!
+14:57:11 [INFO] [INIT] Depth + Floor loaded OK
+14:57:11 [WARNING] [DEPTH] DepthEstimator missing device → disabling depth
+14:57:11 [INFO] [INIT] All modules ready.
+14:57:11 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+14:57:11 [INFO] ============================================================
+14:57:11 [INFO] READY - waiting for mobile connection...
+14:57:11 [INFO] ============================================================
+14:57:12 [INFO] [NETWORK] Connected: ('192.168.1.4', 43252)
+14:57:12 [INFO] [SYSTEM] Connected — running
+14:57:14 [INFO] [STATS] #  27 | FPS:  7.0 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:57:17 [INFO] [STATS] #  57 | FPS: 10.1 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:57:20 [INFO] [STATS] #  88 | FPS: 10.1 |   0.0ms | Hands:0  | Pose:N | Area:0pt
+14:57:23 [INFO] [STATS] # 118 | FPS: 10.0 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:57:26 [INFO] [STATS] # 148 | FPS: 10.0 |   0.1ms | Hands:0  | Pose:N | Area:0pt
+14:57:29 [INFO] [SERVER] Stopped.

@@ -1,0 +1,29 @@
+01:34:13 [INFO] ============================================================
+01:34:13 [INFO]   ARCore Server Compatibility Check
+01:34:13 [INFO] ============================================================
+01:34:13 [INFO]   ✓  mediapipe              0.10.32
+01:34:13 [INFO]   ✓  opencv                 4.11.0
+01:34:13 [INFO]   ✓  numpy                  2.4.2
+01:34:13 [ERROR]   ✗  network_port           [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+01:34:13 [INFO] ------------------------------------------------------------
+01:34:13 [INFO]   Unity ARCore requirements (verify in Editor):
+01:34:13 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+01:34:13 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+01:34:13 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+01:34:13 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+01:34:13 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+01:34:13 [INFO]     AR Camera tag: MainCamera
+01:34:13 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+01:34:13 [INFO] ------------------------------------------------------------
+01:34:13 [WARNING]   Some Python checks FAILED — see errors above
+01:34:13 [INFO] ============================================================
+01:34:13 [INFO] [INIT] Loading hand tracker...
+01:34:13 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+01:34:13 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+01:34:13 [INFO] [INIT] ✓ Hand tracker ready
+01:34:13 [INFO] [INIT] All modules ready.
+01:34:13 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+01:34:13 [INFO] ============================================================
+01:34:13 [INFO] READY - waiting for mobile connection...
+01:34:13 [INFO] ============================================================
+03:24:16 [INFO] [SERVER] Stopped.

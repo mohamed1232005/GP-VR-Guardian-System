@@ -1,0 +1,32 @@
+16:47:03 [INFO] ============================================================
+16:47:03 [INFO]   ARCore Server Compatibility Check
+16:47:03 [INFO] ============================================================
+16:47:03 [INFO]   ✓  mediapipe              0.10.32
+16:47:03 [INFO]   ✓  opencv                 4.11.0
+16:47:03 [INFO]   ✓  numpy                  2.4.2
+16:47:03 [ERROR]   ✗  network_port           [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+16:47:03 [INFO] ------------------------------------------------------------
+16:47:03 [INFO]   Unity ARCore requirements (verify in Editor):
+16:47:03 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+16:47:03 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+16:47:03 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+16:47:03 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+16:47:03 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+16:47:03 [INFO]     AR Camera tag: MainCamera
+16:47:03 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+16:47:03 [INFO] ------------------------------------------------------------
+16:47:03 [WARNING]   Some Python checks FAILED — see errors above
+16:47:03 [INFO] ============================================================
+16:47:03 [INFO] [INIT] Loading hand tracker...
+16:47:03 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+16:47:04 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+16:47:04 [INFO] [INIT] ✓ Hand tracker ready
+16:47:04 [INFO] [INIT] Loading pose tracker...
+16:47:04 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+16:47:04 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+16:47:04 [INFO] [INIT] ✓ Pose tracker ready
+16:47:04 [INFO] [INIT] All modules ready.
+16:47:04 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+16:47:04 [INFO] ============================================================
+16:47:04 [INFO] READY - waiting for mobile connection...
+16:47:04 [INFO] ============================================================

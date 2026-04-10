@@ -1,0 +1,139 @@
+11:37:20 [INFO] ============================================================
+11:37:20 [INFO]   ARCore Server Compatibility Check
+11:37:20 [INFO] ============================================================
+11:37:20 [INFO]   ✓  mediapipe              0.10.32
+11:37:20 [INFO]   ✓  opencv                 4.11.0
+11:37:20 [INFO]   ✓  numpy                  2.4.2
+11:37:20 [INFO]   ✓  network_port           port 9999 likely available
+11:37:20 [INFO] ------------------------------------------------------------
+11:37:20 [INFO]   Unity ARCore requirements (verify in Editor):
+11:37:20 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+11:37:20 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+11:37:20 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+11:37:20 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+11:37:20 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+11:37:20 [INFO]     AR Camera tag: MainCamera
+11:37:20 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+11:37:20 [INFO] ------------------------------------------------------------
+11:37:20 [INFO]   All Python checks PASSED ✓
+11:37:20 [INFO] ============================================================
+11:37:20 [INFO] [INIT] Loading hand tracker...
+11:37:20 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+11:37:21 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+11:37:21 [INFO] [INIT] ✓ Hand tracker ready
+11:37:21 [INFO] [INIT] All modules ready.
+11:37:21 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+11:37:21 [INFO] ============================================================
+11:37:21 [INFO] READY - waiting for mobile connection...
+11:37:21 [INFO] ============================================================
+11:48:07 [INFO] [NETWORK] Connected: ('192.168.1.4', 35068)
+11:48:07 [INFO] [SYSTEM] Connected — running
+11:48:08 [INFO] [STATS] #   1 | FPS:  0.0 | 158.6ms | Hands:0 
+11:48:11 [INFO] [STATS] #  33 | FPS: 10.3 |  27.7ms | Hands:0 
+11:48:14 [INFO] [STATS] #  63 | FPS:  9.8 |  31.7ms | Hands:0 
+11:48:17 [INFO] [STATS] #  93 | FPS: 10.0 |  30.4ms | Hands:0 
+11:48:20 [INFO] [STATS] # 121 | FPS:  9.3 |  27.3ms | Hands:0 
+11:48:23 [INFO] [STATS] # 152 | FPS: 10.0 |  34.1ms | Hands:0 
+11:48:26 [INFO] [STATS] # 182 | FPS: 10.1 |  36.3ms | Hands:0 
+11:48:29 [INFO] [STATS] # 208 | FPS:  8.6 |  35.1ms | Hands:0 
+11:48:32 [INFO] [STATS] # 237 | FPS:  8.7 |  43.0ms | Hands:0 
+11:48:35 [INFO] [STATS] # 265 | FPS:  8.8 |  67.9ms | Hands:0 
+11:48:38 [INFO] [STATS] # 288 | FPS:  8.3 |  38.8ms | Hands:0 
+11:48:41 [INFO] [STATS] # 315 | FPS:  8.5 |  33.0ms | Hands:0 
+11:48:44 [INFO] [DEBUG] Saved proof frame: frame_00330.jpg tip=(0.473,0.537,-0.0276)
+11:48:45 [INFO] [STATS] # 337 | FPS:  7.4 |  52.6ms | Hands:0 
+11:48:46 [INFO] [GESTURE] idx_ext=True(2.27) mid_curl=True(0.50) ring_curl=True(0.30) pink_curl=True(0.42)
+11:48:47 [INFO] [DEBUG] Saved proof frame: frame_00360.jpg tip=(0.276,0.549,-0.1431)
+11:48:48 [INFO] [STATS] # 365 | FPS:  9.0 |  66.1ms | Hands:1 POINTING
+11:48:51 [INFO] [STATS] # 394 | FPS:  9.5 |  43.6ms | Hands:0 
+11:48:53 [INFO] [DEBUG] Saved proof frame: frame_00420.jpg tip=(0.309,0.536,-0.1217)
+11:48:54 [INFO] [STATS] # 422 | FPS:  9.3 |  38.3ms | Hands:1 
+11:48:56 [INFO] [GESTURE] idx_ext=True(2.24) mid_curl=True(1.47) ring_curl=True(1.22) pink_curl=True(1.42)
+11:48:57 [INFO] [STATS] # 449 | FPS:  8.8 |  40.1ms | Hands:0 
+11:49:00 [INFO] [STATS] # 476 | FPS:  8.6 |  36.9ms | Hands:0 
+11:49:03 [INFO] [STATS] # 504 | FPS:  9.6 |  44.2ms | Hands:1 
+11:49:03 [INFO] [DEBUG] Saved proof frame: frame_00510.jpg tip=(0.336,0.544,-0.1069)
+11:49:06 [INFO] [STATS] # 536 | FPS: 10.7 |  46.0ms | Hands:1 POINTING
+11:49:06 [INFO] [GESTURE] idx_ext=True(2.15) mid_curl=True(0.40) ring_curl=True(0.39) pink_curl=True(0.55)
+11:49:09 [INFO] [STATS] # 567 | FPS: 10.0 |  39.9ms | Hands:1 
+11:49:09 [INFO] [DEBUG] Saved proof frame: frame_00570.jpg tip=(0.322,0.551,-0.1073)
+11:49:11 [INFO] [GESTURE] idx_ext=True(1.93) mid_curl=True(0.37) ring_curl=True(0.29) pink_curl=True(0.56)
+11:49:12 [INFO] [STATS] # 598 | FPS: 10.1 |  44.0ms | Hands:1 
+11:49:15 [INFO] [STATS] # 629 | FPS: 10.3 |  42.7ms | Hands:1 POINTING
+11:49:16 [INFO] [DEBUG] Saved proof frame: frame_00630.jpg tip=(0.317,0.541,-0.1729)
+11:49:16 [INFO] [GESTURE] idx_ext=True(2.02) mid_curl=True(0.59) ring_curl=True(0.54) pink_curl=True(0.74)
+11:49:18 [INFO] [STATS] # 656 | FPS:  8.9 |  38.3ms | Hands:1 
+11:49:19 [INFO] [DEBUG] Saved proof frame: frame_00660.jpg tip=(0.360,0.550,-0.1790)
+11:49:21 [INFO] [STATS] # 687 | FPS: 10.3 |  39.0ms | Hands:1 
+11:49:24 [INFO] [STATS] # 717 | FPS: 10.0 |  33.5ms | Hands:0 
+11:49:26 [INFO] [GESTURE] idx_ext=True(2.10) mid_curl=True(0.72) ring_curl=True(0.87) pink_curl=True(0.90)
+11:49:27 [INFO] [STATS] # 749 | FPS: 10.7 |  34.5ms | Hands:0 
+11:49:31 [INFO] [STATS] # 781 | FPS: 10.4 |  33.6ms | Hands:0 
+11:49:34 [INFO] [STATS] # 812 | FPS: 10.3 |  32.6ms | Hands:0 
+11:49:37 [INFO] [STATS] # 841 | FPS:  9.9 |  25.7ms | Hands:0 
+11:49:40 [INFO] [STATS] # 871 | FPS:  9.3 |  25.8ms | Hands:0 
+11:49:43 [INFO] [GESTURE] idx_ext=True(2.16) mid_curl=True(0.75) ring_curl=True(0.78) pink_curl=True(0.68)
+11:49:43 [INFO] [DEBUG] Saved proof frame: frame_00900.jpg tip=(0.402,0.477,-0.1816)
+11:49:43 [INFO] [STATS] # 900 | FPS:  9.6 |  39.4ms | Hands:1 POINTING
+11:49:46 [INFO] [STATS] # 930 | FPS:  9.6 |  37.6ms | Hands:0 
+11:49:49 [INFO] [STATS] # 960 | FPS:  9.8 |  42.4ms | Hands:0 
+11:49:52 [INFO] [DEBUG] Saved proof frame: frame_00990.jpg tip=(0.370,0.492,-0.1264)
+11:49:52 [INFO] [STATS] # 991 | FPS: 10.0 |  36.9ms | Hands:0 
+11:49:55 [INFO] [STATS] #1021 | FPS: 10.0 |  32.7ms | Hands:0 
+11:49:58 [INFO] [STATS] #1052 | FPS: 10.1 |  39.8ms | Hands:0 
+11:50:01 [INFO] [STATS] #1082 | FPS: 10.2 |  53.5ms | Hands:0 
+11:50:04 [INFO] [STATS] #1112 | FPS: 10.0 |  43.9ms | Hands:0 
+11:50:06 [INFO] [GESTURE] idx_ext=True(2.21) mid_curl=True(1.52) ring_curl=True(1.52) pink_curl=False(1.76)
+11:50:07 [INFO] [STATS] #1143 | FPS: 10.3 |  39.3ms | Hands:0 
+11:50:10 [INFO] [STATS] #1173 | FPS:  9.8 |  33.7ms | Hands:0 
+11:50:13 [INFO] [STATS] #1203 | FPS: 10.2 |  38.0ms | Hands:0 
+11:50:16 [INFO] [STATS] #1234 | FPS: 10.2 |  39.9ms | Hands:0 
+11:50:19 [INFO] [DEBUG] Saved proof frame: frame_01260.jpg tip=(0.356,0.458,-0.0694)
+11:50:19 [INFO] [STATS] #1265 | FPS: 10.0 |  31.3ms | Hands:1 POINTING
+11:50:22 [INFO] [STATS] #1297 | FPS: 10.5 |  33.2ms | Hands:0 
+11:50:26 [INFO] [STATS] #1327 | FPS:  9.8 |  29.9ms | Hands:0 
+11:50:29 [INFO] [STATS] #1358 | FPS: 10.2 |  33.6ms | Hands:0 
+11:50:32 [INFO] [STATS] #1388 | FPS:  9.7 |  34.2ms | Hands:0 
+11:50:35 [INFO] [STATS] #1419 | FPS: 10.2 |  30.5ms | Hands:0 
+11:50:38 [INFO] [STATS] #1449 | FPS: 10.0 |  29.4ms | Hands:0 
+11:50:41 [INFO] [STATS] #1481 | FPS: 10.2 |  38.5ms | Hands:0 
+11:50:44 [INFO] [STATS] #1511 | FPS: 10.0 |  31.6ms | Hands:0 
+11:50:46 [INFO] [GESTURE] idx_ext=True(2.12) mid_curl=True(1.44) ring_curl=True(1.20) pink_curl=True(1.17)
+11:50:47 [INFO] [STATS] #1542 | FPS: 10.1 |  31.5ms | Hands:0 
+11:50:50 [INFO] [STATS] #1573 | FPS: 10.2 |  36.6ms | Hands:1 
+11:50:53 [INFO] [STATS] #1605 | FPS: 10.4 |  41.2ms | Hands:0 
+11:50:56 [INFO] [STATS] #1638 | FPS: 10.8 |  32.9ms | Hands:0 
+11:50:59 [INFO] [STATS] #1669 | FPS: 10.0 |  29.2ms | Hands:0 
+11:51:02 [INFO] [STATS] #1697 | FPS:  9.0 |  27.8ms | Hands:0 
+11:51:05 [INFO] [STATS] #1726 | FPS:  9.1 |  34.1ms | Hands:0 
+11:51:08 [INFO] [STATS] #1752 | FPS:  9.5 |  37.6ms | Hands:0 
+11:51:11 [INFO] [STATS] #1782 | FPS:  9.3 |  28.7ms | Hands:0 
+11:51:15 [INFO] [STATS] #1810 | FPS:  9.3 |  38.3ms | Hands:0 
+11:51:16 [INFO] [GESTURE] idx_ext=True(2.25) mid_curl=True(0.85) ring_curl=True(0.86) pink_curl=True(0.95)
+11:51:17 [INFO] [DEBUG] Saved proof frame: frame_01830.jpg tip=(0.459,0.505,-0.0754)
+11:51:18 [INFO] [STATS] #1840 | FPS: 10.0 |  43.0ms | Hands:1 POINTING
+11:51:19 [INFO] [GESTURE] idx_ext=True(2.06) mid_curl=True(0.95) ring_curl=True(0.98) pink_curl=True(1.22)
+11:51:21 [INFO] [STATS] #1867 | FPS:  9.1 |  38.4ms | Hands:0 
+11:51:24 [INFO] [STATS] #1897 | FPS:  9.5 |  32.0ms | Hands:0 
+11:51:27 [INFO] [STATS] #1927 | FPS: 10.0 |  32.3ms | Hands:0 
+11:51:30 [INFO] [STATS] #1958 | FPS: 10.2 |  31.1ms | Hands:0 
+11:51:33 [INFO] [STATS] #1989 | FPS: 10.0 |  28.0ms | Hands:0 
+11:51:36 [INFO] [STATS] #2019 | FPS:  9.9 |  31.4ms | Hands:0 
+11:51:39 [INFO] [STATS] #2049 | FPS:  9.9 |  29.0ms | Hands:0 
+11:51:42 [INFO] [STATS] #2078 | FPS:  9.9 |  26.2ms | Hands:0 
+11:51:45 [INFO] [STATS] #2109 | FPS: 10.1 |  25.6ms | Hands:0 
+11:51:48 [INFO] [STATS] #2139 | FPS: 10.1 |  29.0ms | Hands:0 
+11:51:51 [INFO] [STATS] #2170 | FPS: 10.1 |  29.6ms | Hands:0 
+11:51:54 [INFO] [STATS] #2200 | FPS: 10.0 |  31.9ms | Hands:0 
+11:51:57 [INFO] [STATS] #2229 | FPS:  9.7 |  33.9ms | Hands:0 
+11:52:00 [INFO] [STATS] #2258 | FPS:  9.4 |  28.2ms | Hands:0 
+11:52:03 [INFO] [STATS] #2288 | FPS: 10.0 |  29.7ms | Hands:0 
+11:52:06 [INFO] [STATS] #2319 | FPS: 10.0 |  33.6ms | Hands:0 
+11:52:09 [INFO] [STATS] #2350 | FPS: 10.0 |  30.3ms | Hands:0 
+11:52:16 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+11:52:16 [WARNING] [NET] Connection lost.
+11:52:16 [INFO] [SERVER] Reconnecting in 1s...
+11:52:17 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+11:52:17 [INFO] ============================================================
+11:52:17 [INFO] READY - waiting for mobile connection...
+11:52:17 [INFO] ============================================================

@@ -1,0 +1,55 @@
+22:08:07 [INFO] ============================================================
+22:08:07 [INFO]   ARCore Server Compatibility Check
+22:08:07 [INFO] ============================================================
+22:08:07 [INFO]   ✓  mediapipe              0.10.32
+22:08:07 [INFO]   ✓  opencv                 4.11.0
+22:08:07 [INFO]   ✓  numpy                  2.4.2
+22:08:07 [INFO]   ✓  network_port           port 9999 likely available
+22:08:07 [INFO] ------------------------------------------------------------
+22:08:07 [INFO]   Unity ARCore requirements (verify in Editor):
+22:08:07 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+22:08:07 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+22:08:07 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+22:08:07 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+22:08:07 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+22:08:07 [INFO]     AR Camera tag: MainCamera
+22:08:07 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+22:08:07 [INFO] ------------------------------------------------------------
+22:08:07 [INFO]   All Python checks PASSED ✓
+22:08:07 [INFO] ============================================================
+22:08:07 [INFO] [INIT] Loading AI modules...
+22:08:07 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+22:08:07 [INFO] [HANDS] Downloading model → C:\Users\Hamza\Downloads\Guardian system version 2\GP-VR-Guardian-System-main\modules\cv\hand_landmarker.task ...
+22:08:12 [INFO] [HANDS] ✓ Model downloaded (7.8 MB)
+22:08:12 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+22:08:12 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+22:08:12 [INFO] [POSE] Downloading model → C:\Users\Hamza\Downloads\Guardian system version 2\GP-VR-Guardian-System-main\modules\cv\pose_landmarker_lite.task ...
+22:08:16 [INFO] [POSE] ✓ Model downloaded (5.8 MB)
+22:08:16 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+22:08:16 [INFO] [DEPTH] Loading MiDaS model...
+22:08:21 [INFO] [DEPTH] Device: cpu
+22:08:21 [INFO] [DEPTH] ✓ MiDaS ready!
+22:08:21 [INFO] [FLOOR] ✓ Floor detector ready!
+22:08:21 [INFO] [INIT] Depth + Floor loaded OK
+22:08:21 [INFO] [GPU] CPU
+22:08:21 [INFO] [INIT] All modules ready.
+22:08:21 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+22:08:21 [INFO] ============================================================
+22:08:21 [INFO] READY - waiting for mobile connection...
+22:08:21 [INFO] ============================================================
+22:10:48 [INFO] [NETWORK] Connected: ('192.168.1.4', 56694)
+22:10:48 [INFO] [SYSTEM] Connected — running
+22:10:48 [INFO] [STATS] #   1 | FPS:  0.0 |  42.6ms | Hands:0  | Pose:N | Area:0pt
+22:10:51 [INFO] [STATS] #  33 | FPS: 10.1 |  39.4ms | Hands:1  | Pose:N | Area:0pt | Floor:100%
+22:10:54 [INFO] [STATS] #  60 | FPS:  9.3 |  45.7ms | Hands:1  | Pose:N | Area:0pt | Floor:100%
+22:10:57 [INFO] [STATS] #  82 | FPS:  7.5 |  44.3ms | Hands:1  | Pose:N | Area:0pt | Floor:100%
+22:11:00 [INFO] [STATS] # 113 | FPS: 10.2 |  42.5ms | Hands:1  | Pose:N | Area:0pt | Floor:100%
+22:11:04 [INFO] [STATS] # 144 | FPS: 10.1 |  42.0ms | Hands:1  | Pose:N | Area:0pt | Floor:100%
+22:11:07 [INFO] [STATS] # 174 | FPS:  9.8 |  38.9ms | Hands:1  | Pose:N | Area:0pt | Floor:100%
+22:11:10 [INFO] [STATS] # 204 | FPS:  9.9 |  46.1ms | Hands:0  | Pose:Y | Area:0pt | Floor:100%
+22:11:13 [INFO] [STATS] # 234 | FPS:  9.9 |  44.2ms | Hands:1  | Pose:N | Area:0pt | Floor:100%
+22:11:16 [INFO] [STATS] # 265 | FPS: 10.2 |  46.1ms | Hands:1  | Pose:N | Area:0pt | Floor:100%
+22:11:19 [INFO] [STATS] # 290 | FPS:  8.5 |  39.8ms | Hands:1  | Pose:N | Area:0pt | Floor:100%
+22:11:22 [INFO] [STATS] # 319 | FPS:  9.4 |  38.0ms | Hands:0  | Pose:N | Area:0pt | Floor:100%
+22:11:25 [INFO] [STATS] # 349 | FPS:  9.6 |  35.2ms | Hands:0  | Pose:N | Area:0pt | Floor:100%
+22:11:27 [INFO] [SERVER] Stopped.

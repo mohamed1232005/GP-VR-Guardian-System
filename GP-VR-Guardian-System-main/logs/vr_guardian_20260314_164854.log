@@ -1,0 +1,121 @@
+16:48:55 [INFO] ============================================================
+16:48:55 [INFO]   ARCore Server Compatibility Check
+16:48:55 [INFO] ============================================================
+16:48:55 [INFO]   ✓  mediapipe              0.10.32
+16:48:55 [INFO]   ✓  opencv                 4.11.0
+16:48:55 [INFO]   ✓  numpy                  2.4.2
+16:48:55 [INFO]   ✓  network_port           port 9999 likely available
+16:48:55 [INFO] ------------------------------------------------------------
+16:48:55 [INFO]   Unity ARCore requirements (verify in Editor):
+16:48:55 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+16:48:55 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+16:48:55 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+16:48:55 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+16:48:55 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+16:48:55 [INFO]     AR Camera tag: MainCamera
+16:48:55 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+16:48:55 [INFO] ------------------------------------------------------------
+16:48:55 [INFO]   All Python checks PASSED ✓
+16:48:55 [INFO] ============================================================
+16:48:55 [INFO] [INIT] Loading hand tracker...
+16:48:55 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+16:48:55 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+16:48:55 [INFO] [INIT] ✓ Hand tracker ready
+16:48:55 [INFO] [INIT] All modules ready.
+16:48:55 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+16:48:55 [INFO] ============================================================
+16:48:55 [INFO] READY - waiting for mobile connection...
+16:48:55 [INFO] ============================================================
+16:48:57 [INFO] [NETWORK] Connected: ('192.168.1.4', 53848)
+16:48:57 [INFO] [SYSTEM] Connected — running
+16:48:57 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+16:49:00 [INFO] [STATS] #  31 | FPS: 10.2 |  10.0ms | Hands:0 
+16:49:03 [INFO] [STATS] #  61 | FPS: 10.0 |  11.1ms | Hands:0 
+16:49:06 [INFO] [STATS] #  91 | FPS:  9.9 |  13.7ms | Hands:0 
+16:49:09 [INFO] [STATS] # 121 | FPS: 10.0 |  12.8ms | Hands:0 
+16:49:12 [INFO] [STATS] # 151 | FPS: 10.0 |  11.7ms | Hands:0 
+16:49:15 [INFO] [STATS] # 182 | FPS: 10.1 |  11.2ms | Hands:0 
+16:49:18 [INFO] [STATS] # 212 | FPS: 10.0 |  10.3ms | Hands:0 
+16:49:21 [INFO] [STATS] # 243 | FPS: 10.3 |  10.1ms | Hands:0 
+16:49:24 [INFO] [STATS] # 273 | FPS:  9.8 |   9.7ms | Hands:0 
+16:49:27 [INFO] [STATS] # 303 | FPS:  9.8 |   9.7ms | Hands:0 
+16:49:30 [INFO] [STATS] # 334 | FPS: 10.1 |   9.9ms | Hands:0 
+16:49:33 [INFO] [STATS] # 364 | FPS: 10.0 |   9.7ms | Hands:0 
+16:49:36 [INFO] [STATS] # 395 | FPS: 10.1 |  10.0ms | Hands:0 
+16:49:39 [INFO] [STATS] # 426 | FPS: 10.0 |   9.6ms | Hands:0 
+16:49:40 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+16:49:40 [WARNING] [NET] Connection lost.
+16:49:40 [INFO] [SERVER] Reconnecting in 1s...
+16:49:41 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+16:49:41 [INFO] ============================================================
+16:49:41 [INFO] READY - waiting for mobile connection...
+16:49:41 [INFO] ============================================================
+16:49:47 [INFO] [NETWORK] Connected: ('192.168.1.4', 60274)
+16:49:47 [INFO] [SYSTEM] Connected — running
+16:49:47 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+16:49:50 [INFO] [STATS] #  30 | FPS:  2.9 |  10.2ms | Hands:0 
+16:49:53 [INFO] [STATS] #  61 | FPS: 10.2 |   9.8ms | Hands:0 
+16:49:56 [INFO] [STATS] #  88 | FPS:  9.0 |   9.8ms | Hands:0 
+16:49:59 [INFO] [STATS] # 118 | FPS:  9.9 |   9.9ms | Hands:0 
+16:50:02 [INFO] [STATS] # 149 | FPS: 10.0 |   9.8ms | Hands:0 
+16:50:05 [INFO] [STATS] # 180 | FPS: 10.0 |   9.9ms | Hands:0 
+16:50:08 [INFO] [STATS] # 210 | FPS: 10.0 |   9.9ms | Hands:0 
+16:50:11 [INFO] [STATS] # 241 | FPS: 10.0 |   9.6ms | Hands:0 
+16:50:14 [INFO] [STATS] # 271 | FPS: 10.0 |   9.6ms | Hands:0 
+16:50:17 [INFO] [STATS] # 301 | FPS: 10.0 |   9.8ms | Hands:0 
+16:50:20 [INFO] [STATS] # 331 | FPS: 10.0 |   9.9ms | Hands:0 
+16:50:23 [INFO] [STATS] # 362 | FPS: 10.2 |   9.8ms | Hands:0 
+16:50:26 [INFO] [STATS] # 392 | FPS: 10.0 |   9.7ms | Hands:0 
+16:50:29 [INFO] [STATS] # 423 | FPS: 10.0 |  10.2ms | Hands:0 
+16:50:33 [INFO] [STATS] # 454 | FPS: 10.2 |  10.7ms | Hands:0 
+16:50:36 [INFO] [STATS] # 484 | FPS:  9.9 |   9.5ms | Hands:0 
+16:50:39 [INFO] [STATS] # 514 | FPS: 10.0 |  11.9ms | Hands:0 
+16:50:42 [INFO] [STATS] # 544 | FPS: 10.0 |   9.6ms | Hands:0 
+16:50:45 [INFO] [STATS] # 575 | FPS: 10.0 |   9.6ms | Hands:0 
+16:50:48 [INFO] [STATS] # 606 | FPS: 10.0 |   9.6ms | Hands:0 
+16:50:51 [INFO] [STATS] # 637 | FPS: 10.1 |  10.3ms | Hands:0 
+16:50:54 [INFO] [STATS] # 668 | FPS: 10.1 |   9.5ms | Hands:0 
+16:50:57 [INFO] [STATS] # 698 | FPS: 10.0 |  11.1ms | Hands:0 
+16:51:00 [INFO] [STATS] # 728 | FPS: 10.0 |  10.7ms | Hands:0 
+16:51:03 [INFO] [STATS] # 758 | FPS: 10.0 |  10.2ms | Hands:0 
+16:51:06 [INFO] [STATS] # 788 | FPS: 10.0 |  11.6ms | Hands:0 
+16:51:09 [INFO] [STATS] # 818 | FPS: 10.0 |  10.9ms | Hands:0 
+16:51:12 [INFO] [STATS] # 848 | FPS: 10.0 |  11.0ms | Hands:0 
+16:51:15 [INFO] [STATS] # 878 | FPS: 10.0 |  12.7ms | Hands:0 
+16:51:18 [INFO] [STATS] # 908 | FPS: 10.0 |  12.0ms | Hands:0 
+16:51:21 [INFO] [STATS] # 938 | FPS: 10.0 |  11.2ms | Hands:0 
+16:51:24 [INFO] [STATS] # 968 | FPS: 10.0 |  10.7ms | Hands:0 
+16:51:27 [INFO] [STATS] # 998 | FPS: 10.0 |  11.2ms | Hands:0 
+16:51:30 [INFO] [STATS] #1028 | FPS: 10.0 |  11.4ms | Hands:0 
+16:51:33 [INFO] [STATS] #1058 | FPS: 10.0 |  10.5ms | Hands:0 
+16:51:36 [INFO] [STATS] #1088 | FPS: 10.0 |  11.8ms | Hands:0 
+16:51:39 [INFO] [STATS] #1118 | FPS: 10.0 |  11.2ms | Hands:0 
+16:51:42 [INFO] [STATS] #1148 | FPS: 10.0 |  10.3ms | Hands:0 
+16:51:45 [INFO] [STATS] #1178 | FPS: 10.0 |  10.1ms | Hands:0 
+16:51:48 [INFO] [STATS] #1208 | FPS: 10.0 |  10.8ms | Hands:0 
+16:51:51 [INFO] [STATS] #1238 | FPS: 10.0 |  10.0ms | Hands:0 
+16:51:54 [INFO] [STATS] #1268 | FPS: 10.0 |   9.9ms | Hands:0 
+16:51:57 [INFO] [STATS] #1299 | FPS: 10.0 |  10.2ms | Hands:0 
+16:52:00 [INFO] [STATS] #1329 | FPS: 10.0 |  11.3ms | Hands:0 
+16:52:03 [INFO] [STATS] #1360 | FPS: 10.0 |  10.4ms | Hands:0 
+16:52:06 [INFO] [STATS] #1390 | FPS: 10.0 |  10.2ms | Hands:0 
+16:52:09 [INFO] [STATS] #1421 | FPS: 10.0 |  10.4ms | Hands:0 
+16:52:12 [INFO] [STATS] #1451 | FPS: 10.0 |  10.9ms | Hands:0 
+16:52:15 [INFO] [STATS] #1481 | FPS: 10.0 |  11.1ms | Hands:0 
+16:52:18 [INFO] [STATS] #1512 | FPS: 10.0 |  11.5ms | Hands:0 
+16:52:21 [INFO] [STATS] #1542 | FPS: 10.0 |  10.4ms | Hands:0 
+16:52:24 [INFO] [STATS] #1573 | FPS: 10.0 |  10.1ms | Hands:0 
+16:52:27 [INFO] [STATS] #1603 | FPS: 10.0 |  10.3ms | Hands:0 
+16:52:30 [INFO] [STATS] #1633 | FPS: 10.0 |   9.9ms | Hands:0 
+16:52:34 [INFO] [STATS] #1664 | FPS: 10.0 |  10.0ms | Hands:0 
+16:52:37 [INFO] [STATS] #1694 | FPS: 10.0 |  10.4ms | Hands:0 
+16:52:40 [INFO] [STATS] #1725 | FPS: 10.0 |  10.3ms | Hands:0 
+16:52:43 [INFO] [STATS] #1755 | FPS: 10.0 |  10.7ms | Hands:0 
+16:52:46 [INFO] [STATS] #1785 | FPS: 10.0 |  11.0ms | Hands:0 
+16:52:53 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+16:52:53 [WARNING] [NET] Connection lost.
+16:52:53 [INFO] [SERVER] Reconnecting in 1s...
+16:52:54 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+16:52:54 [INFO] ============================================================
+16:52:54 [INFO] READY - waiting for mobile connection...
+16:52:54 [INFO] ============================================================

@@ -1,0 +1,37 @@
+17:37:54 [INFO] ============================================================
+17:37:54 [INFO]   ARCore Server Compatibility Check
+17:37:54 [INFO] ============================================================
+17:37:54 [INFO]   ✓  mediapipe              0.10.32
+17:37:54 [INFO]   ✓  opencv                 4.11.0
+17:37:54 [INFO]   ✓  numpy                  2.4.2
+17:37:54 [INFO]   ✓  network_port           port 9999 available
+17:37:54 [INFO] ------------------------------------------------------------
+17:37:54 [INFO]   Unity ARCore requirements (verify in Editor):
+17:37:54 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+17:37:54 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+17:37:54 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+17:37:54 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+17:37:54 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+17:37:54 [INFO]     AR Camera tag: MainCamera
+17:37:54 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+17:37:54 [INFO] ------------------------------------------------------------
+17:37:54 [INFO]   All Python checks PASSED ✓
+17:37:54 [INFO] ============================================================
+17:37:54 [INFO] [INIT] Loading hand tracker...
+17:37:54 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+17:37:54 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+17:37:54 [INFO] [INIT] ✓ Hand tracker ready
+17:37:54 [INFO] [INIT] All modules ready.
+17:37:54 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+17:37:54 [INFO] ============================================================
+17:37:54 [INFO] READY - waiting for mobile connection...
+17:37:54 [INFO] ============================================================
+17:39:05 [INFO] [NETWORK] Connected: ('192.168.1.6', 38414)
+17:39:05 [INFO] [SYSTEM] Connected — running
+17:39:06 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+17:39:42 [WARNING] [NET] Connection lost.
+17:39:42 [INFO] [SERVER] Reconnecting in 1s...
+17:39:43 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+17:39:43 [INFO] ============================================================
+17:39:43 [INFO] READY - waiting for mobile connection...
+17:39:43 [INFO] ============================================================

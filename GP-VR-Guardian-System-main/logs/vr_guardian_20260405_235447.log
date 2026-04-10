@@ -1,0 +1,81 @@
+23:54:48 [INFO] ============================================================
+23:54:48 [INFO]   ARCore Server Compatibility Check
+23:54:48 [INFO] ============================================================
+23:54:48 [INFO]   ✓  mediapipe              0.10.32
+23:54:48 [INFO]   ✓  opencv                 4.11.0
+23:54:48 [INFO]   ✓  numpy                  2.4.2
+23:54:48 [INFO]   ✓  network_port           port 9999 available
+23:54:48 [INFO] ------------------------------------------------------------
+23:54:48 [INFO]   Unity ARCore requirements (verify in Editor):
+23:54:48 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+23:54:48 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+23:54:48 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+23:54:48 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+23:54:48 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+23:54:48 [INFO]     AR Camera tag: MainCamera
+23:54:48 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+23:54:48 [INFO] ------------------------------------------------------------
+23:54:48 [INFO]   All Python checks PASSED ✓
+23:54:48 [INFO] ============================================================
+23:54:48 [INFO] [INIT] Loading hand tracker...
+23:54:48 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+23:54:48 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+23:54:48 [INFO] [INIT] ✓ Hand tracker ready
+23:54:48 [INFO] [INIT] Loading pose tracker...
+23:54:48 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+23:54:48 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+23:54:48 [INFO] [INIT] ✓ Pose tracker ready
+23:54:48 [INFO] [INIT] All modules ready.
+23:54:48 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+23:54:48 [INFO] ============================================================
+23:54:48 [INFO] READY - waiting for mobile connection...
+23:54:48 [INFO] ============================================================
+23:56:31 [INFO] [NETWORK] Connected: ('192.168.1.6', 53778)
+23:56:31 [INFO] [SYSTEM] Connected — running
+23:56:32 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+23:56:34 [INFO] [STATS] #  20 | FPS:  0.2 |  50.0ms | Hands:0  | Pose:-- FloorHint:--
+23:56:38 [INFO] [STATS] #  49 | FPS:  9.6 |  58.5ms | Hands:0  | Pose:-- FloorHint:--
+23:56:41 [INFO] [STATS] #  78 | FPS: 10.2 |  50.8ms | Hands:0  | Pose:-- FloorHint:--
+23:56:44 [INFO] [STATS] # 101 | FPS:  7.7 |  50.0ms | Hands:0  | Pose:-- FloorHint:--
+23:56:47 [INFO] [STATS] # 123 | FPS:  7.6 |  55.3ms | Hands:0  | Pose:-- FloorHint:--
+23:56:50 [INFO] [STATS] # 146 | FPS:  7.5 |  76.0ms | Hands:1 POINTING | Pose:-- FloorHint:--
+23:56:50 [INFO] [DEBUG] Saved frame: frame_00150.jpg tip=(0.606,0.478,0.0494) floor_hint=None
+23:56:51 [INFO] [GESTURE] idx_ext=True(1.83) mid_curl=True(1.60) ring_curl=True(1.66) pink_curl=True(1.77)
+23:56:53 [INFO] [STATS] # 173 | FPS:  8.6 |  74.8ms | Hands:0  | Pose:-- FloorHint:--
+23:56:54 [INFO] [DEBUG] Saved frame: frame_00180.jpg tip=(0.528,0.558,0.0054) floor_hint=None
+23:56:56 [INFO] [STATS] # 198 | FPS:  8.1 |  81.2ms | Hands:0  | Pose:OK FloorHint:--
+23:56:57 [INFO] [GESTURE] idx_ext=True(2.20) mid_curl=True(1.19) ring_curl=True(1.28) pink_curl=True(1.37)
+23:56:57 [INFO] [DEBUG] Saved frame: frame_00210.jpg tip=(0.337,0.433,-0.0696) floor_hint=None
+23:56:59 [INFO] [STATS] # 224 | FPS:  8.4 |  80.2ms | Hands:1 POINTING | Pose:-- FloorHint:--
+23:57:00 [INFO] [GESTURE] idx_ext=True(1.95) mid_curl=True(1.51) ring_curl=True(1.51) pink_curl=True(1.49)
+23:57:01 [INFO] [DEBUG] Saved frame: frame_00240.jpg tip=(0.399,0.387,-0.0442) floor_hint=None
+23:57:02 [INFO] [STATS] # 255 | FPS: 10.0 |  79.4ms | Hands:1 POINTING | Pose:-- FloorHint:--
+23:57:04 [INFO] [GESTURE] idx_ext=True(2.02) mid_curl=True(1.98) ring_curl=True(1.90) pink_curl=True(1.63)
+23:57:04 [INFO] [DEBUG] Saved frame: frame_00270.jpg tip=(0.439,0.555,0.0160) floor_hint=None
+23:57:05 [INFO] [STATS] # 281 | FPS:  8.6 |  91.5ms | Hands:1 POINTING | Pose:-- FloorHint:--
+23:57:08 [INFO] [STATS] # 303 | FPS:  7.8 |  73.3ms | Hands:0  | Pose:-- FloorHint:--
+23:57:11 [INFO] [STATS] # 332 | FPS:  9.1 |  60.2ms | Hands:0  | Pose:-- FloorHint:--
+23:57:14 [INFO] [STATS] # 357 | FPS:  9.0 |  55.4ms | Hands:0  | Pose:-- FloorHint:--
+23:57:17 [INFO] [STATS] # 387 | FPS:  9.3 |  67.4ms | Hands:0  | Pose:-- FloorHint:--
+23:57:21 [INFO] [STATS] # 417 | FPS:  9.8 |  58.2ms | Hands:1 POINTING | Pose:-- FloorHint:--
+23:57:21 [INFO] [DEBUG] Saved frame: frame_00420.jpg tip=(0.427,0.548,0.0965) floor_hint=None
+23:57:22 [INFO] [GESTURE] idx_ext=True(1.97) mid_curl=True(0.91) ring_curl=True(0.95) pink_curl=True(1.40)
+23:57:24 [INFO] [STATS] # 448 | FPS: 10.1 |  76.2ms | Hands:1 POINTING | Pose:-- FloorHint:--
+23:57:24 [INFO] [DEBUG] Saved frame: frame_00450.jpg tip=(0.527,0.511,0.0045) floor_hint=None
+23:57:25 [INFO] [GESTURE] idx_ext=True(1.99) mid_curl=True(0.69) ring_curl=True(0.71) pink_curl=True(1.02)
+23:57:27 [INFO] [STATS] # 477 | FPS:  9.8 |  77.4ms | Hands:1 POINTING | Pose:-- FloorHint:--
+23:57:27 [INFO] [DEBUG] Saved frame: frame_00480.jpg tip=(0.534,0.543,0.0404) floor_hint=None
+23:57:28 [INFO] [GESTURE] idx_ext=True(2.00) mid_curl=True(0.52) ring_curl=True(0.60) pink_curl=True(0.75)
+23:57:30 [INFO] [STATS] # 505 | FPS:  9.1 |  88.1ms | Hands:0  | Pose:-- FloorHint:--
+23:57:33 [INFO] [STATS] # 535 | FPS:  9.7 |  54.0ms | Hands:0  | Pose:-- FloorHint:--
+23:57:36 [INFO] [STATS] # 564 | FPS:  9.5 |  65.1ms | Hands:0  | Pose:-- FloorHint:--
+23:57:39 [INFO] [STATS] # 594 | FPS: 10.1 |  58.9ms | Hands:0  | Pose:-- FloorHint:--
+23:57:42 [INFO] [STATS] # 625 | FPS: 10.1 |  62.2ms | Hands:0  | Pose:-- FloorHint:--
+23:57:45 [INFO] [STATS] # 656 | FPS: 10.0 |  58.5ms | Hands:0  | Pose:-- FloorHint:--
+23:57:48 [INFO] [STATS] # 686 | FPS:  9.9 |  60.4ms | Hands:0  | Pose:-- FloorHint:--
+23:57:51 [INFO] [STATS] # 717 | FPS: 10.0 |  53.4ms | Hands:0  | Pose:-- FloorHint:--
+23:57:54 [INFO] [STATS] # 747 | FPS: 10.0 |  53.5ms | Hands:0  | Pose:-- FloorHint:--
+23:57:57 [INFO] [STATS] # 778 | FPS: 10.2 |  51.4ms | Hands:0  | Pose:-- FloorHint:--
+23:58:00 [INFO] [STATS] # 808 | FPS:  9.9 |  52.3ms | Hands:0  | Pose:-- FloorHint:--
+23:58:03 [INFO] [STATS] # 839 | FPS: 10.0 |  52.3ms | Hands:0  | Pose:-- FloorHint:--
+23:58:04 [INFO] [SERVER] Stopped.

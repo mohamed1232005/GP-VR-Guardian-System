@@ -1,0 +1,53 @@
+15:13:15 [INFO] ============================================================
+15:13:15 [INFO]   ARCore Server Compatibility Check
+15:13:15 [INFO] ============================================================
+15:13:15 [INFO]   ✓  mediapipe              0.10.32
+15:13:15 [INFO]   ✓  opencv                 4.11.0
+15:13:15 [INFO]   ✓  numpy                  2.4.2
+15:13:15 [INFO]   ✓  network_port           port 9999 available
+15:13:15 [INFO] ------------------------------------------------------------
+15:13:15 [INFO]   Unity ARCore requirements (verify in Editor):
+15:13:15 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+15:13:15 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+15:13:15 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+15:13:15 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+15:13:15 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+15:13:15 [INFO]     AR Camera tag: MainCamera
+15:13:15 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+15:13:15 [INFO] ------------------------------------------------------------
+15:13:15 [INFO]   All Python checks PASSED ✓
+15:13:15 [INFO] ============================================================
+15:13:15 [INFO] [INIT] Loading hand tracker...
+15:13:15 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+15:13:15 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+15:13:15 [INFO] [INIT] ✓ Hand tracker ready
+15:13:15 [INFO] [INIT] Loading pose tracker...
+15:13:15 [INFO] [POSE] Loading MediaPipe Pose (Tasks API)...
+15:13:15 [INFO] [POSE] ✓ Pose tracking ready (Tasks API v0.10.32)
+15:13:15 [INFO] [INIT] ✓ Pose tracker ready
+15:13:15 [INFO] [INIT] All modules ready.
+15:13:15 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+15:13:15 [INFO] ============================================================
+15:13:15 [INFO] READY - waiting for mobile connection...
+15:13:15 [INFO] ============================================================
+15:16:24 [INFO] [NETWORK] Connected: ('10.20.230.48', 36146)
+15:16:24 [INFO] [SYSTEM] Connected — running
+15:16:24 [INFO] [INIT] MediaPipe input size: (160, 160, 3) (should be 160×160×3)
+15:16:27 [INFO] [STATS] #  27 | FPS:  0.1 |  70.5ms | Hands:0  | Pose:-- FloorHint:--
+15:16:30 [INFO] [STATS] #  54 | FPS:  8.9 |  47.5ms | Hands:0  | Pose:-- FloorHint:--
+15:16:33 [INFO] [STATS] #  84 | FPS:  9.8 |  43.1ms | Hands:1 POINTING | Pose:-- FloorHint:--
+15:16:34 [INFO] [GESTURE] idx_ext=True(2.03) mid_curl=True(0.51) ring_curl=True(0.43) pink_curl=True(1.02)
+15:16:34 [INFO] [DEBUG] Saved frame: frame_00090.jpg tip=(0.400,0.394,-0.0033) floor_hint=None
+15:16:36 [INFO] [STATS] # 115 | FPS: 10.0 |  40.3ms | Hands:1 POINTING | Pose:-- FloorHint:--
+15:16:37 [INFO] [GESTURE] idx_ext=True(1.96) mid_curl=True(0.79) ring_curl=True(0.76) pink_curl=True(1.20)
+15:16:37 [INFO] [DEBUG] Saved frame: frame_00120.jpg tip=(0.320,0.675,-0.0137) floor_hint=None
+15:16:39 [INFO] [STATS] # 146 | FPS: 10.1 |  36.9ms | Hands:1 POINTING | Pose:-- FloorHint:--
+15:16:40 [INFO] [GESTURE] idx_ext=True(2.03) mid_curl=True(0.97) ring_curl=True(1.06) pink_curl=True(1.20)
+15:16:40 [INFO] [DEBUG] Saved frame: frame_00150.jpg tip=(0.477,0.439,0.0415) floor_hint=None
+15:16:42 [INFO] [STATS] # 175 | FPS: 10.1 |  32.2ms | Hands:0  | Pose:-- FloorHint:--
+15:16:45 [INFO] [STATS] # 207 | FPS: 10.1 |  26.0ms | Hands:0  | Pose:-- FloorHint:--
+15:16:48 [INFO] [STATS] # 238 | FPS: 10.0 |  24.9ms | Hands:0  | Pose:-- FloorHint:--
+15:16:51 [INFO] [STATS] # 268 | FPS:  9.9 |  36.9ms | Hands:0  | Pose:-- FloorHint:--
+15:16:55 [INFO] [STATS] # 298 | FPS:  9.8 |  55.8ms | Hands:0  | Pose:-- FloorHint:--
+15:16:58 [INFO] [STATS] # 329 | FPS: 10.2 |  31.8ms | Hands:0  | Pose:-- FloorHint:--
+15:16:59 [INFO] [SERVER] Stopped.

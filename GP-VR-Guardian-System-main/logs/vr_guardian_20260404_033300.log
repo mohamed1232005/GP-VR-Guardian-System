@@ -1,0 +1,37 @@
+03:33:01 [INFO] ============================================================
+03:33:01 [INFO]   ARCore Server Compatibility Check
+03:33:01 [INFO] ============================================================
+03:33:01 [INFO]   ✓  mediapipe              0.10.32
+03:33:01 [INFO]   ✓  opencv                 4.11.0
+03:33:01 [INFO]   ✓  numpy                  2.4.2
+03:33:01 [ERROR]   ✗  network_port           [WinError 10048] Only one usage of each socket address (protocol/network address/port) is normally permitted
+03:33:01 [INFO] ------------------------------------------------------------
+03:33:01 [INFO]   Unity ARCore requirements (verify in Editor):
+03:33:01 [INFO]     XR Plug-in Management → Android → ARCore: ✓ checked
+03:33:01 [INFO]     AR Foundation + ARCore XR Plugin: same major version
+03:33:01 [INFO]     ARPlaneManager Detection Mode: Horizontal only
+03:33:01 [INFO]     Scripting Backend: IL2CPP   Architecture: ARM64
+03:33:01 [INFO]     Camera.clearFlags: Solid Color (not Skybox)
+03:33:01 [INFO]     AR Camera tag: MainCamera
+03:33:01 [INFO]     GuardianSystem Inspector: 3 AR refs assigned
+03:33:01 [INFO] ------------------------------------------------------------
+03:33:01 [WARNING]   Some Python checks FAILED — see errors above
+03:33:01 [INFO] ============================================================
+03:33:01 [INFO] [INIT] Loading hand tracker...
+03:33:01 [INFO] [HANDS] Loading MediaPipe Hands (Tasks API)...
+03:33:01 [INFO] [HANDS] ✓ Hand tracker ready (Tasks API v0.10.32)
+03:33:01 [INFO] [INIT] ✓ Hand tracker ready
+03:33:01 [INFO] [INIT] All modules ready.
+03:33:01 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+03:33:01 [INFO] ============================================================
+03:33:01 [INFO] READY - waiting for mobile connection...
+03:33:01 [INFO] ============================================================
+03:52:09 [INFO] [NETWORK] Connected: ('192.168.1.6', 36102)
+03:52:09 [INFO] [SYSTEM] Connected — running
+03:52:14 [ERROR] [NETWORK] Receive error: [WinError 10054] An existing connection was forcibly closed by the remote host
+03:52:14 [WARNING] [NET] Connection lost.
+03:52:14 [INFO] [SERVER] Reconnecting in 1s...
+03:52:15 [INFO] [NETWORK] Listening on 0.0.0.0:9999
+03:52:15 [INFO] ============================================================
+03:52:15 [INFO] READY - waiting for mobile connection...
+03:52:15 [INFO] ============================================================
