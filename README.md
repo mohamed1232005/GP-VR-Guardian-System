@@ -1676,7 +1676,7 @@ Assets/
 | Report 2 Submission | May 2, 2026 |
 | GitHub Repository | https://github.com/mohamed1232005/GP-VR-Guardian-System |
 | Unity Cloud | https://cloud.unity.com/home/organizations/11270618913273/projects/c0e40f1e-f1ae-49ad-9c5b-c16b028dc078 |
-| Demo Video | https://drive.google.com/drive/folders/14uRaXD2cKZxU0FoLaBoZ7k0BDWAV8DPG |
+| Demo Video | [https://drive.google.com/drive/folders/14uRaXD2cKZxU0FoLaBoZ7k0BDWAV8DPG](https://drive.google.com/file/d/1qWls0T4skueb_WwdptPVJGJcsSJ5ZOkz/view?usp=sharing) |
 | Presentation | https://canva.link/lnd040bvpzaufzr |
 
 ---
