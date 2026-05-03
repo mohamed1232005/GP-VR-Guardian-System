@@ -1,102 +1,112 @@
-"""Geometry: ray-plane projection and guardian polygon generation."""
+import math
+from typing import Iterable
 
 import numpy as np
-from scipy.spatial import ConvexHull
 
-from config import MIN_BOUNDARY_POINTS, MIN_AREA_M2
+from config import MIN_AREA_M2
 
 
-def project_fingertip_to_floor(
-    smoothed_landmarks: np.ndarray,
-    camera_to_world_flat: list,
-    floor: dict,
-) -> list | None:
+def _as_vec3(value, fallback=None):
+    if value is None:
+        return fallback
+    if isinstance(value, (list, tuple)) and len(value) >= 3:
+        return np.array([float(value[0]), float(value[1]), float(value[2])], dtype=np.float32)
+    return fallback
+
+
+def _pose_to_matrix(pose_matrix: list) -> np.ndarray:
+    if pose_matrix is None or len(pose_matrix) != 16:
+        return np.eye(4, dtype=np.float32)
+    return np.array(pose_matrix, dtype=np.float32).reshape((4, 4))
+
+
+def project_fingertip_to_floor(smoothed_landmarks: np.ndarray, pose_matrix: list, floor: dict):
     """
-    Project the index fingertip (landmark 8) onto the floor plane.
+    Projects index fingertip landmark 8 to the confirmed floor plane.
 
-    Parameters
-    ----------
-    smoothed_landmarks   : np.array (21, 3) — normalised [0,1] image coords
-    camera_to_world_flat : list[float] — 16 floats, row-major 4×4 ARCore pose
-    floor                : dict with intrinsics, floor_y_world,
-                           plane_normal_world, plane_center_world
-
-    Returns [x, y, z] world point, or None if ray is parallel / behind camera.
+    This remains for legacy boundary point placement.
+    Ball ray/skeleton do not depend on this; they use landmarks directly in Unity.
     """
-    intr = floor["camera_intrinsics"]
-    fx, fy = intr["fx"], intr["fy"]
-    cx, cy = intr["cx"], intr["cy"]
-    W,  H  = intr["width"], intr["height"]
+    if smoothed_landmarks is None or len(smoothed_landmarks) <= 8:
+        return None
 
-    # 1. Index fingertip normalised -> pixel
+    pose = _pose_to_matrix(pose_matrix)
+
+    floor_point = _as_vec3(
+        floor.get("floor_point_world")
+        or floor.get("center_world")
+        or floor.get("world_position"),
+        None,
+    )
+
+    if floor_point is None:
+        y = float(floor.get("floor_y_world", floor.get("y", 0.0)))
+        floor_point = np.array([0.0, y, 0.0], dtype=np.float32)
+
+    floor_normal = _as_vec3(
+        floor.get("floor_normal_world")
+        or floor.get("normal_world")
+        or floor.get("normal"),
+        np.array([0.0, 1.0, 0.0], dtype=np.float32),
+    )
+
+    norm = float(np.linalg.norm(floor_normal))
+    if norm < 1e-6:
+        floor_normal = np.array([0.0, 1.0, 0.0], dtype=np.float32)
+    else:
+        floor_normal = floor_normal / norm
+
+    # Camera origin and approximate forward from Unity localToWorld matrix.
+    cam_origin = pose[:3, 3]
+    cam_forward = pose[:3, 2]
+    if np.linalg.norm(cam_forward) < 1e-6:
+        cam_forward = np.array([0.0, 0.0, 1.0], dtype=np.float32)
+
+    # Use fingertip normalized viewport offset to build a stable ray approximation.
     tip = smoothed_landmarks[8]
-    u   = tip[0] * W
-    v   = tip[1] * H
+    x = float(tip[0]) - 0.5
+    y = 0.5 - float(tip[1])
 
-    # 2. Unproject to camera-space ray.
-    #    CRITICAL: negate (v-cy) — image Y is down, camera Y is up.
-    #    ARCore camera Z points behind the camera (negative-Z-forward).
-    ray_cam = np.array([
-         (u - cx) / fx,
-        -(v - cy) / fy,
-        -1.0,
-    ])
-    ray_cam /= np.linalg.norm(ray_cam)
+    right = pose[:3, 0]
+    up = pose[:3, 1]
+    direction = cam_forward + right * x * 1.2 + up * y * 1.2
 
-    # 3. Camera-space ray -> world-space ray
-    M          = np.array(camera_to_world_flat, dtype=float).reshape(4, 4)
-    R          = M[:3, :3]
-    cam_pos    = M[:3, 3]
-    ray_world  = R @ ray_cam
-    ray_world /= np.linalg.norm(ray_world)
+    d_norm = float(np.linalg.norm(direction))
+    if d_norm < 1e-6:
+        return None
+    direction = direction / d_norm
 
-    # 4. Ray-plane intersection
-    normal   = np.array(floor["plane_normal_world"], dtype=float)
-    plane_pt = np.array(floor["plane_center_world"], dtype=float)
-    denom    = np.dot(normal, ray_world)
+    denom = float(np.dot(direction, floor_normal))
+    if abs(denom) < 1e-5:
+        return None
 
-    if abs(denom) < 1e-6:
-        return None  # ray parallel to floor
+    t = float(np.dot(floor_point - cam_origin, floor_normal) / denom)
+    if t <= 0.02 or t > 12.0:
+        return None
 
-    t = np.dot(normal, plane_pt - cam_pos) / denom
-    if t < 0:
-        return None  # intersection is behind the camera
-
-    world_pt    = cam_pos + t * ray_world
-    world_pt[1] = floor["floor_y_world"]   # clamp Y (float safety)
-
-    return world_pt.tolist()
+    p = cam_origin + direction * t
+    return [float(p[0]), float(p[1]), float(p[2])]
 
 
-def generate_guardian_polygon(
-    points_3d: list,
-) -> tuple[list, float, list]:
-    """
-    Build a convex hull from the boundary points.
+def generate_guardian_polygon(points: Iterable[list]):
+    pts = [list(map(float, p[:3])) for p in points if p is not None and len(p) >= 3]
+    if len(pts) < 4:
+        raise ValueError("Need at least 4 boundary points.")
 
-    Returns
-    -------
-    ordered  : list of [x, y, z] — hull vertices in order
-    area_m2  : float
-    centroid : [x, y, z]
-    """
-    if len(points_3d) < MIN_BOUNDARY_POINTS:
-        raise ValueError(f"Need at least {MIN_BOUNDARY_POINTS} points, got {len(points_3d)}")
+    cx = sum(p[0] for p in pts) / len(pts)
+    cy = sum(p[1] for p in pts) / len(pts)
+    cz = sum(p[2] for p in pts) / len(pts)
 
-    pts_xz = np.array([[p[0], p[2]] for p in points_3d])
+    ordered = sorted(pts, key=lambda p: math.atan2(p[2] - cz, p[0] - cx))
 
-    hull     = ConvexHull(pts_xz, qhull_options="QJ")
-    ordered  = [points_3d[i] for i in hull.vertices]
-    area_m2  = float(hull.volume)   # hull.volume == area in 2-D
+    area = 0.0
+    for i in range(len(ordered)):
+        a = ordered[i]
+        b = ordered[(i + 1) % len(ordered)]
+        area += a[0] * b[2] - b[0] * a[2]
+    area = abs(area) * 0.5
 
-    xz_verts = pts_xz[hull.vertices]
-    centroid = [
-        float(np.mean(xz_verts[:, 0])),
-        float(points_3d[0][1]),
-        float(np.mean(xz_verts[:, 1])),
-    ]
+    if area < MIN_AREA_M2:
+        raise ValueError(f"Boundary area too small: {area:.2f} m²")
 
-    if area_m2 < MIN_AREA_M2:
-        raise ValueError(f"Guardian area {area_m2:.2f} m² is below minimum {MIN_AREA_M2} m²")
-
-    return ordered, area_m2, centroid
+    return ordered, area, [cx, cy, cz]

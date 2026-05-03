@@ -10,6 +10,7 @@ import json
 import struct
 import multiprocessing as mp
 from typing import Optional
+import queue
 
 # Type IDs (Unity -> Python)
 MSG_FLOOR_CONFIRM = 0x02
@@ -61,6 +62,28 @@ class TCPHandler:
         self._client_id: Optional[str] = None
 
     # ------------------------------------------------------------------
+    
+
+    def _put_control_nowait(self, item: dict) -> None:
+        """
+        Put an important TCP control message into frame_queue.
+
+        frame_queue has maxsize=1 and is also used by UDP frames.
+        If the queue is full, remove the old item first. This is safe because
+        a TCP control message such as FLOOR_CONFIRM or RESET is more important
+        than an old camera frame.
+        """
+        
+        try:
+            self.frame_queue.put_nowait(item)
+        except queue.Full:
+            try:
+                self.frame_queue.get_nowait()
+            except queue.Empty:
+                pass
+            self.frame_queue.put_nowait(item)
+    
+    
     async def handle_client(
         self,
         reader: asyncio.StreamReader,
@@ -88,27 +111,26 @@ class TCPHandler:
     # ------------------------------------------------------------------
     async def _dispatch_incoming(self, type_id: int, payload: dict) -> None:
         if type_id == MSG_FLOOR_CONFIRM:
-            # Push floor data into CV worker via frame_queue sentinel
-            try:
-                self.frame_queue.put_nowait({
-                    "client_id"   : self._client_id,
-                    "_floor_data" : payload,
-                })
-            except Exception:
-                pass
+            # Push floor data into CV worker via frame_queue sentinel.
+            # This must not be silently dropped if a UDP frame is already queued.
+            self._put_control_nowait({
+                "client_id"   : self._client_id,
+                "_floor_data" : payload,
+            })
+
             # ACK with STATE_CHANGE
             ack = {"type": "STATE_CHANGE", "state": "PLACING_POINTS"}
             await self._send(MSG_STATE_CHANGE, ack)
             print(f"[TCP] FLOOR_CONFIRM received — y={payload.get('floor_y_world')}")
 
         elif type_id == MSG_RESET:
-            try:
-                self.frame_queue.put_nowait({
-                    "client_id"     : self._client_id,
-                    "_state_override": "INIT",
-                })
-            except Exception:
-                pass
+            # Push reset override into CV worker.
+            # This must not be silently dropped if a UDP frame is already queued.
+            self._put_control_nowait({
+                "client_id"      : self._client_id,
+                "_state_override": "INIT",
+            })
+
             ack = {"type": "STATE_CHANGE", "state": "INIT"}
             await self._send(MSG_STATE_CHANGE, ack)
             print("[TCP] RESET received")
@@ -135,3 +157,5 @@ class TCPHandler:
         if self._writer and not self._writer.is_closing():
             self._writer.write(_pack_message(type_id, payload))
             await self._writer.drain()
+            
+    
