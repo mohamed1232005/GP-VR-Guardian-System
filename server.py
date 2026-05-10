@@ -1,26 +1,17 @@
-"""
-Guardian Server — production entry point.
-Runs UDP, TCP, and CV worker with visible crash reporting.
-
-Final hand-skeleton fix:
-- Uses a supervised thread instead of a silent multiprocessing child.
-- Ensures CV logs appear in the same terminal.
-- Keeps the latest-frame queue behaviour.
-"""
+"""Guardian Python hand-tracking service entry point."""
 
 import asyncio
 import queue
 import threading
 import traceback
 
-from config import TCP_CONTROL_PORT, UDP_FRAME_PORT
-from cv_worker import run_cv_worker
-from tcp_handler import TCPHandler
-from udp_handler import UDPFrameReceiver
+from config import FRAME_QUEUE_MAXSIZE, TCP_CONTROL_PORT, UDP_FRAME_PORT
+from hand_tracking import run_cv_worker
+from transport import TCPHandler, UDPFrameReceiver
 
 
 async def main() -> None:
-    frame_queue = queue.Queue(maxsize=1)
+    frame_queue = queue.Queue(maxsize=FRAME_QUEUE_MAXSIZE)
     result_queue = queue.Queue()
 
     def guarded_cv_worker() -> None:
