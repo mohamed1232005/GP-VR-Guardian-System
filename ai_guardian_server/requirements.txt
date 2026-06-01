@@ -1,0 +1,8 @@
+opencv-python
+numpy
+torch
+torchvision
+transformers>=4.45.0
+Pillow
+mediapipe>=0.10.21
+# If mp.solutions is unavailable in latest MediaPipe, use mediapipe==0.10.21 or Tasks API.
