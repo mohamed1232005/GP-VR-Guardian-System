@@ -1,4 +1,3 @@
-<img width="1063" height="630" alt="image" src="https://github.com/user-attachments/assets/9b91488c-1ca1-407e-b60a-43a4d2760a2b" /># Guardian System for Affordable Smartphone-Based VR
 
 > **Team 25 — Graduation Project**  
 > Faculty of Engineering | Computer Science & Artificial Intelligence  
