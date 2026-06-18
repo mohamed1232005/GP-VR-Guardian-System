@@ -1,0 +1,28 @@
+AI Guardian — Phase 9.1 Session Summary
+==================================================
+
+Duration: 296.3s
+Total Frames: 1388
+Lock Frame: 174
+Lock Source: python_only_unity_never_acked
+Errors: 0
+Warnings: 0
+
+--- WARM PHASE (depth+seg ON) ---
+Duration: 27.4s
+Frames: 17
+Pipeline FPS: 0.6
+Avg Depth: 0.0ms
+Avg Seg: 195.1ms
+Avg Plane: 48.0ms
+Avg Hand: 28.6ms
+TCP Guardian Hz: 0.6
+TCP Hand Hz: 0.6
+
+--- IDLE PHASE (depth+seg OFF, hand ON) ---
+Duration: 268.9s
+Frames: 1371
+Idle FPS: 5.1
+Hand FPS: 5.1
+Avg Hand: 30.9ms
+TCP Hand Hz: 5.1
