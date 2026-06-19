@@ -1,501 +1,588 @@
+# Guardian System for Affordable Smartphone-Based Virtual Reality
 
-> **Team 25 — Graduation Project**  
-> Faculty of Engineering | Computer Science & Artificial Intelligence  
-> Academic Year 2025–2026
+> A real-time, controller-free **spatial-safety framework** that turns any ARCore-compatible Android phone into a guardian-capable VR platform — **no extra hardware**, using only the phone's built-in **RGB camera** and **IMU**.
+
+**Team 25 · Graduation Project 2025–2026**
+**Zewail City of Science and Technology — School of Computational Sciences and Artificial Intelligence (CSAI)**
+
+### Project Snapshot
+
+| | |
+|---|---|
+| **Platform** | Android 9.0+ (API 29+), ARCore-certified |
+| **Engine** | Unity 2022.3 LTS |
+| **AR stack** | ARCore / AR Foundation / ARCore XR Plugin |
+| **AI / CV** | MediaPipe · Depth Anything V2 · SegFormer-B0 · RANSAC · Unity Sentis |
+| **Backend** | Python 3.9+ (Pipelines 1 & 2); on-device C# (Pipeline 3) |
+| **Use case** | TOSHFA — lower-back VR rehabilitation |
+| **Status** | Final submission — three working pipelines |
 
 ---
 
 ## Table of Contents
 
-1. [Project Overview](#1-project-overview)
-2. [The Problem](#2-the-problem)
-3. [System Architecture](#3-system-architecture)
-4. [Three Implementation Pipelines](#4-three-implementation-pipelines)
-   - [Pipeline 1 — ARCore + MediaPipe](#pipeline-1--arcore--mediapipe)
-   - [Pipeline 2 — AI & Computer Vision](#pipeline-2--ai--computer-vision)
-   - [Pipeline 3 — On-Device Guardian](#pipeline-3--on-device-guardian)
-5. [TOSHFA — Use Case & Demonstration Application](#5-toshfa--use-case--demonstration-application)
-6. [Technology Stack](#6-technology-stack)
-7. [Data Flow](#7-data-flow)
-8. [Performance Results](#8-performance-results)
-9. [Repository Structure](#9-repository-structure)
-10. [Getting Started](#10-getting-started)
-11. [Known Issues & Bugs](#11-known-issues--bugs)
-12. [Team](#12-team)
-13. [Links](#13-links)
+1. [Project Description](#1-project-description)
+2. [Team Members](#2-team-members)
+3. [Supervisor & Sponsor](#3-supervisor--sponsor)
+4. [Problem Statement](#4-problem-statement)
+5. [Objectives & Scope](#5-objectives--scope)
+6. [Features](#6-features)
+7. [System Architecture](#7-system-architecture)
+8. [The Three Implementation Pipelines](#8-the-three-implementation-pipelines)
+9. [TOSHFA — Demonstration Use Case](#9-toshfa--demonstration-use-case)
+10. [Technologies Used](#10-technologies-used)
+11. [Repository Structure & Branching Strategy](#11-repository-structure--branching-strategy)
+12. [Environment Requirements](#12-environment-requirements)
+13. [Setup Instructions](#13-setup-instructions)
+14. [Deployment Instructions](#14-deployment-instructions)
+15. [Usage Guide](#15-usage-guide)
+16. [API Documentation](#16-api-documentation)
+17. [Data & Session Schema](#17-data--session-schema)
+18. [Performance & Results](#18-performance--results)
+19. [Testing & Validation](#19-testing--validation)
+20. [Screenshots & Demo](#20-screenshots--demo)
+21. [Troubleshooting](#21-troubleshooting)
+22. [Reproducing & Verifying the Build](#22-reproducing--verifying-the-build)
+23. [Contributions](#23-contributions)
+24. [Project Links](#24-project-links)
+25. [License](#25-license)
 
 ---
 
-## 1. Project Overview
+## 1. Project Description
 
-The **Guardian System for Affordable Smartphone-Based VR** is a real-time boundary-safety framework that turns any ARCore-compatible Android smartphone into a guardian-capable VR platform — no specialized hardware required.
+High-end VR headsets such as the Meta Quest ship with built-in **guardian systems** that detect physical boundaries and warn users before collisions. These rely on dedicated depth cameras and proprietary processing that affordable smartphone VR simply does not have. **This project closes that gap.**
 
-High-end VR headsets such as the Meta Quest provide built-in guardian systems that detect physical boundaries and warn users before collisions. These systems rely on dedicated cameras, depth sensors, and proprietary processing that are unavailable on consumer smartphones. This project closes that gap.
+The Guardian System adds guardian-style spatial safety to **affordable smartphone-based VR** using only the phone's existing sensors. While wearing a headset that fully blocks their view, the user is continuously protected: the system detects and confirms the physical floor, draws a virtual safety boundary inside the VR scene, tracks the user's hands in 3D without a controller, and issues escalating **Safe → Caution → Danger → Freeze** warnings in real time.
 
-The system uses the phone's built-in **RGB camera** and **IMU sensors** to:
-- Detect and confirm the physical floor plane
-- Define a safe play area and draw a virtual safety boundary in the VR scene
-- Track the user's hands in 3D without a physical controller
-- Detect proximity to real-world obstacles in real time
-- Issue visual and audio safety warnings (Safe → Caution → Danger → Freeze) directly inside the VR experience
-
-The framework is **modular**, **offline-capable**, and **hardware-agnostic** within the ARCore-certified Android ecosystem. TOSHFA — a lower-back VR rehabilitation module — serves as the primary demonstration application built on top of the Guardian Framework.
+The framework is **modular**, **hardware-agnostic** within the ARCore ecosystem, and is delivered through **three interchangeable pipelines** that implement the same guardian core with different perception strategies and compute locations. It is demonstrated through **TOSHFA**, a lower-back VR rehabilitation application built directly on top of the guardian safe-space lifecycle.
 
 ---
 
-## 2. The Problem
+## 2. Team Members
 
-Smartphone-based VR platforms lack built-in guardian systems capable of detecting real-world boundaries and warning users before collisions. Users remain physically vulnerable during immersive experiences while wearing a headset that completely occludes their vision.
+| Name | ID | Program |
+|------|------|---------|
+| Ameen Gamal | 202202219 | CSAI |
+| Hamza Abdelmoreed | 202201508 | CSAI |
+| Mohamed Ehab Yousry | 202201236 | CSAI |
+| Yousef Selim Shawky | 202201255 | CSAI |
+
+> *Bachelor of Science in Computational Sciences and Artificial Intelligence (CSAI).*
+
+---
+
+## 3. Supervisor & Sponsor
+
+| Role | Name |
+|------|------|
+| **Supervisor** | Dr. Mayada Mansour Ali Hadhoud |
+| **Sponsor / Industry Partner** | [VRapeutic](https://myvrapeutic.com) — VR-based therapeutic & rehabilitation solutions |
+
+---
+
+## 4. Problem Statement
+
+Smartphone-based VR platforms lack built-in guardian systems capable of detecting real-world boundaries and warning users before collisions. While wearing a headset that fully occludes their vision, users remain physically vulnerable during immersive, movement-based experiences.
 
 | Impact | Description |
 |--------|-------------|
-| **Physical collisions** | Users walk into walls, furniture, and obstacles with no warning |
-| **Risk of injury** | Bodily harm from collisions undermines user trust and safety |
-| **Blocked adoption** | Movement-based VR cannot be safely deployed in clinics, schools, or rehabilitation centers without safety guarantees |
+| **Physical collisions** | Users walk into walls, furniture, and obstacles with no warning. |
+| **Risk of injury** | Collisions cause bodily harm and erode user trust in smartphone VR. |
+| **Blocked adoption** | Movement-based VR cannot be safely deployed in clinics, schools, or rehabilitation centres without spatial-safety guarantees. |
+| **Interaction gap** | Without controllers, affordable VR offers no natural way to interact with the scene. |
 
-> **Core Gap:** Affordable smartphone VR lacks the spatial safety and interaction capabilities of premium VR systems.
-
----
-
-## 3. System Architecture
-
-The system is organized into five hierarchical layers:
-
-```
-┌─────────────────────────────────────────────────────────┐
-│                     USER LAYER                          │
-│         User wearing a Smartphone VR Headset            │
-└───────────────────────────┬─────────────────────────────┘
-                            │
-┌───────────────────────────▼─────────────────────────────┐
-│                   HARDWARE LAYER                        │
-│     Android Smartphone  │  Camera  │  IMU Sensors       │
-└───────────────────────────┬─────────────────────────────┘
-                            │
-┌───────────────────────────▼─────────────────────────────┐
-│                  APPLICATION LAYER                      │
-│                   Unity Application                     │
-└───────────────────────────┬─────────────────────────────┘
-                            │
-┌───────────────────────────▼─────────────────────────────┐
-│             GUARDIAN FRAMEWORK CORE  ★                  │
-│   ┌──────────────────┬──────────────────────────────┐   │
-│   │ Safety Management│  Boundary Monitoring         │   │
-│   ├──────────────────┼──────────────────────────────┤   │
-│   │ Hand Interaction │  Warning System              │   │
-│   └──────────────────┴──────────────────────────────┘   │
-│                                                         │
-│   Implementation Pipelines (supporting components):     │
-│   ┌──────────────┬───────────────────┬──────────────┐   │
-│   │  Pipeline 1  │    Pipeline 2     │  Pipeline 3  │   │
-│   │  ARCore +    │  AI & Computer    │  On-Device   │   │
-│   │  MediaPipe   │  Vision           │  Guardian    │   │
-│   └──────────────┴───────────────────┴──────────────┘   │
-└───────────────────────────┬─────────────────────────────┘
-                            │
-┌───────────────────────────▼─────────────────────────────┐
-│                USE CASE / APPLICATION                   │
-│          TOSHFA Rehabilitation System                   │
-│     (Demonstration application built on the framework)  │
-└─────────────────────────────────────────────────────────┘
-```
-
-> **The Guardian Framework is the project.** The three pipelines are alternative implementation approaches within it. TOSHFA is the demonstration use case deployed on top of the framework.
+**Core gap:** affordable smartphone VR lacks the spatial-safety and natural-interaction capabilities of premium VR systems — and it must be solved **without adding hardware**.
 
 ---
 
-## 4. Three Implementation Pipelines
+## 5. Objectives & Scope
 
-### Pipeline 1 — ARCore + MediaPipe
+**Objectives**
 
-**The primary pipeline. Powers TOSHFA and the main production build.**
+- Deliver guardian-style spatial safety on affordable smartphones using **only the built-in camera and IMU**.
+- Detect and confirm the physical floor markerlessly and anchor a stable virtual boundary to it.
+- Provide **controller-free** hand interaction for placing and confirming the safe area.
+- Drive **multimodal** (visual + audio + haptic) warnings through a clear safety state machine.
+- Keep the design **modular** so the guardian core can be reused across VR applications.
+- Validate the framework with a real application — **TOSHFA** lower-back rehabilitation.
 
-| Component | Implementation |
-|-----------|---------------|
-| Floor Detection | ARCore Plane API + RANSAC fallback (`floor_detector.py`) |
-| Hand Tracking | MediaPipe Hands — 21 3D landmarks, markerless |
-| Gesture Recognition | Pointing gesture (EMA-smoothed, 3-frame debouncing state machine) |
-| Controller-Free Interaction | Fingertip dot → boundary point placement in Unity |
-| Communication | TCP (hand data, JSON) + UDP (camera frames, results) |
+**Scope**
 
-**Performance:** ~30 FPS for depth estimation; ~10–16 FPS end-to-end with the full Python backend
-
-**Key files:**
-```
-server.py              — Python backend entry point (TCP/UDP server, port 9999)
-hand_tracker.py        — MediaPipe hand landmark detection + gesture classifier
-floor_detector.py      — ARCore plane detection + RANSAC depth-based fallback
-GuardianSystem.cs      — Unity C# frontend: hand skeleton, fingertip, boundary drawing
-```
-
-**How it works:**
-1. Unity streams camera frames to Python via UDP
-2. `hand_tracker.py` runs MediaPipe Hands and detects pointing gestures
-3. Results (gesture type, 21 landmarks, confidence) stream back via TCP as JSON
-4. `GuardianSystem.cs` renders the hand skeleton, red fingertip dot, and neon safety boundary
+- Implementation, integration, and evaluation of the three pipelines and the TOSHFA use case.
+- **Technical-feasibility scope:** the project demonstrates a working, evaluated system. It is **not** a clinical trial; TOSHFA was not tested on patients and carries no medical claims.
+- Target platform is **Android / ARCore**; iOS / ARKit is identified as future work.
 
 ---
+
+## 6. Features
+
+- **Markerless floor detection** — ARCore plane detection and depth-based RANSAC plane fitting confirm the physical floor as the `Y = 0` reference.
+- **Anchored virtual boundary** — a locked neon boundary is pinned to the real floor with an `ARAnchor`, eliminating ARCore re-localization drift in stereo VR.
+- **Controller-free hand interaction** — MediaPipe Hands tracks **21 3D landmarks**; a fingertip ray places, edits, and confirms boundary points.
+- **Escalating safety warnings** — a **Safe → Caution → Danger → Freeze** state machine drives synchronized visual, audio, and haptic alerts.
+- **Three interchangeable pipelines** — networked, AI-perception, and fully on-device implementations of the same guardian core.
+- **Offline on-device mode** — Pipeline 3 runs entirely on the phone with no laptop, Wi-Fi, or external server.
+- **Body-pose rep tracking** — MediaPipe Pose (33 landmarks) drives exercise counting and form feedback in TOSHFA.
+- **Guardian-integrated application layer** — TOSHFA pauses and resumes automatically based on guardian safety events.
+
+---
+
+## 7. System Architecture
+
+The system is organized into hierarchical layers. The **Guardian Framework Core is the project**; the three pipelines are alternative implementations of that core, and **TOSHFA** is the demonstration application deployed on top of it.
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  USER LAYER          User wearing a smartphone VR headset      │
+├──────────────────────────────────────────────────────────────┤
+│  HARDWARE LAYER      Android phone │ RGB camera │ IMU sensors  │
+├──────────────────────────────────────────────────────────────┤
+│  APPLICATION LAYER   Unity 2022.3 LTS VR/AR application        │
+├──────────────────────────────────────────────────────────────┤
+│  GUARDIAN FRAMEWORK CORE  *                                    │
+│   ┌───────────────────┬────────────────────────────────────┐  │
+│   │ Safety Management │ Boundary Monitoring                │  │
+│   │ Hand Interaction  │ Warning System (Safe→…→Freeze)     │  │
+│   └───────────────────┴────────────────────────────────────┘  │
+│   Implementation pipelines:                                    │
+│   ┌──────────────┬───────────────────┬─────────────────────┐  │
+│   │  Pipeline 1  │    Pipeline 2     │     Pipeline 3      │  │
+│   │  ARCore +    │  AI & Computer    │  On-Device Guardian │  │
+│   │  MediaPipe   │  Vision (Sentis)  │  (C# / Sentis)      │  │
+│   └──────────────┴───────────────────┴─────────────────────┘  │
+├──────────────────────────────────────────────────────────────┤
+│  USE CASE            TOSHFA — Lower-Back Rehabilitation         │
+└──────────────────────────────────────────────────────────────┘
+```
+
+**Runtime data flow (networked pipelines)**
+
+```
+Phone camera ──JPEG/UDP──▶ Python backend ──(MediaPipe / Depth / RANSAC)──▶
+   perception result ──JSON/TCP──▶ Unity ──▶ boundary + warnings + interaction
+```
+
+For Pipeline 3 the entire loop runs **inside Unity on the device** — frames never leave the phone.
+
+---
+
+## 8. The Three Implementation Pipelines
+
+All three pipelines implement the **same guardian core** (floor → boundary → warnings) but differ in *how* they perceive the environment and *where* computation runs. Each pipeline has a **Unity scene** (managed in Unity Cloud / Plastic SCM) and a corresponding **Python branch** on GitHub.
+
+### Pipeline 1 — ARCore + MediaPipe  *(primary / production build)*
+
+The networked pipeline that powers TOSHFA. ARCore (Unity) performs floor-plane detection; a Python backend runs **MediaPipe Hands** (21 landmarks) and gesture recognition; Unity renders the hand skeleton, fingertip ray, and safety boundary. Camera frames stream out over UDP and JSON results return over TCP.
+
+**Flow:** ARCore detects plane → user confirms area with fingertip → boundary anchored → MediaPipe hand interaction + warning monitoring → TOSHFA.
+
+| | |
+|---|---|
+| **Unity scene** | [`MVP-Guardian-Unity/ARCore_pipeline_with_simple_toshfa`](https://cloud.unity.com/home/organizations/11270618913273/projects/3af6106f-603f-411a-9087-d805c64f2b72/plastic-scm/organizations/11270618913273/repositories/MVP-Guardian-Unity%2FARCore_pipeline_with_simple_toshfa) |
+| **Python branch** | [`ARcore_simple_toshfa`](https://github.com/mohamed1232005/GP-VR-Guardian-System/tree/ARcore_simple_toshfa) |
+| **Floor detection** | ARCore Plane API (+ RANSAC fallback) |
+| **Interaction** | MediaPipe Hands — 21 landmarks, fingertip pointing |
+| **Compute** | Phone client + Python host over local Wi-Fi |
+| **Render rate** | ~60 FPS (lightest on-device load) |
 
 ### Pipeline 2 — AI & Computer Vision
 
-**The depth-intelligence pipeline. Focuses on environmental understanding.**
+The depth-intelligence pipeline, focused on environmental understanding. **Depth Anything V2** provides monocular depth, **SegFormer-B0** performs semantic floor segmentation, and a custom **RANSAC** routine fits the floor plane from the resulting point cloud. The AI models are deployed as ONNX and executed through **Unity Inference Engine (Sentis)**; the Python side handles MediaPipe and geometry.
 
-| Component | Implementation |
-|-----------|---------------|
-| Depth Estimation | ARCore Depth API + MiDaS monocular depth (adaptive resolution scaling) |
-| Floor Segmentation | RANSAC plane fitting on depth point cloud |
-| Environment Understanding | YOLOv11n object detection → proximity zones (Safe / Caution / Danger) |
-| Intelligent Boundary Generation | Automatic boundary box from detected floor plane |
-| Sensor Fusion | Kalman filter — IMU + depth + pose |
+**Flow:** frame → depth + floor segmentation → point cloud → RANSAC floor plane → boundary + warning monitoring.
 
-**Performance:** ~10 FPS (heavy multi-model load; frame caching every 3rd frame reduces CPU load by ~67%)
+| | |
+|---|---|
+| **Unity scene** | [`MVP-Guardian-Unity/AI_Guardian_Pipeline_2_hamza`](https://cloud.unity.com/home/organizations/11270618913273/projects/3af6106f-603f-411a-9087-d805c64f2b72/plastic-scm/organizations/11270618913273/repositories/MVP-Guardian-Unity%2FAI_Guardian_Pipeline_2_hamza/branch/%2Fmain/tree/) |
+| **Python branch** | [`AI-Guardian-pipeline-2--final-version`](https://github.com/mohamed1232005/GP-VR-Guardian-System/tree/AI-Guardian-pipeline-2--final-version) |
+| **Depth** | Depth Anything V2 (monocular) |
+| **Segmentation** | SegFormer-B0 (floor) |
+| **Floor fitting** | RANSAC plane fitting on depth point cloud |
+| **Render rate** | 27.5 – 30 FPS |
 
-**Key models:**
-```
-MiDaS           — Monocular depth estimation (depth map from single RGB frame)
-YOLOv11n        — Lightweight real-time obstacle detection (on-device / edge GPU)
-SegFormer       — Semantic floor segmentation
-MediaPipe Pose  — 33-landmark body pose (BlazePose)
-```
+### Pipeline 3 — On-Device Guardian  *(C# / Sentis, backend-free)*
 
-**Smart caching strategy:** Every 3rd frame is fully processed. Frames 1 and 2 of each triplet reuse the last valid depth map and detection result — reducing inference calls by ~67% without significant accuracy loss at human movement speeds.
+A fully **on-device** implementation written in native **C#** using **Unity Inference Engine (Sentis)** — no external Python backend. Depth Anything V2 runs locally through Sentis and a C# RANSAC routine defines the safe play area, keeping inference local and low-latency for offline and clinical deployment. This scene also hosts the **TOSHFA** scene.
 
-**Safety state machine:**
-```
-SAFE ──→ CAUTION ──→ DANGER ──→ FREEZE
-  ↑__________|___________|_________|
-               (proximity clears)
-```
+**Flow:** on-device depth (Sentis) → C# RANSAC floor → boundary + warning monitoring → TOSHFA — all on the phone.
 
----
-
-### Pipeline 3 — On-Device Guardian
-
-**The standalone pipeline. Runs entirely on the phone with no external server.**
-
-| Component | Implementation |
-|-----------|---------------|
-| Mobile AI Inference | TensorFlow Lite (quantized models) |
-| Floor Detection | Pure Python RANSAC — no ARCore dependency |
-| Hand Tracking | MediaPipe on-device |
-| Standalone Deployment | No Wi-Fi, no laptop, no external server required |
-| Real-Time Processing | Optimized for mid-range Android (Snapdragon 600–800 series) |
-
-**Performance:** ~12 FPS standalone on device
-
-**Key advantages over Pipeline 1/2:**
-- Works offline and in environments without Wi-Fi
-- Eliminates TCP/UDP network latency (~30–80 ms saving)
-- Single APK deployment — no server setup required
-- Suitable for clinical and field deployment
+| | |
+|---|---|
+| **Unity scene (+ TOSHFA)** | [`MVP-Guardian-Unity/Warning_System_Yousef-hAMZA`](https://cloud.unity.com/home/organizations/11270618913273/projects/3af6106f-603f-411a-9087-d805c64f2b72/plastic-scm/organizations/11270618913273/repositories/MVP-Guardian-Unity%2FWarning_System_Yousef-hAMZA/branch/%2Fmain%2FFix%20CODE/tree/) |
+| **Python branch (prototype)** | [`Yousef-final-python-On-Device-Pipeline-3`](https://github.com/mohamed1232005/GP-VR-Guardian-System/tree/Yousef-final-python-On-Device-Pipeline-3) |
+| **Inference** | Depth Anything V2 via Unity Sentis (on-device) |
+| **Floor detection** | RANSAC implemented entirely in C# |
+| **Compute** | Standalone APK — no Wi-Fi, no laptop, no server |
+| **Render rate** | ~35 FPS |
 
 ---
 
-## 5. TOSHFA — Use Case & Demonstration Application
+## 9. TOSHFA — Demonstration Use Case
 
-**TOSHFA** is the lower-back VR rehabilitation module — the primary demonstration application built on top of the Guardian Framework. It is not a separate application; it is the `VR_LowerBackRehabMain` scene that runs inside the Guardian safe-space lifecycle.
+**TOSHFA** is the lower-back VR rehabilitation module — the primary application built on top of the Guardian Framework. It runs **inside the guardian safe-space lifecycle**: the boundary must be detected and locked before the rehabilitation scene starts.
 
-### Scene Flow
-
-```
-Welcome Gate
-    → AR Floor Detection (ARCore confirms physical floor)
-    → Safe-Space + Guardian Boundary (room dimensions confirmed)
-    → VR Lobby
-    → [START REHAB] → VR_LowerBackRehabMain (TOSHFA)
-    → Session Complete → Reset
-```
-
-### The Exercise: Step & Reach (Lower-Back Routine)
-
-TOSHFA guides users through a five-phase lower-back rehabilitation routine:
+**Scene flow**
 
 ```
-RELIEVE → RELEASE → STABILIZE → STRENGTHEN → COMPLETE (Cool Down)
+Welcome Gate → AR Floor Detection → Safe-Space + Guardian Boundary
+            → VR Lobby → [START REHAB] → TOSHFA Rehab Scene
+            → Session Complete → Reset
 ```
 
-Phases cycle **within each rep** as a movement-pace guide. Session progression is **rep-driven** (10 reps default) with a timer fallback.
+**Rehabilitation routine.** A guided lower-back session uses **MediaPipe Pose (33 body landmarks)** to drive rep tracking. Progression is **rep-driven** (10 reps by default) with a timer fallback, and on-screen **form feedback** (form warning, hold timing, good-form confirmation) guides the user through each movement.
 
-### Body-Pose Integration
-
-The laptop/PC webcam runs **MediaPipe BlazePose** (`pose_tracking.py`), streaming raw 33-joint `BODY_POSE` data over TCP to Unity. Unity's `BodyPoseReceiver` derives rehabilitation metrics:
-
-| Flag | Default | Behavior |
-|------|---------|----------|
-| `useBodyPoseWhenTracked` | `true` | CV reps drive progress while tracking is healthy |
-| `useRealRepsForProgression` | `true` | Real reps (not the clock) advance the 5-phase session |
-| `repProgressTimeoutMultiplier` | `2.5` | Safety timeout — stalled tracking still completes the session |
-| `totalReps` | `10` | Reps for a full session |
-| `secondsPerRep` | `5.0` | Tempo / timer-fallback pacing |
-
-**Form feedback (status line priority order):**
-1. Amber — Form warning (e.g., spine-lean violation)
-2. Cyan — Hold timing ("Hold X.X s", quantized to 0.1 s)
-3. Green — Good form confirmed
-4. Tracking lost — rep-linked message ("N/10 reps — step back into view")
-
-### Guardian Fail-Safe Integration
-
-TOSHFA is fully wired into the Guardian boundary safety system:
-- Subscribes to `GuardianFailSafeController` pause/resume events
-- On pause: warning sound, amber "PAUSED — {reason}" status, emissives dimmed
-- Self-healing: if fail-safe clears without firing resume, `Update()` auto-resumes
-- Phase toasts are hard-gated off while paused — no announcements during safety events
-
-### Session Data Export
-
-On completion (progress = 100%):
-- Exports a JSON session summary to `persistentDataPath/sessions/`
-- In-VR stats panel switches from live analytics to a final summary card
-- Triggered by `BodyPoseReceiver.SessionEnded` event
-
-### Known TOSHFA-Specific Fix
-
-When `ManualStereoCameraRig` kept ARCore alive during stereo rendering, ARCore re-localized continuously and the boundary box drifted off the physical floor. **Fix:** `FloorDetectionController` now creates a single `ARAnchor` at the confirmed floor and parents both the boundary box and safe-space root under it — pinning them to real-world coordinates regardless of ARCore re-localization.
+**Guardian fail-safe integration.** TOSHFA subscribes to the boundary fail-safe controller: on a safety event the session pauses (warning sound, amber "PAUSED" status, dimmed visuals) and auto-resumes when the area is clear. On completion, a **JSON session summary** is exported and the in-VR stats panel switches to a final summary card.
 
 ---
 
-## 6. Technology Stack
+## 10. Technologies Used
 
-### Unity & Mobile Layer
+**Unity & Mobile**
+
 | Tool | Purpose |
 |------|---------|
 | Unity 2022.3 LTS | VR/AR application framework |
-| Android Platform (API 29+) | Target deployment OS |
-| ARCore / AR Foundation | Floor detection, depth API, pose tracking |
-| ARCore XR Plugin | Unity integration layer for ARCore |
+| Android (API 29+) | Target deployment platform |
+| ARCore / AR Foundation | Floor detection, depth, pose tracking |
+| ARCore XR Plugin · XR Plugin Management | Unity ↔ ARCore integration |
+| Unity Inference Engine (Sentis) | On-device ONNX inference (Pipelines 2 & 3) |
+| TextMeshPro · Input System | In-VR UI and input |
 
-### Computer Vision & AI Layer
-| Library | Version | Purpose |
-|---------|---------|---------|
-| MediaPipe | Latest | Hand tracking (21 landmarks), body pose (33 landmarks) |
-| Depth Anything V2 | — | Monocular depth estimation (alternative to MiDaS) |
-| SegFormer | — | Semantic floor segmentation |
-| OpenCV | 4.x | Frame preprocessing, camera calibration |
-| NumPy | 1.x | Array operations, depth map processing |
-| RANSAC (custom) | — | Robust floor plane fitting from depth point clouds |
+**AI & Computer Vision**
 
-### Communication Layer
+| Library / Model | Purpose |
+|-----------------|---------|
+| MediaPipe Hands | Hand tracking — 21 3D landmarks |
+| MediaPipe Pose (BlazePose) | Body pose — 33 landmarks (TOSHFA) |
+| Depth Anything V2 | Monocular depth estimation |
+| SegFormer-B0 | Semantic floor segmentation |
+| RANSAC (custom) | Robust floor-plane fitting |
+| OpenCV · NumPy · SciPy | Frame processing & geometry |
+
+**Communication**
+
 | Protocol | Usage |
 |----------|-------|
-| UDP (port 9998) | Camera frame streaming: Unity → Python (JPEG compressed) |
-| TCP (port 9999) | AI results streaming: Python → Unity (JSON) |
-| Local Wi-Fi | Same network required for Pipelines 1 & 2 |
+| UDP | Camera-frame streaming: Unity → Python (JPEG) |
+| TCP | Result streaming: Python → Unity (JSON) |
+| Local Wi-Fi | Shared network for Pipelines 1 & 2 |
 
 ---
 
-## 7. Data Flow
+## 11. Repository Structure & Branching Strategy
 
-```
-Phone Camera (30 FPS RGB)
-       │
-       ▼
-TCP → Python Backend
-       ├── MiDaS / Depth Anything V2 → Depth Map
-       ├── MediaPipe Hands            → 21 Landmarks + Gesture
-       ├── RANSAC                     → Floor Y=0 Reference
-       └── YOLOv11n                   → Obstacle Proximity Labels
-       │
-       ▼
-Safety State Machine
-   SAFE / CAUTION / DANGER / FREEZE
-       │
-       ▼ UDP (JSON)
-Unity VR Application
-       ├── Boundary Renderer    → Neon safety box on floor
-       ├── Hand Skeleton        → 21-bone hand overlay in AR
-       ├── Fingertip Dot        → Red pointing indicator
-       └── Alert System         → Visual + audio safety cues
-```
+Source code is split across **GitHub** (Python backends) and **Unity Cloud / Plastic SCM** (Unity scenes and binary assets, kept out of Git to avoid large-binary merge conflicts). Each pipeline lives on a dedicated branch so its history is isolated and reproducible.
 
-**Latency targets:**
-- End-to-end (sensor → Unity alert): ≤ 100 ms
-- Per-frame processing: 18.9 ms – 34.0 ms (Python backend)
-- UDP packet round-trip: < 5 ms on local Wi-Fi
-
----
-
-## 8. Performance Results
-
-| Pipeline | FPS | Notes |
-|----------|-----|-------|
-| **Pipeline 1** — ARCore + MediaPipe | **~30 FPS** | Depth estimation alone; ~10–16 FPS end-to-end with full backend |
-| **Pipeline 2** — AI & Computer Vision | **~10 FPS** | Heavy multi-model load; 3-frame cache reduces CPU by 67% |
-| **Pipeline 3** — On-Device Guardian | **~12 FPS** | Fully standalone; no server dependency |
-
-**Evaluation metrics:**
-
-| Metric | Target | Status |
-|--------|--------|--------|
-| Boundary detection error | ≤ 10 cm | Achieved |
-| End-to-end latency | ≤ 100 ms | Achieved (avg ~52 ms) |
-| Frame rate (Python backend) | ≥ 8 FPS | Achieved (avg 9.1 FPS) |
-| Safety state accuracy | ≥ 90% | Achieved in test scenarios |
-| Floor detection confidence | 100% | Confirmed across 578 test frames |
-
----
-
-## 9. Repository Structure
+**Python backend (representative layout)**
 
 ```
 GP-VR-Guardian-System/
-│
-├── server.py                    # Main Python backend — TCP/UDP server (port 9999)
-├── hand_tracker.py              # MediaPipe Hands — landmark detection + gesture classifier
-├── floor_detector.py            # ARCore plane + RANSAC floor fitting fallback
-├── pose_tracking.py             # MediaPipe BlazePose — 33-joint body pose (TOSHFA)
-├── depth_estimator.py           # MiDaS / Depth Anything V2 integration
-├── safety_logic.py              # Safety state machine (Safe/Caution/Danger/Freeze)
-├── requirements.txt             # Python dependencies
-│
-├── Unity/  (managed via Unity Cloud — see Links)
-│   ├── Assets/
-│   │   ├── Scripts/
-│   │   │   ├── GuardianSystem.cs                    # Core: hand skeleton, boundary drawing
-│   │   │   ├── FloorDetectionController.cs          # ARCore floor detection + ARAnchor fix
-│   │   │   ├── GuardianFailSafeController.cs        # Boundary pause/resume events
-│   │   │   ├── BodyPoseReceiver.cs                  # TOSHFA: body pose metrics
-│   │   │   ├── LowerBackRehabStudioSceneController.cs # TOSHFA: main rehab controller
-│   │   │   ├── VRExperienceFlowController.cs        # Master state machine
-│   │   │   └── RehabStatsPanelController.cs         # TOSHFA: live stats + summary card
-│   │   └── Scenes/
-│   │       ├── SampleScene.unity                    # Main AR scene
-│   │       └── VR_LowerBackRehabMain.unity          # TOSHFA rehabilitation scene
-│   └── ...
-│
-└── README.md
+├── server.py            # TCP/UDP server entry point
+├── hand_tracker.py      # MediaPipe Hands — landmarks + gesture classifier
+├── floor_detector.py    # ARCore plane + RANSAC floor fitting
+├── pose_tracking.py     # MediaPipe Pose — 33-joint body pose (TOSHFA)
+├── safety_logic.py      # Safety state machine (Safe/Caution/Danger/Freeze)
+├── transport.py         # UDP/TCP transport layer
+├── config.py            # Ports, IPs, thresholds
+├── gesture_recognizer.task
+└── requirements.txt
 ```
 
-**Branch structure:**
+**Branch ↔ pipeline ↔ scene mapping**
 
-| Branch | Purpose |
-|--------|---------|
-| `main` | Stable Python backend (server, hand tracking, communication) |
-| `Mohamed` | Depth estimation, pose estimation, modules integration |
-| `Hamza` | Unity scenes, boundary drawing, floor detection |
-| `Ameen` | Python-Unity pipeline, VR lobby, Android setup |
-| `Yousef` | FPS optimization, ARCore Unity project, integration trials |
-| `hamza_boundary` | Boundary drawing algorithm development |
-| `hamza_points3D` | 3D point cloud processing experiments |
+| Pipeline | GitHub branch (Python) | Unity Cloud scene |
+|----------|------------------------|-------------------|
+| Pipeline 1 + initial TOSHFA | `ARcore_simple_toshfa` | `ARCore_pipeline_with_simple_toshfa` |
+| Pipeline 2 | `AI-Guardian-pipeline-2--final-version` | `AI_Guardian_Pipeline_2_hamza` |
+| Pipeline 3 + TOSHFA | `Yousef-final-python-On-Device-Pipeline-3` | `Warning_System_Yousef-hAMZA` *(branch `/main/Fix CODE`)* |
 
-> Unity scene files are managed separately in **Unity Cloud (Plastic SCM)** to avoid binary merge conflicts.
+> Unity scenes are version-controlled in **Unity Cloud (Plastic SCM)** under the **`MVP-Guardian-Unity`** repository. All members contribute through Git / Plastic commits, giving a clear, per-member contribution history for both code and scenes.
 
 ---
 
-## 10. Getting Started
+## 12. Environment Requirements
 
-### Prerequisites
+**Hardware**
 
-**Hardware:**
-- Android smartphone, ARCore-certified, Android 9.0+ (API 29)
-- Laptop or desktop with a webcam (for TOSHFA body-pose tracking)
-- Both devices on the **same local Wi-Fi network**
+- ARCore-certified Android smartphone, **Android 9.0+ (API 29+)**, with RGB camera and IMU, in a low-cost VR viewer (e.g. Cardboard).
+- Laptop/desktop with a webcam — required only for Pipelines 1 & 2 and for TOSHFA body-pose tracking.
+- Both devices on the **same local Wi-Fi** (not required for Pipeline 3).
 
-**Software:**
-- Python 3.9+
-- Unity 2022.3 LTS + Unity Hub
-- Android SDK / USB debugging enabled on the phone
+**Software**
+
+- **Python 3.9+** (Pipelines 1 & 2 backends).
+- **Unity 2022.3 LTS** + Unity Hub.
+- Android SDK / Android Build Support module, with **USB debugging** enabled.
+
+**Required Unity packages**
+
+- AR Foundation, ARCore XR Plugin, XR Plugin Management
+- Unity Inference Engine (Sentis) — Pipelines 2 & 3
+- TextMeshPro, Input System
+
+**Python dependencies** (`requirements.txt`, Pipelines 1 & 2)
+
+```
+mediapipe>=0.10
+opencv-python
+numpy
+scipy
+```
+
+> Pipeline 3 requires **no Python dependencies** — all inference runs on-device through Unity Sentis.
 
 ---
 
-### Step 1 — Clone the Python Backend
+## 13. Setup Instructions
+
+**1. Clone the backend and install dependencies**
 
 ```bash
 git clone https://github.com/mohamed1232005/GP-VR-Guardian-System.git
 cd GP-VR-Guardian-System
+git checkout ARcore_simple_toshfa        # or the branch for your target pipeline
 pip install -r requirements.txt
 ```
 
-Start the server:
-```bash
-python server.py
+**2. Get the Unity scene from Unity Cloud**
+
+1. Open **Unity Hub** and sign in.
+2. **Projects → Add → Clone from Unity Cloud**.
+3. Paste the scene link for your pipeline (see [§11](#11-repository-structure--branching-strategy)).
+4. Wait for the sync to finish, then open the scene in **Unity 2022.3 LTS**.
+
+**3. Configure the network (Pipelines 1 & 2)**
+
+- Start the backend: `python server.py` — wait for `READY — waiting for mobile connection…`.
+- In Unity, select the **`GuardianSystem`** object → Inspector → **NETWORK** → set **Server IP** to the host PC's local IP (e.g. `192.168.1.10`).
+- Confirm phone and PC share the same Wi-Fi. Default ports: **UDP 9998** (frames) / **TCP 9999** (results) — configurable in `config.py`.
+
+---
+
+## 14. Deployment Instructions
+
+**Unity Player Settings (Android / ARCore)**
+
+- **Minimum API Level:** 29 (Android 9.0).
+- **Scripting Backend:** IL2CPP · **Target Architecture:** ARM64.
+- **Graphics API:** OpenGLES3 (remove *Auto*; ARCore requires OpenGLES3 or Vulkan).
+- **XR Plug-in Management → Android:** enable **ARCore**.
+
+**Build & run**
+
+1. Connect the phone via USB and enable **USB Debugging**.
+2. **File → Build Settings → Android → Switch Platform**.
+3. Click **Build and Run** — Unity compiles and installs the APK on the device.
+4. When the app shows `AR Camera OK / Net OK`, the pipeline is live.
+
+**On-device deployment (Pipeline 3).** Build the `Warning_System_Yousef-hAMZA` scene to a single standalone APK. No server, Wi-Fi, or host PC is required — install and run.
+
+---
+
+## 15. Usage Guide
+
+1. Place the phone in the VR viewer and look at the floor — ARCore detects the floor plane.
+2. Confirm the safe area: the **yellow preview** boundary locks into a **green/cyan** boundary anchored to the real floor.
+3. Move around — approaching an edge escalates the warning state (see below) with visual, audio, and haptic feedback.
+4. Use your hand (fingertip ray) to point and interact; press **START REHAB** in the VR lobby to enter TOSHFA.
+5. Follow the guided lower-back routine (10 reps by default); a **session summary** appears on completion.
+
+**Safety warning state machine**
+
+| State | Trigger | Feedback |
+|-------|---------|----------|
+| **SAFE** | Well inside the boundary | Normal play; boundary subtle |
+| **CAUTION** | Approaching an edge | Boundary glows; soft audio cue |
+| **DANGER** | Very near / at the edge | Strong visual + audio + haptic alert |
+| **FREEZE** | Crossing / contact | Scene freezes and dims until the user returns inside |
+
+> Thresholds (distances that trigger each state) are configurable in `config.py` (networked) or the scene inspector (on-device).
+
+---
+
+## 16. API Documentation
+
+The Python backend and the Unity client communicate over a lightweight, **two-channel socket protocol**. There is no REST/HTTP layer.
+
+| Channel | Direction | Transport | Payload |
+|---------|-----------|-----------|---------|
+| Frame stream | Unity → Python | **UDP** (default `9998`) | JPEG-compressed RGB camera frame |
+| Result stream | Python → Unity | **TCP** (default `9999`) | JSON perception + safety result |
+
+**Result message (Python → Unity, JSON) — representative schema**
+
+```jsonc
+{
+  "frame_id": 1287,
+  "hand": {
+    "detected": true,
+    "gesture": "pointing",          // none | pointing | pinch
+    "confidence": 0.94,
+    "landmarks": [ {"x":0.51,"y":0.42,"z":-0.08} ]   // 21 entries
+  },
+  "floor": {
+    "valid": true,
+    "normal": [0.01, 0.99, 0.02],   // plane normal
+    "height": 0.0                    // Y = 0 reference
+  },
+  "safety": {
+    "state": "CAUTION",             // SAFE | CAUTION | DANGER | FREEZE
+    "nearest_distance_m": 0.46
+  },
+  "pose": {                          // present in TOSHFA sessions
+    "detected": true,
+    "landmarks": [ ]                 // 33 entries (BlazePose)
+  }
+}
 ```
-The terminal will print `READY — waiting for mobile connection...` once the server is listening on port 9999. **Keep this terminal open throughout the session.**
+
+**Frame packet (Unity → Python, UDP).** Raw JPEG bytes of the current camera frame (downscaled, e.g. 320×240) for low-latency streaming. Configuration (ports, IP, resolution, thresholds) is centralized in `config.py`.
 
 ---
 
-### Step 2 — Pull the Unity Scene from Unity Cloud
+## 17. Data & Session Schema
 
-The Unity project is managed in Unity Cloud (Plastic SCM):
+The system uses **no relational database**. Runtime state is held in memory; the only persisted artefact is a **TOSHFA session summary** exported as JSON to `persistentDataPath/sessions/` on completion.
 
-1. Open **Unity Hub** and sign in with your Unity account
-2. Go to **Projects → Add → Clone from Unity Cloud**
-3. Paste the project link (see [Links](#13-links))
-4. Wait for the scene to sync, then open **SampleScene**
-
----
-
-### Step 3 — Configure the Server IP in Unity
-
-1. In the Unity **Hierarchy**, select the `GuardianSystem` GameObject
-2. In the **Inspector**, under **NETWORK**, update **Server IP** to your laptop's local IP address (e.g., `192.168.1.10`)
-3. Confirm your phone and laptop are on the same Wi-Fi network
-
----
-
-### Step 4 — Build and Run on Android
-
-1. Connect your Android phone via USB and enable **USB Debugging**
-2. In Unity: **File → Build Settings → Android → Switch Platform**
-3. Click **Build and Run** — Unity compiles and installs the APK automatically
-4. The app will launch. When the screen shows `AR Camera ✓ Net ✓`, the full pipeline is live
+```jsonc
+{
+  "session_id": "2026-06-19T14:32:10",
+  "exercise": "lower_back_step_and_reach",
+  "total_reps": 10,
+  "completed_reps": 10,
+  "duration_seconds": 312,
+  "form_warnings": 3,
+  "guardian_pauses": 1,
+  "completed": true
+}
+```
 
 ---
 
-### Step 5 — Run a Session
+## 18. Performance & Results
 
-1. Point the phone camera at the floor — ARCore will detect the floor plane
-2. Confirm the safe area when prompted
-3. The green neon safety boundary appears on the floor in AR
-4. Walk toward any edge — the system transitions through Safe → Caution → Danger → Freeze
-5. For TOSHFA: press **START REHAB** in the VR lobby to enter the rehabilitation scene
+| Pipeline | Unity Render FPS | Notes |
+|----------|------------------|-------|
+| **Pipeline 1** — ARCore + MediaPipe | **~60 FPS** | Lightest on-device load; primary production build |
+| **Pipeline 2** — AI & Computer Vision | **27.5 – 30 FPS** | Heavier multi-model perception |
+| **Pipeline 3** — On-Device Guardian | **~35 FPS** | Standalone; no network round-trip |
 
----
-
-## 11. Known Issues & Bugs
-
-| ID | Description | Severity | Status | Fix |
-|----|-------------|----------|--------|-----|
-| BUG-01 | FPS drops to ~8.5 when running depth + pose simultaneously | Medium | Resolved | Pose tracker disabled in MVP; re-enable via `server.py` line 106 |
-| BUG-02 | Floor detection delayed 3–10 s on textureless / dark floors | Medium | Mitigated | 5-second timeout activates simplified Y=0 raycasting fallback |
-| BUG-03 | Hand tracking loses detection at image boundary (<5% edge margin) | Low | Known | Expand camera FOV usage; add boundary proximity warning |
-| BUG-04 | UDP packet loss causes safety state freeze in Unity | Medium | Mitigated | UDP retry logic + last-known-state fallback in Unity receiver |
-| BUG-05 | Skipped frames sent undefined `result` variable (NameError) | Medium | Resolved | `last_result` cache added; skipped frames send last valid result |
-| BUG-06 | Boundary box drifts during TOSHFA stereo mode (ARCore re-localization) | High | Resolved | `FloorDetectionController` now anchors boundary to `ARAnchor` at confirmed floor |
+| Metric | Target | Result |
+|--------|--------|--------|
+| Boundary detection error | ≤ 10 cm | Achieved |
+| End-to-end latency (sensor → alert) | ≤ 100 ms | Achieved (avg ~52 ms) |
+| Floor detection confidence | High | Confirmed across 578 test frames |
+| Safety-state accuracy | ≥ 90% | Achieved in test scenarios |
 
 ---
 
-## 12. Team
+## 19. Testing & Validation
 
-**Team 25 — Guardian System for Affordable Smartphone-Based VR**
+The system was evaluated against the functional safety requirements rather than on human subjects (technical-feasibility scope).
 
-| Member | Role | Key Contributions |
+| Test | What it checks | Result |
+|------|----------------|--------|
+| **Boundary lock** | Boundary stays fixed to the real floor under head movement | Pass — anchored, no drift |
+| **Warning escalation** | Correct Safe → Caution → Danger → Freeze transitions near edges | Pass |
+| **Hand interaction** | Fingertip ray places/confirms boundary points | Pass |
+| **Floor detection** | Plane found on varied floors / lighting | Pass; Y=0 fallback on failure |
+| **TOSHFA transition** | Session starts only inside a locked safe area | Pass |
+| **Guardian pause/resume** | TOSHFA pauses on safety event, resumes when clear | Pass |
+
+---
+
+## 20. Screenshots & Demo
+
+Image assets live in **`docs/screenshots/`** and the full walkthrough is in the demo video (see [Project Links](#24-project-links)). Key captures included with the submission:
+
+| Capture | Shows |
+|---------|-------|
+| `floor_scan` | AR floor scanning with the yellow preview boundary |
+| `boundary_locked` | Locked green/cyan boundary anchored to the real floor |
+| `hand_tracking` | 21-joint hand skeleton with the fingertip interaction ray |
+| `warning_states` | Caution / Danger / Freeze warning visuals |
+| `vr_lobby` | VR lobby with the START REHAB (TOSHFA) button |
+| `toshfa_session` | TOSHFA rehabilitation scene with rep tracking |
+
+---
+
+## 21. Troubleshooting
+
+| Symptom | Likely cause | Fix |
+|---------|--------------|-----|
+| Floor not detected | Dark or textureless floor | Move to a well-lit, textured area; a Y=0 fallback activates after ~5 s |
+| `Net` fails / no data | Wrong Server IP, different Wi-Fi, server not running, or firewall | Verify same Wi-Fi, correct Server IP, `server.py` running, and that the ports are allowed |
+| Hand lost near screen edge | Hand outside camera frame | Keep the hand centred in view |
+| Boundary jitter / freeze | Transient UDP packet loss | App holds the last safe state; restart the server if it persists |
+| Low frame rate | Background apps / heavy pipeline | Close other apps; Pipeline 1 is the lightest |
+| ARCore build fails | Graphics API or API level | Set Graphics API to OpenGLES3 and Minimum API Level to 29 |
+
+---
+
+## 22. Reproducing & Verifying the Build
+
+A clean reproduction of the **primary build (Pipeline 1)**:
+
+```bash
+# 1. Backend
+git clone https://github.com/mohamed1232005/GP-VR-Guardian-System.git
+cd GP-VR-Guardian-System
+git checkout ARcore_simple_toshfa
+pip install -r requirements.txt
+python server.py            # expect: READY — waiting for mobile connection…
+
+# 2. Unity
+#   - Unity Hub → Clone from Unity Cloud → ARCore_pipeline_with_simple_toshfa
+#   - Open in Unity 2022.3 LTS, set Server IP on the GuardianSystem object
+#   - File → Build Settings → Android → Build and Run
+```
+
+**Verification checklist**
+
+- [ ] Backend prints `READY` and accepts the phone connection.
+- [ ] App shows `AR Camera OK / Net OK` on launch.
+- [ ] Floor is detected and the boundary locks (green/cyan).
+- [ ] Hand skeleton and fingertip ray appear and track.
+- [ ] Warnings escalate correctly near the boundary edge.
+- [ ] START REHAB launches TOSHFA inside the locked area.
+
+> All dependencies and assets are linked in this README; following the steps above reproduces a working build end to end.
+
+---
+
+## 23. Contributions
+
+All members contributed to system architecture, requirements analysis, technical documentation, and integration. Per-member focus areas:
+
+| Member | Role | Key contributions |
 |--------|------|-------------------|
-| **Mohamed Ehab Yousri** | Team Lead | System architecture, monocular depth estimation (ARCore Depth API, adaptive resolution, depth caching), FPS optimization, integration trials, Unity scene building |
-| **Hamza Abdelmoreed** | Integration Lead | All-modules integration (lead), boundary drawing & area detection, ground level estimation (RANSAC), Unity scenes development, Python-Unity pipeline |
-| **Amin Gamal** | Co-Integration Lead | Python-Unity pipeline, VR lobby environment, Android dev environment setup, ARCore XR Plugin configuration, module development, FPS optimization |
-| **Yousef Selim** | FPS & ARCore Lead | FPS optimization across all modules (depth, pose, hand tracking), ARCore Unity project, pose estimation trial (MediaPipe + rtmpose-s), integration trial |
+| **Mohamed Ehab Yousry** | Team Lead | System architecture, monocular depth estimation & depth caching, FPS optimization, Unity scene building, integration |
+| **Hamza Abdelmoreed** | Integration Lead | All-modules integration, boundary drawing & area detection, RANSAC ground estimation, Unity scenes, Python–Unity pipeline |
+| **Ameen Gamal** | Co-Integration Lead | Python–Unity pipeline, VR lobby, Android dev environment, ARCore XR Plugin configuration, FPS optimization |
+| **Yousef Selim Shawky** | FPS & ARCore Lead | FPS optimization across modules, ARCore Unity project, pose estimation, on-device Pipeline 3 |
 
-All members contributed to: system architecture design, requirements analysis, technical documentation, and co-authoring a research paper on pose estimation for lower-back pain ("TOSHFA") published on arXiv.
+> Contribution history is reflected in the per-pipeline branches (GitHub) and the `MVP-Guardian-Unity` repository (Unity Cloud / Plastic SCM). Every member contributed through tracked commits.
 
 ---
 
-## 13. Links
+## 24. Project Links
 
 | Resource | Link |
 |----------|------|
-| **GitHub Repository (Python Backend)** | https://github.com/mohamed1232005/GP-VR-Guardian-System |
-| **Unity Cloud Project (Unity Scenes)** | https://cloud.unity.com/home/organizations/11270618913273/projects/c0e40f1e-f1ae-49ad-9c5b-c16b028dc078 |
-| **Demo Video** | https://drive.google.com/drive/folders/14uRaXD2cKZxU0FoLaBoZ7k0BDWAV8DPG |
-| **Presentation** | https://canva.link/lnd040bvpzaufzr |
+| GitHub repository | https://github.com/mohamed1232005/GP-VR-Guardian-System |
+| Unity Cloud organization (all scenes) | https://cloud.unity.com/home/organizations/11270618913273/projects |
+| Pipeline 1 scene | [`ARCore_pipeline_with_simple_toshfa`](https://cloud.unity.com/home/organizations/11270618913273/projects/3af6106f-603f-411a-9087-d805c64f2b72/plastic-scm/organizations/11270618913273/repositories/MVP-Guardian-Unity%2FARCore_pipeline_with_simple_toshfa) |
+| Pipeline 2 scene | [`AI_Guardian_Pipeline_2_hamza`](https://cloud.unity.com/home/organizations/11270618913273/projects/3af6106f-603f-411a-9087-d805c64f2b72/plastic-scm/organizations/11270618913273/repositories/MVP-Guardian-Unity%2FAI_Guardian_Pipeline_2_hamza/branch/%2Fmain/tree/) |
+| Pipeline 3 + TOSHFA scene | [`Warning_System_Yousef-hAMZA`](https://cloud.unity.com/home/organizations/11270618913273/projects/3af6106f-603f-411a-9087-d805c64f2b72/plastic-scm/organizations/11270618913273/repositories/MVP-Guardian-Unity%2FWarning_System_Yousef-hAMZA/branch/%2Fmain%2FFix%20CODE/tree/) |
 
 ---
 
-## License
+## 25. License
 
-This project was developed as a graduation project for academic purposes.  
+This project was developed as a graduation project for academic purposes.
 © 2026 Team 25 — All rights reserved.
 
 ---
 
-*Built with ARCore · MediaPipe · Unity · Python · TensorFlow Lite*
+*Built with ARCore · MediaPipe · Depth Anything V2 · SegFormer · Unity Sentis · Python.*
